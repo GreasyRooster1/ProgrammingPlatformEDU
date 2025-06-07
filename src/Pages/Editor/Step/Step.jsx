@@ -5,7 +5,8 @@ function Step(props) {
     return (
         <div className={`${styles[props.type]} ${styles.step}`}>
             <div className={styles.head}>
-                {props.title}
+                <span>{props.title}</span>
+                <span className={styles.type}>{props.type}</span>
             </div>
             <div className={styles.content}>
                 <div className={styles.textContent}>

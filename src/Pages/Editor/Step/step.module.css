@@ -12,7 +12,8 @@
 
 .head{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+
     justify-content: space-between;
     border-bottom: 2px solid var(--neutral-light);
     padding: 10px;
@@ -23,6 +24,25 @@
     padding: 10px;
 }
 
+.type{
+    text-transform: capitalize;
+    background: var(--step-accent-color);
+    padding:0 2px;
+    border-radius: 5px;
+}
+
 .info{
     --step-accent-color:var(--step-info);
+}
+.code{
+    --step-accent-color:var(--step-code);
+}
+.challenge{
+    --step-accent-color:var(--step-challenge);
+}
+.check{
+    --step-accent-color:var(--step-check);
+}
+.next{
+    --step-accent-color:var(--step-next);
 }
