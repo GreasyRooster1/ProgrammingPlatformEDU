@@ -1,0 +1,14 @@
+.step{
+    display: flex;
+    background: var(--neutral-med);
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content{
+
+}

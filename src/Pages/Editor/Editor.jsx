@@ -2,13 +2,17 @@ import React from 'react';
 import ScreenPage from "../../components/screenPage/ScreenPage.jsx";
 import {Panel, PanelGroup, PanelResizeHandle} from "react-resizable-panels";
 import styles from "./editor.module.css";
+import Step from "./Step/Step.jsx";
+import logo from '/vite.svg';
 
 function Editor() {
     return (
         <ScreenPage>
             <PanelGroup direction="horizontal">
                 <Panel defaultSize={25} className={styles.stepsPanel}>
-                    steps
+                    <Step title="Step 1" image={logo} type="info">
+                        This is a test step
+                    </Step>
                 </Panel>
                 <PanelResizeHandle />
 
@@ -23,6 +27,7 @@ function Editor() {
                             output
                         </Panel>
                         <PanelResizeHandle />
+
                         <Panel defaultSize={60} className={styles.consolePanel}>
                             console
                         </Panel>
