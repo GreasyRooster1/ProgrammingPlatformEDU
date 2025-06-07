@@ -1,14 +1,22 @@
 .step{
     display: flex;
-    background: var(--neutral-med);
+    background: var(--neutral-dark);
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid var(--neutral-light);
+    margin:10px;
+    overflow: hidden;
 }
 
 .head{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-bottom: 1px solid var(--neutral-light);
+    padding: 10px;
 }
 
 .content{
-
+    background: var(--neutral-med);
+    padding: 10px;
 }
