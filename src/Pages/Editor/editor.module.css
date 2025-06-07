@@ -1,15 +1,18 @@
 .stepsPanel{
-
+    background: var(--neutral-dark);
+    border-right:1px solid var(--neutral-light)
 }
 
 .codePanel{
-
+    background: var(--neutral-med);
+    border-right:1px solid var(--neutral-light)
 }
 
 .outputPanel{
-
+    background: var(--neutral-dark);
+    border-bottom:1px solid var(--neutral-light)
 }
 
 .consolePanel{
-
+    background: var(--neutral-dark);
 }
