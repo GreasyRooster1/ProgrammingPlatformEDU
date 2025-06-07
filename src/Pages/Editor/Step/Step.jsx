@@ -3,7 +3,7 @@ import styles from "./step.module.css"
 
 function Step(props) {
     return (
-        <div className={styles.step}>
+        <div className={`${styles[props.type]} ${styles.step}`}>
             <div className={styles.head}>
                 {props.title}
             </div>

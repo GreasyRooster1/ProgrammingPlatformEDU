@@ -1,9 +1,11 @@
 .step{
+    --step-accent-color:var(--neutral-light);
+
     display: flex;
     background: var(--neutral-dark);
     flex-direction: column;
     border-radius: 10px;
-    border: 1px solid var(--neutral-light);
+    border: 2px solid var(--step-accent-color);
     margin:10px;
     overflow: hidden;
 }
@@ -12,11 +14,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-bottom: 1px solid var(--neutral-light);
+    border-bottom: 2px solid var(--neutral-light);
     padding: 10px;
 }
 
 .content{
     background: var(--neutral-med);
     padding: 10px;
+}
+
+.info{
+    --step-accent-color:var(--step-info);
 }

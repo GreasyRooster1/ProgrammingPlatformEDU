@@ -14,6 +14,12 @@
   --neutral-med:#151516;
   --neutral-light:#46494C;
 
+  --step-info:#1974E8;
+  --step-code:#19E823;
+  --step-challenge:#E83C19;
+  --step-check:#D019E8;
+  --step-next:#F1C31C;
+
   --default-text-color:#fff;
 
   color: var(--default-text-color)
