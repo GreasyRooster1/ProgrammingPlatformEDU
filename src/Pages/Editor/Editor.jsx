@@ -6,7 +6,7 @@ import styles from "./editor.module.css";
 function Editor() {
     return (
         <ScreenPage>
-            <PanelGroup autoSaveId="example" storage={null} direction="horizontal">
+            <PanelGroup direction="horizontal">
                 <Panel defaultSize={25} className={styles.stepsPanel}>
                     steps
                 </Panel>
@@ -18,7 +18,7 @@ function Editor() {
                 <PanelResizeHandle />
 
                 <Panel defaultSize={25}>
-                    <PanelGroup autoSaveId="example" storage={null} direction="vertical">
+                    <PanelGroup direction="vertical">
                         <Panel defaultSize={60} className={styles.outputPanel}>
                             output
                         </Panel>

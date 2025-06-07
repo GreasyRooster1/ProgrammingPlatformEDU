@@ -1,11 +1,11 @@
 .stepsPanel{
     background: var(--neutral-dark);
-    border-right:1px solid var(--neutral-light)
 }
 
 .codePanel{
     background: var(--neutral-med);
-    border-right:1px solid var(--neutral-light)
+    border-right:1px solid var(--neutral-light);
+    border-left:1px solid var(--neutral-light);
 }
 
 .outputPanel{
