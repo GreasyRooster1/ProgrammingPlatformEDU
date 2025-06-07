@@ -7,6 +7,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --neutral-dark:#0F0F10;
+  --neutral-med:#151516;
+  --neutral-light:#46494C;
 }
 
 body{
