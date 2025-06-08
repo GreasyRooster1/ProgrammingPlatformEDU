@@ -1,9 +1,26 @@
-import React from 'react';
-import {Editor} from "@monaco-editor/react";
+import React, {useEffect} from 'react';
+import {Editor, useMonaco} from "@monaco-editor/react";
 
 function CodePanel() {
+    let monaco = useMonaco();
+
+    useEffect(() => {
+        if(monaco) {
+            console.log(monaco);
+            monaco.editor.defineTheme('brand-default', {
+                base: 'vs-dark',
+                inherit: true,
+                rules: [],
+                colors: {
+                    'editor.background': '#151516',
+                },
+            });
+            monaco.editor.setTheme("brand-default")
+        }
+    },[monaco]);
+
     return (
-        <Editor height="90vh" defaultLanguage="javascript" defaultValue="// some comment" />
+        <Editor height="100vh" defaultLanguage="javascript" defaultValue="// some comment" />
     );
 }
 
