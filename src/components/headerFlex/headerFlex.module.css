@@ -1,0 +1,12 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.head{
+    border-bottom: 2px solid var(--neutral-light);
+}
+
+.body{
+
+}

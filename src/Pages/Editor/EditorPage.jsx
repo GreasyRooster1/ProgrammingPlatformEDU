@@ -6,7 +6,7 @@ import Step from "./Step/Step.jsx";
 import logo from '/vite.svg';
 import LessonPanel from "./panels/lesson/LessonPanel.jsx";
 import CodePanel from "./panels/code/CodePanel.jsx";
-import OutputPanel from "./panels/output/OutputPanel.js";
+import OutputPanel from "./panels/output/OutputPanel.jsx";
 import ConsolePanel from "./panels/console/ConsolePanel.jsx";
 
 function EditorPage() {
