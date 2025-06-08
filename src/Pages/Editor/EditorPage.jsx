@@ -1,35 +1,23 @@
 import React from 'react';
 import ScreenPage from "../../components/screenPage/ScreenPage.jsx";
 import {Panel, PanelGroup, PanelResizeHandle} from "react-resizable-panels";
-import styles from "./editor.module.css";
+import styles from "./editorPage.module.css";
 import Step from "./Step/Step.jsx";
 import logo from '/vite.svg';
+import LessonPanel from "./panels/lesson/LessonPanel.jsx";
+import CodePanel from "./panels/code/CodePanel.jsx";
 
-function Editor() {
+function EditorPage() {
     return (
         <ScreenPage>
             <PanelGroup direction="horizontal">
                 <Panel defaultSize={25} className={styles.stepsPanel}>
-                    <Step title="Step 1" image={logo} type="info">
-                        This is a test step
-                    </Step>
-                    <Step title="Step 1" image={logo} type="code">
-                        This is a test step
-                    </Step>
-                    <Step title="Step 1" image={logo} type="challenge">
-                        This is a test step
-                    </Step>
-                    <Step title="Step 1" image={logo} type="check">
-                        This is a test step
-                    </Step>
-                    <Step title="Step 1" image={logo} type="next">
-                        This is a test step
-                    </Step>
+                    <LessonPanel />
                 </Panel>
                 <PanelResizeHandle />
 
                 <Panel className={styles.codePanel}>
-                    code
+                    <CodePanel />
                 </Panel>
                 <PanelResizeHandle />
 
@@ -50,4 +38,4 @@ function Editor() {
     );
 }
 
-export default Editor;
+export default EditorPage;
