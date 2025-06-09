@@ -1,7 +1,38 @@
+.wrapper{
+    height: 100%;
+}
+
 .head{
     display: flex;
+    justify-content: space-between;
+    padding:5px 10px;
+    align-items: center;
+}
+
+.iconContainers{
+    display: flex;
+    align-items: center;
+}
+
+.iconContainers img {
+    width: 32px;
+    height: 32px;
+}
+
+.controlButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;;
 }
 
 .body{
+    display: flex;
+    flex:1;
+    padding: 10px;
+}
 
+.frame{
+    border:none;
+    width: 100%;
+    flex:1;
 }
