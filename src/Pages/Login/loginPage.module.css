@@ -1,3 +1,10 @@
 .screenPage{
     background:var(--neutral-dark)
 }
+
+.loginBox{
+    background: var(--neutral-med);
+    border: 2px solid var(--neutral-light);
+    border-radius: 10px;
+
+}
