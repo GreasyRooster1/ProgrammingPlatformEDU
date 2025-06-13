@@ -1,6 +1,6 @@
 import React from 'react';
 
-function HomePage() {
+function LoginPage() {
     return (
         <div>
             login
@@ -8,4 +8,4 @@ function HomePage() {
     );
 }
 
-export default HomePage;
+export default LoginPage;
