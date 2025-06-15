@@ -6,7 +6,7 @@ function LandingPage() {
 
     if(!isLoading && isAuthenticated) {
         console.log(user)
-        console.log(user.user_id)
+        console.log(user.sub)
     }
 
     return (
