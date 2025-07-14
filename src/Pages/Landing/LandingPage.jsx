@@ -3,11 +3,19 @@ import {useAuth0} from "@auth0/auth0-react";
 import {getUserId} from "../../api/api.js";
 
 function LandingPage() {
-    const { loginWithRedirect,logout, user, isAuthenticated,isLoading} = useAuth0();
+    const { loginWithRedirect,logout, user, isAuthenticated,isLoading,getAccessTokenWithPopup } = useAuth0();
 
     if(!isLoading && isAuthenticated) {
         console.log(user)
         console.log(getUserId(user))
+        getAccessTokenWithPopup ({
+            authorizationParams: {
+                audience: `https://dev-pqbjxkbpmw3pn3x7.us.auth0.com/api/v2/`,
+                scope:""
+            },
+        }).then((t)=>{
+            console.log(t)
+        })
     }
 
     return (
