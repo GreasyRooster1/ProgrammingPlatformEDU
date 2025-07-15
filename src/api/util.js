@@ -1,4 +1,4 @@
-export function handle(e, fn) {
+export function handle(e, fn, ...args) {
     e.preventDefault();
-    fn();
+    fn.apply(this, args);
 }
