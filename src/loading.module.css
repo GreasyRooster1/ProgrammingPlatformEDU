@@ -1,0 +1,14 @@
+.textContainer{
+
+}
+
+.text{
+    font-size: 2rem;
+}
+
+.background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--neutral-dark)
+}

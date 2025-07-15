@@ -3,7 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import HomePage from "./Pages/Home/HomePage.jsx";
 import EditorPage from "./Pages/Editor/EditorPage.jsx";
 import LandingPage from "./Pages/Landing/LandingPage.jsx";
-import LoginPage from "./Pages/Login/LoginPage.jsx";
+import LoadingTestPage from "./Pages/Loading/LoadingTestPage.jsx";
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/editor" element={<EditorPage />} />
         <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/loadingTest" element={<LoadingTestPage />} />
         {/* Add more routes as needed */}
       </Routes>
   )
