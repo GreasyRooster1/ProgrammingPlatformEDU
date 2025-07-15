@@ -6,23 +6,17 @@ import LoginErrors from "./LoginErrors.jsx";
 function LandingPage() {
     const { loginWithRedirect,logout, user, isAuthenticated,isLoading,getAccessTokenWithPopup } = useAuth0();
 
-    const [state, setState] = useState({
-        showResult: false,
-        apiMessage: "",
-        error: null,
-    });
-
     if(!isLoading && isAuthenticated) {
         console.log(user)
         console.log(getUserId(user))
-        getAccessTokenWithPopup ({
-            authorizationParams: {
-                audience: `https://dev-pqbjxkbpmw3pn3x7.us.auth0.com/api/v2/`,
-                scope:""
-            },
-        }).then((t)=>{
-            console.log(t)
-        })
+        // getAccessTokenWithPopup ({
+        //     authorizationParams: {
+        //         audience: `https://dev-pqbjxkbpmw3pn3x7.us.auth0.com/api/v2/`,
+        //         scope:""
+        //     },
+        // }).then((t)=>{
+        //     console.log(t)
+        // })
     }
 
     return (
