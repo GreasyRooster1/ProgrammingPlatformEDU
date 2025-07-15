@@ -19,11 +19,7 @@ function AuthProvider(props) {
         }
     },[isLoading,isAuthenticated])
 
-    return (
-        <>
-            {props.children}
-        </>
-    );
+    return props.children;
 }
 
 export function defaultAuthData(){
