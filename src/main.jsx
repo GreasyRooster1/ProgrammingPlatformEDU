@@ -11,7 +11,8 @@ createRoot(document.getElementById('root')).render(
           domain="dev-pqbjxkbpmw3pn3x7.us.auth0.com"
           clientId="ZDY58e8OF70FyubRaf6r7VtoGaVNanNV"
           authorizationParams={{
-              redirect_uri: window.location.origin
+              redirect_uri: window.location.origin,
+              audience:"https://generalapi.com"
           }}
       >
       <BrowserRouter>
