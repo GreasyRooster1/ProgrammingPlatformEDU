@@ -1,10 +1,11 @@
 import React from 'react';
+import AuthLock from "../../components/AuthLock.jsx";
 
 function HomePage() {
     return (
-        <div>
+        <AuthLock>
             home
-        </div>
+        </AuthLock>
     );
 }
 
