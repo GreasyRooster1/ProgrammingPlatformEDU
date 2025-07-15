@@ -6,18 +6,18 @@ import Loading from "../Loading.jsx";
 function AuthLock(props) {
     const {isAuthenticated,isLoading,loginWithRedirect} = useAuth0();
 
-    if(!isAuthenticated) {
-        loginWithRedirect()
-        return (<Loading/>);
-    }
+    let content = props.children;
 
     if(isLoading) {
-        return (<Loading/>);
+        content = (<Loading/>);
+    }else if(!isAuthenticated) {
+        loginWithRedirect()
+        content = (<Loading/>);
     }
 
     return (
        <AuthProvider setUserData={props.setUserData}>
-           {props.children}
+           {content}
        </AuthProvider>
     );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ScreenPage from "../../components/screenPage/ScreenPage.jsx";
 import {Panel, PanelGroup, PanelResizeHandle} from "react-resizable-panels";
 import styles from "./editorPage.module.css";
@@ -9,10 +9,13 @@ import CodePanel from "./panels/code/CodePanel.jsx";
 import OutputPanel from "./panels/output/OutputPanel.jsx";
 import ConsolePanel from "./panels/console/ConsolePanel.jsx";
 import AuthLock from "../../components/AuthLock.jsx";
+import {defaultAuthData} from "../../components/AuthProvider.jsx";
 
 function EditorPage() {
+    const [userData, setUserData] = useState(defaultAuthData());
+
     return (
-        <AuthLock>
+        <AuthLock setUserData={setUserData}>
         <ScreenPage>
             <PanelGroup direction="horizontal">
                 <Panel defaultSize={25} className={styles.stepsPanel}>
