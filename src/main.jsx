@@ -10,7 +10,6 @@ createRoot(document.getElementById('root')).render(
       <Auth0Provider
           domain="dev-pqbjxkbpmw3pn3x7.us.auth0.com"
           clientId="ZDY58e8OF70FyubRaf6r7VtoGaVNanNV"
-          audience="https://dev-pqbjxkbpmw3pn3x7.us.auth0.com/api/v2/"
           authorizationParams={{
               redirect_uri: window.location.origin
           }}
