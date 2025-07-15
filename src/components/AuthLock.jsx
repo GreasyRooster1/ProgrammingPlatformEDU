@@ -11,7 +11,11 @@ function AuthLock(props) {
     if(isLoading) {
         content = (<Loading/>);
     }else if(!isAuthenticated) {
-        loginWithRedirect()
+        loginWithRedirect({
+            appState: {
+                returnTo: window.location.pathname
+            }
+        });
         content = (<Loading/>);
     }
 

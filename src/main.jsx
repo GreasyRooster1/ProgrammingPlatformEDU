@@ -5,6 +5,14 @@ import App from './App.jsx'
 import {BrowserRouter} from "react-router-dom";
 import {Auth0Provider} from "@auth0/auth0-react";
 
+const onRedirectCallback = (appState) => {
+    window.location.replace(
+        appState && appState.returnTo
+            ? appState.returnTo
+            : window.location.href
+    );
+};
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
       <Auth0Provider
@@ -14,6 +22,7 @@ createRoot(document.getElementById('root')).render(
               redirect_uri: window.location.origin,
               audience:"https://generalapi.com"
           }}
+          onRedirectCallback={onRedirectCallback}
       >
       <BrowserRouter>
         <App />
