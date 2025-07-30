@@ -4,13 +4,14 @@ import {getUserId} from "../api/api.js";
 
 function AuthProvider(props) {
     const {user, isAuthenticated,isLoading,getAccessTokenSilently } = useAuth0();
-
+    let setUserData = props.setUserData;
     useEffect(() => {
+        console.log(isAuthenticated,isLoading);
         if(!isLoading && isAuthenticated) {
             console.log(user)
             let uid = getUserId(user);
             getAccessTokenSilently().then((e)=>{
-                props.setUserData({
+                setUserData({
                     token:e,
                     uid:uid,
                     isAuthenticated:true,
