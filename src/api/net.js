@@ -7,8 +7,11 @@ const netUser = {
 }
 
 const netProj = {
-    // testsd
-    getData:jsonReq("/project/get_data")
+    // /get_data/<proj_id>
+    getData:jsonReq("/project/get_data"),
+
+    // /get_user_proj_list/<page>
+    getUserProjList:jsonReq("/project/get_user_proj_list"),
 }
 
 const netAuth = {
