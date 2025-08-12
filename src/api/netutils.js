@@ -1,22 +1,17 @@
 import {API_URL} from "./net.js";
 
 //quickly build a request handler for the backend
-function req(uri, func){
+function req(uri, method, func){
     //args for the request
-    return (...args)=>{
-        return new Promise((resolve,reject)=>{
-            let argsUri = "/"+args.join("/");
-            fetch(API_URL + uri + argsUri).then(r  =>{
-                resolve(func.apply(this, [r,...args]));
-            }).catch(err=>{
-                reject(err);
-            })
-        })
+    return async (...args) => {
+        let argsUri = "/"+args.join("/");
+        const response = await fetch(API_URL + uri + argsUri)
+        return func.apply(this, [response,...args]);
     };
 }
 
 function jsonReq(uri){
-    req(uri,(response)=>{
+    return req(uri,(response)=>{
         return response.json();
     })
 }
