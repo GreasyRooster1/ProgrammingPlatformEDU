@@ -1,0 +1,7 @@
+.list{
+    width: 66%;
+    border-right:1px solid var(--neutral-light);
+}
+.details{
+    width: 34%;
+}
