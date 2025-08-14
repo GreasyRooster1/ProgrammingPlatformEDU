@@ -1,7 +1,9 @@
 .list{
-    width: calc(66% + 16px);
+    width: 66%;
     border-right:1px solid var(--neutral-light);
+    padding: 8px;
 }
 .details{
-    width: calc(34% - 16px);
+    width: 34%;
+    padding: 8px;
 }

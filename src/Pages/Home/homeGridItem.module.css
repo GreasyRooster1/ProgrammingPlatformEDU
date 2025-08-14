@@ -1,6 +1,6 @@
 .item{
     display: flex;
-    padding:16px;
+    padding:12px;
     height: 33vh;
     flex-grow: 1;
     flex-shrink: 1;
@@ -19,7 +19,7 @@
 
 .itemLong{
     display: flex;
-    padding:16px;
+    padding:12px;
     height: 33vh;
     width: 100%;
 }
