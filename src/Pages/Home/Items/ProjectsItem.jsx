@@ -7,6 +7,9 @@ function ProjectsItem() {
         <>
             <div className={styles.list}>
                 <MedTitle>Projects</MedTitle>
+                <div>
+
+                </div>
             </div>
             <div className={styles.details}>
 
