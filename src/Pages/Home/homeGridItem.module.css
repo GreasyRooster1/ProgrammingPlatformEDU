@@ -1,9 +1,13 @@
 .item{
     display: flex;
-    border-radius: 10px;
-    border: 1px solid var(--neutral-light);
+    padding:16px;
+    height: 33vh;
+    width: 33vw;
 }
 
 .inner{
-
+    border-radius: 10px;
+    border: 1px solid var(--neutral-light);
+    width: 100%;
+    height: 100%;
 }
