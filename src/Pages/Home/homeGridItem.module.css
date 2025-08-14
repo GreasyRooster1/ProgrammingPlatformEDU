@@ -4,7 +4,7 @@
     height: 33vh;
     flex-grow: 1;
     flex-shrink: 1;
-    min-width: 33vh;
+    min-width: 30vh;
     max-width: 50vw;
 }
 
@@ -20,5 +20,5 @@
     display: flex;
     padding:16px;
     height: 33vh;
-    width: 100vw;
+    width: 100%;
 }
