@@ -2,4 +2,8 @@
     display: flex;
     margin:16px;
     flex-wrap: wrap;
+    max-width: 150vh;
+    flex-shrink: 0;
+    flex-basis:100%;
+    flex-grow: 0;
 }

@@ -22,20 +22,22 @@ function HomePage() {
             <div className={styles.header}>
                 <span className={styles.welcome}>Welcome, {user.name}</span>
             </div>
-            <HomeGrid>
-                <HomeGridItem>
-                    projects
-                </HomeGridItem>
-                <HomeGridItem>
-                    projects
-                </HomeGridItem>
-                <HomeGridItem>
-                    projects
-                </HomeGridItem>
-                <HomeGridItem isLong={true}>
-                    <ProjectsItem />
-                </HomeGridItem>
-            </HomeGrid>
+            <div className={styles.gridWrapper}>
+                <HomeGrid>
+                    <HomeGridItem>
+                        projects
+                    </HomeGridItem>
+                    <HomeGridItem>
+                        projects
+                    </HomeGridItem>
+                    <HomeGridItem>
+                        projects
+                    </HomeGridItem>
+                    <HomeGridItem isLong={true}>
+                        <ProjectsItem />
+                    </HomeGridItem>
+                </HomeGrid>
+            </div>
         </AuthLock>
     );
 }
