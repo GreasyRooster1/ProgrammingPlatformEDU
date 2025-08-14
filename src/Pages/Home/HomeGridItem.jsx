@@ -3,7 +3,7 @@ import styles from './homeGridItem.module.css';
 
 function HomeGridItem(props) {
     return (
-        <div className={styles.item}>
+        <div className={props.isLong?styles.itemLong:styles.item}>
             <div className={styles.inner}>
                 {props.children}
             </div>

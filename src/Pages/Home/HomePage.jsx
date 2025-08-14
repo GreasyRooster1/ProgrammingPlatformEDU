@@ -25,6 +25,9 @@ function HomePage() {
                 <HomeGridItem>
                     projects
                 </HomeGridItem>
+                <HomeGridItem isLong={true}>
+                    projects
+                </HomeGridItem>
             </HomeGrid>
         </AuthLock>
     );
