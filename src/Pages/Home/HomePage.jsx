@@ -25,6 +25,12 @@ function HomePage() {
                 <HomeGridItem>
                     projects
                 </HomeGridItem>
+                <HomeGridItem>
+                    projects
+                </HomeGridItem>
+                <HomeGridItem>
+                    projects
+                </HomeGridItem>
                 <HomeGridItem isLong={true}>
                     projects
                 </HomeGridItem>
