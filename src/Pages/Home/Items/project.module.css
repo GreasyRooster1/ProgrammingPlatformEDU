@@ -7,8 +7,22 @@
     flex-grow:0;
     flex-shrink:1;
     align-items: center;
+    justify-content: space-between
 }
 
 .title{
     font-weight: 300;
+}
+
+.extras{
+    display:flex;
+}
+
+.age{
+    margin-right:32px;
+    color: var(--neutral-light);
+}
+
+.type{
+
 }
