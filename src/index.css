@@ -17,6 +17,9 @@
   --neutral-med:#151516;
   --neutral-light:#46494C;
 
+  --primary:#8A13E5;
+  --primary-dark:#3C0466;
+
   --step-info:#1974E8;
   --step-code:#19E823;
   --step-challenge:#E83C19;
@@ -26,6 +29,10 @@
   --default-text-color:#fff;
 
   color: var(--default-text-color)
+}
+
+html{
+  font-size: 16pt;
 }
 
 body{
