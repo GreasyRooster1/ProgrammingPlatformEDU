@@ -3,11 +3,12 @@
     border-radius: 10px;
     padding:8px;
     display:flex;
-    flex-basis: 20%;
+    /*flex-basis: 20%;*/
     flex-grow:0;
     flex-shrink:1;
+    align-items: center;
 }
 
 .title{
-
+    font-weight: 300;
 }

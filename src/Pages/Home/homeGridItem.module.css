@@ -6,6 +6,7 @@
     flex-shrink: 1;
     min-width: 30vh;
     max-width: 50vw;
+    min-height: 450px;
 }
 
 .inner{
@@ -22,4 +23,5 @@
     padding:12px;
     height: 33vh;
     width: 100%;
+    min-height: 450px;
 }

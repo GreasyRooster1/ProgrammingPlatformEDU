@@ -14,6 +14,7 @@ function ProjectsItem() {
                     <Project />
                     <Project />
                     <Project />
+                    <Project />
                 </div>
                 <div className={styles.viewAllContainer}><SubText >View All...</SubText></div>
             </div>
