@@ -27,6 +27,7 @@
   --step-next:#F1C31C;
 
   --default-text-color:#fff;
+  --sub-text: #6d7071;
 
   color: var(--default-text-color)
 }
