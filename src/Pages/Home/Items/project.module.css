@@ -7,7 +7,12 @@
     flex-grow:0;
     flex-shrink:1;
     align-items: center;
-    justify-content: space-between
+    justify-content: space-between;
+    transition: border-color ease-in-out .15s;
+}
+
+.item:hover {
+    border-color: var(--primary);
 }
 
 .title{
