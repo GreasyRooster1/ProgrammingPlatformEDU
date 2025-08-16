@@ -3,6 +3,7 @@ import styles from './projectsItem.module.css'
 import MedTitle from "../../../components/text/MedTitle.jsx";
 import SubText from "../../../components/text/SubText.jsx";
 import Project from "./Project.jsx";
+import PrimaryButton from "../../../components/buttons/PrimaryButton.jsx";
 
 function ProjectsItem() {
     return (
@@ -19,7 +20,7 @@ function ProjectsItem() {
                 <div className={styles.viewAllContainer}><SubText >View All...</SubText></div>
             </div>
             <div className={styles.details}>
-
+                <PrimaryButton className={styles.openButton}>Open</PrimaryButton>
             </div>
         </>
     );

@@ -15,9 +15,13 @@
     display: flex;
     flex-direction: row-reverse;
 }
+.openButton{
+    font-size:1.5rem;
+}
 
 .details{
     width: 34%;
-    padding: 8px;
+    padding: 16px;
+
 }
 
