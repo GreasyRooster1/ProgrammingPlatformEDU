@@ -1,0 +1,4 @@
+.primaryButton {
+    background-color: var(--primary);
+    border-radius: 10px;
+}
