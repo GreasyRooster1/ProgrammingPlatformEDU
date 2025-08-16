@@ -5,7 +5,9 @@ import SubText from "../../../components/text/SubText.jsx";
 import Project from "./Project.jsx";
 import PrimaryButton from "../../../components/buttons/PrimaryButton.jsx";
 
-import publicIcon from "/icons/PaperPlane.svg"
+import publicIcon from "/icons/PublicVisIcon.svg"
+import unlistedIcon from "/icons/UnlistedVisIcon.svg"
+import privateIcon from "/icons/PrivateVisIcon.svg"
 
 function ProjectsItem() {
     return (
@@ -24,7 +26,7 @@ function ProjectsItem() {
             <div className={styles.details}>
                 <div className={styles.detailsTitle}>
                     <MedTitle>Bouncing Rainbow Squares</MedTitle>
-                    <SubText className={styles.visText} icon={publicIcon}>Public</SubText>
+                    <SubText className={styles.visText} icon={privateIcon}>Private</SubText>
                 </div>
                 <div>
                     <PrimaryButton className={styles.openButton}>Open</PrimaryButton>
