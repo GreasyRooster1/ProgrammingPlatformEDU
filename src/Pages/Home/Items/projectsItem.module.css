@@ -26,4 +26,10 @@
     flex-direction: column;
     justify-content: space-between;
 }
-
+.detailsTitle{
+    display: flex;
+    flex-direction: column;
+}
+.visText{
+    text-decoration: underline;
+}

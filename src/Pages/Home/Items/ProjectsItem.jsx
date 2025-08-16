@@ -20,8 +20,9 @@ function ProjectsItem() {
                 <div className={styles.viewAllContainer}><SubText >View All...</SubText></div>
             </div>
             <div className={styles.details}>
-                <div>
-
+                <div className={styles.detailsTitle}>
+                    <MedTitle>Bouncing Rainbow Squares</MedTitle>
+                    <SubText className={styles.visText}>Public</SubText>
                 </div>
                 <div>
                     <PrimaryButton className={styles.openButton}>Open</PrimaryButton>
