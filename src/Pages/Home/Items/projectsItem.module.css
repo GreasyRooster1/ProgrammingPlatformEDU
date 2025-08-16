@@ -22,6 +22,8 @@
 .details{
     width: 34%;
     padding: 16px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 

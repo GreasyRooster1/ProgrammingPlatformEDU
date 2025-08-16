@@ -20,7 +20,12 @@ function ProjectsItem() {
                 <div className={styles.viewAllContainer}><SubText >View All...</SubText></div>
             </div>
             <div className={styles.details}>
-                <PrimaryButton className={styles.openButton}>Open</PrimaryButton>
+                <div>
+
+                </div>
+                <div>
+                    <PrimaryButton className={styles.openButton}>Open</PrimaryButton>
+                </div>
             </div>
         </>
     );
