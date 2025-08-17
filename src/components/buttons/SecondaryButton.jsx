@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './primaryButton.module.css'
+import styles from './secondaryButton.module.css'
 
-function PrimaryButton(props) {
+function SecondaryButton(props) {
     return (
         <div className={`${styles.secondaryButton} ${props.className??""}`}>
             {props.children}
@@ -9,4 +9,4 @@ function PrimaryButton(props) {
     );
 }
 
-export default PrimaryButton;
+export default SecondaryButton;

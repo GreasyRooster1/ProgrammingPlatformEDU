@@ -8,6 +8,7 @@ import PrimaryButton from "../../../components/buttons/PrimaryButton.jsx";
 import publicIcon from "/icons/PublicVisIcon.svg"
 import unlistedIcon from "/icons/UnlistedVisIcon.svg"
 import privateIcon from "/icons/PrivateVisIcon.svg"
+import SecondaryButton from "../../../components/buttons/SecondaryButton.jsx";
 
 function ProjectsItem() {
     return (
@@ -29,6 +30,10 @@ function ProjectsItem() {
                     <SubText className={styles.visText} icon={privateIcon}>Private</SubText>
                 </div>
                 <div>
+                    <div className={styles.secondaryButtons}>
+                        <SecondaryButton className={styles.copyButton}>Copy</SecondaryButton>
+                        <SecondaryButton className={styles.deleteButton}>Delete</SecondaryButton>
+                    </div>
                     <PrimaryButton className={styles.openButton}>Open</PrimaryButton>
                 </div>
             </div>
