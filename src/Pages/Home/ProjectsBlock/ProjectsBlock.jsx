@@ -9,19 +9,16 @@ import publicIcon from "/icons/PublicVisIcon.svg"
 import unlistedIcon from "/icons/UnlistedVisIcon.svg"
 import privateIcon from "/icons/PrivateVisIcon.svg"
 import SecondaryButton from "../../../components/buttons/SecondaryButton.jsx";
+import ProjectsList from "./ProjectsList.jsx";
 
 function ProjectsBlock() {
+    let [selectedProject, setSelectedProject] = React.useState(null);
+
     return (
         <>
             <div className={styles.list}>
                 <MedTitle>Projects</MedTitle>
-                <div className={styles.projList}>
-                    <Project />
-                    <Project />
-                    <Project />
-                    <Project />
-                    <Project />
-                </div>
+                <ProjectsList className={styles.projList} setSelectedProj={setSelectedProject} />
                 <div className={styles.viewAllContainer}><SubText >View All...</SubText></div>
             </div>
             <div className={styles.details}>
