@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {use, useEffect} from 'react';
 import Project from "./Project.jsx";
 
 function ProjectsList(props) {
+    function handle(pid){
+        console.log(pid);
+    }
+    let projects = [];
+    useEffect(() => {
+
+    }, []);
+
     return (
         <div className={props.className}>
-            <Project />
+            <Project handle={handle} pid={"test"}/>
             <Project />
             <Project />
             <Project />

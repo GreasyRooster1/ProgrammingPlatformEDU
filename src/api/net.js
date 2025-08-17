@@ -23,5 +23,5 @@ const net = {
     proj:netProj,
     auth:netAuth,
 }
-net.proj.getData()
+
 export {net,API_URL};
