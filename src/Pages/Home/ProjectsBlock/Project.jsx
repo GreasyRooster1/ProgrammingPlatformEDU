@@ -1,10 +1,13 @@
 import React from 'react';
 import styles from "./project.module.css"
 import SubText from "../../../components/text/SubText.jsx";
+import {net} from "../../../api/net.js";
 
 function Project(props) {
     let handle = () => {
-        props.handle(props.pid)
+        net.proj.getUserProjList(1).then(r => {
+            console.log(r);
+        })
     }
     return (
         <div className={styles.item} onClick={handle}>
