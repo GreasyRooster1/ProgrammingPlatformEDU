@@ -5,7 +5,7 @@ import {useAuth0} from "@auth0/auth0-react";
 import Loading from "../../Loading.jsx";
 import HomeGrid from "./HomeGrid.jsx";
 import HomeGridItem from "./HomeGridItem.jsx";
-import ProjectsItem from "./ProjectsBlock/ProjectsItem.jsx";
+import ProjectsBlock from "./ProjectsBlock/ProjectsBlock.jsx";
 
 function HomePage() {
     let {user, isLoading, isAuthenticated,loginWithRedirect} = useAuth0();
@@ -34,7 +34,7 @@ function HomePage() {
                         projects
                     </HomeGridItem>
                     <HomeGridItem isLong={true}>
-                        <ProjectsItem />
+                        <ProjectsBlock />
                     </HomeGridItem>
                 </HomeGrid>
             </div>

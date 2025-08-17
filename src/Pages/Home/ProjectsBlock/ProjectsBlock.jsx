@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './projectsItem.module.css'
+import styles from './projectsBlock.module.css'
 import MedTitle from "../../../components/text/MedTitle.jsx";
 import SubText from "../../../components/text/SubText.jsx";
 import Project from "./Project.jsx";
@@ -10,7 +10,7 @@ import unlistedIcon from "/icons/UnlistedVisIcon.svg"
 import privateIcon from "/icons/PrivateVisIcon.svg"
 import SecondaryButton from "../../../components/buttons/SecondaryButton.jsx";
 
-function ProjectsItem() {
+function ProjectsBlock() {
     return (
         <>
             <div className={styles.list}>
@@ -41,4 +41,4 @@ function ProjectsItem() {
     );
 }
 
-export default ProjectsItem;
+export default ProjectsBlock;
