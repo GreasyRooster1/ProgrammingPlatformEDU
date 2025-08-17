@@ -5,7 +5,7 @@ import {useAuth0} from "@auth0/auth0-react";
 import Loading from "../../Loading.jsx";
 import HomeGrid from "./HomeGrid.jsx";
 import HomeGridItem from "./HomeGridItem.jsx";
-import ProjectsItem from "./Items/ProjectsItem.jsx";
+import ProjectsItem from "./ProjectsBlock/ProjectsItem.jsx";
 
 function HomePage() {
     let {user, isLoading, isAuthenticated,loginWithRedirect} = useAuth0();
