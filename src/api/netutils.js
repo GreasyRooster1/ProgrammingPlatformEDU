@@ -1,30 +1,38 @@
 import {API_URL} from "./net.js";
 
 //quickly build a request handler for the backend
-function req(uri, method, useAuth, func){
+function authReq(uri, method, func){
     //args for the request
-    return async (...args) => {
-        let authHead = useAuth?args[0]:"";
-        let argsUri;
-        if(authHead) {
-            argsUri = "/" + args.slice(1).join("/");
-        }else{
-            argsUri = "/" + args.join("/");
+    return async (authToken,reqArgs,setLoading,setError) => {
+        let authHead = authToken;
+        let argsUri = "/" + reqArgs.join("/");
+        if(setError===undefined){
+            setError = ()=>{}
         }
-        const response = await fetch(API_URL + uri + argsUri,{
-            method: method,
-            headers: {
-                "Authorization":authHead
+        try {
+            const response = await fetch(API_URL + uri + argsUri,{
+                method: method,
+                headers: {
+                    "Authorization":authHead
+                }
+            })
+            if (!response.ok) {
+                setError(await response.text());
+                return response;
             }
-        })
-        return func.apply(this, [response,...args]);
+            setLoading(false);
+            return await func(this, [response,reqArgs]);
+        } catch (err) {
+            setError(err)
+            console.error(err)
+        }
     };
 }
 
 function jsonReq(uri,useAuth){
-    return req(uri,"GET", useAuth, (response)=>{
-        return response.json();
+    return authReq(uri,"GET", useAuth, async (response)=>{
+        return await response.json();
     })
 }
 
-export {req,jsonReq}
+export {authReq,jsonReq}

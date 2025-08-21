@@ -1,5 +1,6 @@
 import React, {use, useEffect} from 'react';
 import Project from "./Project.jsx";
+import {net} from "../../../api/net.js";
 
 function ProjectsList(props) {
     function handle(pid){
@@ -7,7 +8,9 @@ function ProjectsList(props) {
     }
     let projects = [];
     useEffect(() => {
-
+        net.proj.getUserProjList(props.userData.token,props.pid).then(r => {
+            projects = r
+        })
     }, []);
 
     return (
