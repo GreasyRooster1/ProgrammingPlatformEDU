@@ -13,6 +13,7 @@ function ProjectsList(props) {
     let [projects, setProjects] = useState([]);
 
     useEffect(() => {
+        console.log(props.userData);
         net.proj.getUserProjList(props.userData.token, [1] ,setLoading).then(response => {
             setProjects(response)
         })
