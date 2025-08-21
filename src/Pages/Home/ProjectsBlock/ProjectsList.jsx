@@ -1,17 +1,25 @@
-import React, {use, useEffect} from 'react';
+import React, {use, useEffect, useState} from 'react';
 import Project from "./Project.jsx";
 import {net} from "../../../api/net.js";
+import Loading from "../../../Loading.jsx";
 
 function ProjectsList(props) {
     function handle(pid){
         console.log(pid);
     }
-    let projects = [];
+
+    let [setLoading,loading] = useState(true);
+    let [projects, setProjects] = useState([]);
+
     useEffect(() => {
-        net.proj.getUserProjList(props.userData.token,props.pid).then(r => {
-            projects = r
+        net.proj.getUserProjList(props.userData.token,props.pid,setLoading).then(response => {
+            setProjects(response)
         })
     }, []);
+
+    if(loading){
+        return <Loading />;
+    }
 
     return (
         <div className={props.className}>
