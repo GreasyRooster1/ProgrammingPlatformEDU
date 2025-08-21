@@ -6,7 +6,7 @@ import {useAuth0} from "@auth0/auth0-react";
 
 function Project(props) {
     let handle = () => {
-        net.proj.getUserProjList(props.userData,1).then(r => {
+        net.proj.getUserProjList(props.userData.token,1).then(r => {
             console.log(r);
         })
     }
