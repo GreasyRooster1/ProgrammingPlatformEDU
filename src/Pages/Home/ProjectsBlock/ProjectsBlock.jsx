@@ -11,14 +11,14 @@ import privateIcon from "/icons/PrivateVisIcon.svg"
 import SecondaryButton from "../../../components/buttons/SecondaryButton.jsx";
 import ProjectsList from "./ProjectsList.jsx";
 
-function ProjectsBlock() {
+function ProjectsBlock(props) {
     let [selectedProject, setSelectedProject] = React.useState(null);
 
     return (
         <>
             <div className={styles.list}>
                 <MedTitle>Projects</MedTitle>
-                <ProjectsList className={styles.projList} setSelectedProj={setSelectedProject} />
+                <ProjectsList className={styles.projList} setSelectedProj={setSelectedProject} userData={props.userData}/>
                 <div className={styles.viewAllContainer}><SubText >View All...</SubText></div>
             </div>
             <div className={styles.details}>

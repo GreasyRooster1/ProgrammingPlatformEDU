@@ -12,7 +12,7 @@ function ProjectsList(props) {
 
     return (
         <div className={props.className}>
-            <Project handle={handle} pid={"test"}/>
+            <Project handle={handle} pid={"test"} userData={props.userData}/>
             <Project />
             <Project />
             <Project />

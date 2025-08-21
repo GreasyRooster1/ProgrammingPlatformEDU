@@ -2,10 +2,11 @@ import React from 'react';
 import styles from "./project.module.css"
 import SubText from "../../../components/text/SubText.jsx";
 import {net} from "../../../api/net.js";
+import {useAuth0} from "@auth0/auth0-react";
 
 function Project(props) {
     let handle = () => {
-        net.proj.getUserProjList(1).then(r => {
+        net.proj.getUserProjList(props.userData,1).then(r => {
             console.log(r);
         })
     }
