@@ -5,7 +5,12 @@ function req(uri, method, useAuth, func){
     //args for the request
     return async (...args) => {
         let authHead = useAuth?args[0]:"";
-        let argsUri = "/"+args.slice(1).join("/");
+        let argsUri;
+        if(authHead) {
+            argsUri = "/" + args.slice(1).join("/");
+        }else{
+            argsUri = "/" + args.join("/");
+        }
         const response = await fetch(API_URL + uri + argsUri,{
             method: method,
             headers: {
