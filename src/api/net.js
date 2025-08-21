@@ -8,10 +8,10 @@ const netUser = {
 
 const netProj = {
     // /get_data/<proj_id>
-    getData:jsonReq("/project/get_data",true),
+    getData:jsonReq("/project/get_data"),
 
     // /get_user_proj_list/<page>
-    getUserProjList:jsonReq("/project/get_user_proj_list",true),
+    getUserProjList:jsonReq("/project/get_user_proj_list"),
 }
 
 const netAuth = {

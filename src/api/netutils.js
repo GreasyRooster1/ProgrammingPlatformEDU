@@ -4,7 +4,6 @@ import {API_URL} from "./net.js";
 function authReq(uri, method, func){
     //args for the request
     return async (authToken,reqArgs,setLoading,setError) => {
-        let authHead = authToken;
         let argsUri = "/" + reqArgs.join("/");
         if(setError===undefined){
             setError = ()=>{}
@@ -13,7 +12,7 @@ function authReq(uri, method, func){
             const response = await fetch(API_URL + uri + argsUri,{
                 method: method,
                 headers: {
-                    "Authorization":authHead
+                    "Authorization":authToken
                 }
             })
             if (!response.ok) {
@@ -29,8 +28,8 @@ function authReq(uri, method, func){
     };
 }
 
-function jsonReq(uri,useAuth){
-    return authReq(uri,"GET", useAuth, async (response)=>{
+function jsonReq(uri){
+    return authReq(uri,"GET", async (response)=>{
         return await response.json();
     })
 }
