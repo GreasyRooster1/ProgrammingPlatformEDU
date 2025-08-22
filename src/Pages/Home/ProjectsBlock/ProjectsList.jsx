@@ -16,18 +16,9 @@ function ProjectsList(props) {
 
     useEffect(() => {
         net.proj.getUserProjList(props.userData.token, [1] ,setLoading).then(response => {
-            console.log(response[0]);
-            setProjects(response)
+            setProjects(response.map((p) => p.id))
         })
     }, []);
-
-    useEffect(() => {
-        for(let pid of projects){
-            projectList.push(
-                <Project pid={pid} userData={props.userData} handle={clickHandle}/>
-            );
-        }
-    },[projects])
 
     if(loading){
         return <Loading />;
@@ -35,7 +26,7 @@ function ProjectsList(props) {
 
     return (
         <div className={props.className}>
-            {projectList}
+            {projects.map(pid => <Project key={pid} pid={pid} userData={props.userData} handle={clickHandle}/>)}
         </div>
     );
 }

@@ -7,7 +7,7 @@ import Loading from "../../../Loading.jsx";
 
 function Project(props) {
 
-    let [setLoading,loading] = useState(true);
+    let [loading,setLoading] = useState(true);
     let [data, setData] = useState([]);
 
     useEffect(() => {
