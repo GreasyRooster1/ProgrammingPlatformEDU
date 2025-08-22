@@ -14,6 +14,8 @@ import ProjectsList from "./ProjectsList.jsx";
 function ProjectsBlock(props) {
     let [selectedProject, setSelectedProject] = React.useState(null);
 
+    console.log(props.userData)
+
     return (
         <>
             <div className={styles.list}>
