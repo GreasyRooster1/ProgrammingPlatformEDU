@@ -9,8 +9,8 @@ function ProjectsList(props) {
         console.log(pid);
     }
 
-    let [setLoading,loading] = useState(true);
-    let [projects, setProjects] = useState([]);
+    const [setLoading,loading] = useState(true);
+    const [projects, setProjects] = useState([]);
 
     useEffect(() => {
         console.log(props.userData);
