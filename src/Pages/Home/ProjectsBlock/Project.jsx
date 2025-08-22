@@ -22,7 +22,7 @@ function Project(props) {
 
     return (
         <div className={styles.item} onClick={props.handle}>
-            <span className={styles.title}>Title</span>
+            <span className={styles.title}>{data.name}</span>
             <span className={styles.extras}>
                 <SubText className={styles.age}>5d Ago</SubText>
                 <span className={styles.type}>Javascript</span>
