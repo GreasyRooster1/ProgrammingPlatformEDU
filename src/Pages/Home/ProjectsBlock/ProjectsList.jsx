@@ -8,20 +8,25 @@ function ProjectsList(props) {
 
     const [loading,setLoading] = useState(true);
     const [projects, setProjects] = useState([]);
+    let projectList = [];
 
-    let handle = () => {
+    let clickHandle = () => {
 
     }
 
     useEffect(() => {
-        console.log(setLoading);
         net.proj.getUserProjList(props.userData.token, [1] ,setLoading).then(response => {
+            console.log(response[0]);
             setProjects(response)
         })
     }, []);
 
     useEffect(() => {
-
+        for(let pid of projects){
+            projectList.push(
+                <Project pid={pid} userData={props.userData} handle={clickHandle}/>
+            );
+        }
     },[projects])
 
     if(loading){
@@ -30,11 +35,7 @@ function ProjectsList(props) {
 
     return (
         <div className={props.className}>
-            <Project pid={"test"} userData={props.userData} handle={clickHandle}/>
-            {/*<Project />*/}
-            {/*<Project />*/}
-            {/*<Project />*/}
-            {/*<Project />*/}
+            {projectList}
         </div>
     );
 }

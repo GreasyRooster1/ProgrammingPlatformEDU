@@ -20,7 +20,7 @@ function authReq(uri, method, func){
                 return response;
             }
             setLoading(false);
-            return await func(this, [response,reqArgs]);
+            return await func(response,reqArgs);
         } catch (err) {
             setError(err)
             console.error(err)
