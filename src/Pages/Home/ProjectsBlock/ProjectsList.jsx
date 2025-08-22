@@ -5,19 +5,24 @@ import LoadingScreen from "../../../LoadingScreen.jsx";
 import Loading from "../../../Loading.jsx";
 
 function ProjectsList(props) {
-    function handle(pid){
-        console.log(pid);
-    }
 
-    const [setLoading,loading] = useState(true);
+    const [loading,setLoading] = useState(true);
     const [projects, setProjects] = useState([]);
 
+    let handle = () => {
+
+    }
+
     useEffect(() => {
-        console.log(props.userData);
+        console.log(setLoading);
         net.proj.getUserProjList(props.userData.token, [1] ,setLoading).then(response => {
             setProjects(response)
         })
     }, []);
+
+    useEffect(() => {
+
+    },[projects])
 
     if(loading){
         return <Loading />;
@@ -25,11 +30,11 @@ function ProjectsList(props) {
 
     return (
         <div className={props.className}>
-            <Project handle={handle} pid={"test"} userData={props.userData}/>
-            <Project />
-            <Project />
-            <Project />
-            <Project />
+            <Project pid={"test"} userData={props.userData} handle={clickHandle}/>
+            {/*<Project />*/}
+            {/*<Project />*/}
+            {/*<Project />*/}
+            {/*<Project />*/}
         </div>
     );
 }

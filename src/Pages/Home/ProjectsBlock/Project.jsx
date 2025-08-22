@@ -6,11 +6,6 @@ import {useAuth0} from "@auth0/auth0-react";
 import Loading from "../../../Loading.jsx";
 
 function Project(props) {
-    let handle = () => {
-        // net.proj.getData(props.userData.token,props.pid).then(r => {
-        //     console.log(r);
-        // })
-    }
 
     let [setLoading,loading] = useState(true);
     let [data, setData] = useState([]);
@@ -26,7 +21,7 @@ function Project(props) {
     }
 
     return (
-        <div className={styles.item} onClick={handle}>
+        <div className={styles.item} onClick={props.handle}>
             <span className={styles.title}>Title</span>
             <span className={styles.extras}>
                 <SubText className={styles.age}>5d Ago</SubText>
