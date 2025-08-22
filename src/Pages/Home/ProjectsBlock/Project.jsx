@@ -4,11 +4,12 @@ import SubText from "../../../components/text/SubText.jsx";
 import {net} from "../../../api/net.js";
 import {useAuth0} from "@auth0/auth0-react";
 import Loading from "../../../Loading.jsx";
+import {getLangForType} from "../../../api/proj.js";
 
 function Project(props) {
 
-    let [loading,setLoading] = useState(true);
-    let [data, setData] = useState([]);
+    const [loading,setLoading] = useState(true);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         net.proj.getData(props.userData.token, [props.pid] ,setLoading).then(response => {
@@ -25,7 +26,9 @@ function Project(props) {
             <span className={styles.title}>{data.name}</span>
             <span className={styles.extras}>
                 <SubText className={styles.age}>5d Ago</SubText>
-                <span className={styles.type}>Javascript</span>
+                <span className={styles.type}>
+                    {getLangForType(data.project_type)}
+                </span>
             </span>
         </div>
     );
