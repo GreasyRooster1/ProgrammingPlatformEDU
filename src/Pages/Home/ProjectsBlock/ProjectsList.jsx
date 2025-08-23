@@ -8,15 +8,10 @@ function ProjectsList(props) {
 
     const [loading,setLoading] = useState(true);
     const [projects, setProjects] = useState([]);
-    let projectList = [];
-
-    let clickHandle = () => {
-
-    }
 
     useEffect(() => {
         net.proj.getUserProjDataList(props.userData.token, [1] ,setLoading).then(response => {
-            setProjects(response.map((p) => p.id))
+            setProjects(response)
         })
     }, []);
 
@@ -26,7 +21,7 @@ function ProjectsList(props) {
 
     return (
         <div className={props.className}>
-            {projects.map(projData => <Project key={projData.id} data={projData} userData={props.userData} handle={clickHandle}/>)}
+            {projects.map(projData => <Project key={projData.id} data={projData} userData={props.userData} clickHandle={props.clickHandle}/>)}
         </div>
     );
 }

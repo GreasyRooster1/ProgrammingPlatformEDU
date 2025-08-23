@@ -1,7 +1,7 @@
 const typesToLangMap = {
-    "p5js":"Javascript",
-    "pythonTurtle":"Python",
-    "web":"Web",
+    "P5js":"Javascript",
+    "PythonTurtle":"Python",
+    "Web":"Web",
 }
 
 function getLangForType(rawType){

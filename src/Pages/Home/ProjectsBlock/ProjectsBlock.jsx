@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './projectsBlock.module.css'
 import MedTitle from "../../../components/text/MedTitle.jsx";
 import SubText from "../../../components/text/SubText.jsx";
@@ -12,15 +12,17 @@ import SecondaryButton from "../../../components/buttons/SecondaryButton.jsx";
 import ProjectsList from "./ProjectsList.jsx";
 
 function ProjectsBlock(props) {
-    let [selectedProject, setSelectedProject] = React.useState(null);
+    const [selectedProject, setSelectedProject] = React.useState(null);
 
-    console.log(props.userData)
+    let clickHandle = (data) => {
+        console.log(data.id)
+    }
 
     return (
         <>
             <div className={styles.list}>
                 <MedTitle>Projects</MedTitle>
-                <ProjectsList className={styles.projList} setSelectedProj={setSelectedProject} userData={props.userData}/>
+                <ProjectsList className={styles.projList} clickHandle={clickHandle} userData={props.userData}/>
                 <div className={styles.viewAllContainer}><SubText >View All...</SubText></div>
             </div>
             <div className={styles.details}>
