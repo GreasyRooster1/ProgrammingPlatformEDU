@@ -12,10 +12,10 @@ import SecondaryButton from "../../../components/buttons/SecondaryButton.jsx";
 import ProjectsList from "./ProjectsList.jsx";
 
 function ProjectsBlock(props) {
-    const [selectedProject, setSelectedProject] = React.useState(null);
+    const [selectedProject, setSelectedProject] = useState(null);
 
     let clickHandle = (data) => {
-        console.log(data.id)
+        setSelectedProject(data)
     }
 
     return (
@@ -27,7 +27,9 @@ function ProjectsBlock(props) {
             </div>
             <div className={styles.details}>
                 <div className={styles.detailsTitle}>
-                    <MedTitle>Bouncing Rainbow Squares</MedTitle>
+                    <MedTitle>
+                        {selectedProject ? selectedProject.name : "Click a project"}
+                    </MedTitle>
                     <SubText className={styles.visText} icon={privateIcon}>Private</SubText>
                 </div>
                 <div>
