@@ -23,9 +23,9 @@ function ProjectsBlock(props) {
                 {
                    selectedProject?
                        <DetailView project={selectedProject} />:
-                       <div className={styles.unloadedTitle}>
-                           Click a project...
-                       </div>
+                       <MedTitle className={styles.unloadedTitle}>
+                           Click a project
+                       </MedTitle>
 
                 }
             </div>

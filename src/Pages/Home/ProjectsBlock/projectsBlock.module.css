@@ -26,3 +26,11 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.unloadedTitle{
+    color: var(--sub-text);
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
