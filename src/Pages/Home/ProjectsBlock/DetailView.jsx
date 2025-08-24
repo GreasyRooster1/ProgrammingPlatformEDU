@@ -5,13 +5,14 @@ import SubText from "../../../components/text/SubText.jsx";
 import SecondaryButton from "../../../components/buttons/SecondaryButton.jsx";
 import PrimaryButton from "../../../components/buttons/PrimaryButton.jsx";
 import privateIcon from "/icons/PrivateVisIcon.svg"
+import {getIconForVisibility} from "../../../api/proj.js";
 
 function DetailView(props) {
     return (
         <>
             <div className={styles.title}>
                 <MedTitle>{props.project.name}</MedTitle>
-                <SubText className={styles.visText} icon={privateIcon}>Private</SubText>
+                <SubText className={styles.visText} icon={getIconForVisibility(props.project.visibility)}>Private</SubText>
             </div>
             <div>
                 <div className={styles.secondaryButtons}>
