@@ -2,14 +2,8 @@ import React, {useState} from 'react';
 import styles from './projectsBlock.module.css'
 import MedTitle from "../../../components/text/MedTitle.jsx";
 import SubText from "../../../components/text/SubText.jsx";
-import Project from "./Project.jsx";
-import PrimaryButton from "../../../components/buttons/PrimaryButton.jsx";
-
-import publicIcon from "/icons/PublicVisIcon.svg"
-import unlistedIcon from "/icons/UnlistedVisIcon.svg"
-import privateIcon from "/icons/PrivateVisIcon.svg"
-import SecondaryButton from "../../../components/buttons/SecondaryButton.jsx";
 import ProjectsList from "./ProjectsList.jsx";
+import DetailView from "./DetailView.jsx";
 
 function ProjectsBlock(props) {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -23,22 +17,17 @@ function ProjectsBlock(props) {
             <div className={styles.list}>
                 <MedTitle>Projects</MedTitle>
                 <ProjectsList className={styles.projList} clickHandle={clickHandle} userData={props.userData}/>
-                <div className={styles.viewAllContainer}><SubText >View All...</SubText></div>
+                <div className={styles.viewAllContainer}><SubText>View All...</SubText></div>
             </div>
             <div className={styles.details}>
-                <div className={styles.detailsTitle}>
-                    <MedTitle>
-                        {selectedProject ? selectedProject.name : "Click a project"}
-                    </MedTitle>
-                    <SubText className={styles.visText} icon={privateIcon}>Private</SubText>
-                </div>
-                <div>
-                    <div className={styles.secondaryButtons}>
-                        <SecondaryButton className={styles.copyButton}>Copy</SecondaryButton>
-                        <SecondaryButton className={styles.deleteButton}>Delete</SecondaryButton>
-                    </div>
-                    <PrimaryButton className={styles.openButton}>Open</PrimaryButton>
-                </div>
+                {
+                   selectedProject?
+                       <DetailView project={selectedProject} />:
+                       <div className={styles.unloadedTitle}>
+                           Click a project...
+                       </div>
+
+                }
             </div>
         </>
     );

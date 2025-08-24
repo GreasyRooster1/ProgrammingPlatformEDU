@@ -26,20 +26,3 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.detailsTitle{
-    display: flex;
-    flex-direction: column;
-}
-.visText{
-    text-decoration: underline;
-}
-.secondaryButtons{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 12px;
-}
-.secondaryButtons div{
-    flex-basis: 50%;
-}
