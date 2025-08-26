@@ -36,7 +36,7 @@ function getTimestampAge(stamp){
     let msPerMonth = msPerDay * 30;
     let msPerYear = msPerDay * 365;
 
-    let current = Date.now()
+    let current = Date.now()/1000;
 
     let elapsed = current - stamp;
 
