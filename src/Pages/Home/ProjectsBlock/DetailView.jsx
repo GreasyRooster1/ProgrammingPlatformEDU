@@ -13,7 +13,7 @@ function DetailView(props) {
             <div className={styles.title}>
                 <MedTitle>{props.project.name}</MedTitle>
                 <SubText>{getProjectNamedType(props.project.project_type)}</SubText>
-                <SubText className={styles.visText} icon={getIconForVisibility(props.project.visibility)}>Private</SubText>
+                <SubText className={styles.visText} icon={getIconForVisibility(props.project.visibility)}>{props.project.visibility}</SubText>
             </div>
             <div>
                 <div className={styles.secondaryButtons}>
