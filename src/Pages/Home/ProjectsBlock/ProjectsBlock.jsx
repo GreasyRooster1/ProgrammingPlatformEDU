@@ -26,7 +26,6 @@ function ProjectsBlock(props) {
                        <MedTitle className={styles.unloadedTitle}>
                            Click a project
                        </MedTitle>
-
                 }
             </div>
         </>

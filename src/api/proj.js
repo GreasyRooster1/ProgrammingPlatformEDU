@@ -3,14 +3,18 @@ import publicIcon from "/icons/PublicVisIcon.svg";
 import unlistedIcon from "/icons/UnlistedVisIcon.svg";
 import vite from "/vite.svg";
 
-const typesToLangMap = {
-    "P5js":"Javascript",
-    "PythonTurtle":"Python",
-    "Web":"Web",
+const projTypesMap = {
+    "P5js":             ["Javascript", "p5.js"],
+    "PythonTurtle":     ["Python","Python Turtle"],
+    "Web":              ["Web","Web"],
 }
 
 function getLangForType(rawType){
-    return typesToLangMap[rawType]??"?";
+    return (projTypesMap[rawType]??"?")[0];
+}
+
+function getProjectNamedType(rawType){
+    return (projTypesMap[rawType]??"?")[1];
 }
 
 const iconFallback = vite;
@@ -66,4 +70,4 @@ function getTimestampAge(stamp){
 
 }
 
-export {getLangForType,getIconForVisibility,getTimestampAge};
+export {getLangForType,getIconForVisibility,getTimestampAge,getProjectNamedType};
