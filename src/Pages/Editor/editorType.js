@@ -1,3 +1,5 @@
+import {useRef, useState} from "react";
+
 const requiredEditorFunctions = [
     "save",
     "setupEditorUI"
@@ -31,4 +33,29 @@ class EditorType {
     }
 }
 
-export default EditorType;
+function useEditor(initialData) {
+    const carRef = useRef();
+    if (!carRef.current) {
+        carRef.current = new EditorType(initialData);
+    }
+    return carRef.current;
+}
+
+function useEditorProjection(car) {
+    const [projection, setProjection] = useState(editorProjection(car));
+    return {
+        ...projection,
+        // each change function modifies the car AND updates the projection
+        changeColor: (newColor) => {
+            car.changeColor(newColor);
+            setProjection(editorProjection(car));
+        },
+    };
+}
+
+function editorProjection(car) {
+    // include any data your components need
+    return { color: car.data.color };
+}
+
+export {EditorType, };

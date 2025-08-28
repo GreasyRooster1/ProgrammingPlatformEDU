@@ -15,6 +15,7 @@ import {useLocation} from "react-router-dom";
 function EditorPage() {
     const [userData, setUserData] = useState(defaultAuthData());
     const {state} = useLocation();
+    const 
     console.log(state);
 
     return (
