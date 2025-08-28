@@ -41,21 +41,21 @@ function useEditor(initialData) {
     return carRef.current;
 }
 
-function useEditorProjection(car) {
-    const [projection, setProjection] = useState(editorProjection(car));
+function useEditorProjection(editor) {
+    const [projection, setProjection] = useState(editorProjection(editor));
     return {
         ...projection,
         // each change function modifies the car AND updates the projection
         changeColor: (newColor) => {
-            car.changeColor(newColor);
-            setProjection(editorProjection(car));
+            editor.changeColor(newColor);
+            setProjection(editorProjection(editor));
         },
     };
 }
 
-function editorProjection(car) {
+function editorProjection(editor) {
     // include any data your components need
-    return { color: car.data.color };
+    return { id: editor.projectMetadata.id};
 }
 
-export {EditorType, };
+export {EditorType,useEditor,useEditorProjection};
