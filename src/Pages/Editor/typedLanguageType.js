@@ -5,11 +5,11 @@ class TypedLanguageType extends EditorType {
         super(projectMetadata);
     }
 
-    save(){
+    getEditorData(){
 
     }
 
-    setupEditorUI() {
+    setEditorData(){
 
     }
 }
