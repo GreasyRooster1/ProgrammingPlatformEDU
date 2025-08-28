@@ -10,9 +10,12 @@ import OutputPanel from "./panels/output/OutputPanel.jsx";
 import ConsolePanel from "./panels/console/ConsolePanel.jsx";
 import AuthLock from "../../components/AuthLock.jsx";
 import {defaultAuthData} from "../../components/AuthProvider.jsx";
+import {useLocation} from "react-router-dom";
 
 function EditorPage() {
     const [userData, setUserData] = useState(defaultAuthData());
+    const {state} = useLocation();
+    console.log(state);
 
     return (
         <AuthLock setUserData={setUserData}>
