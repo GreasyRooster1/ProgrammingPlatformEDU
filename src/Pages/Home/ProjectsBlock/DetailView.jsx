@@ -23,6 +23,7 @@ function DetailView(props) {
                     <SecondaryButton className={styles.deleteButton}>Delete</SecondaryButton>
                 </div>
                 <PrimaryButton className={styles.openButton} onClick={()=>{
+                    console.log(props.project);
                     navigate("/editor", {state: {projectMetadata: props.project}});
                 }}>
                     Open
