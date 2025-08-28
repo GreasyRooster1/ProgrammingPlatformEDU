@@ -1,5 +1,6 @@
 const requiredEditorFunctions = [
     "save",
+    "setupEditorUI"
 ]
 
 
@@ -19,6 +20,14 @@ class EditorType {
 
     save(){
         throw new Error("Save must be implemented.")
+    }
+
+    setupEditorUI(){
+        throw new Error("setupEditorUI must be implemented.")
+    }
+
+    useDefaultUI(){
+        return true;
     }
 }
 
