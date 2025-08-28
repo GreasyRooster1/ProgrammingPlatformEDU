@@ -6,8 +6,10 @@ import SecondaryButton from "../../../components/buttons/SecondaryButton.jsx";
 import PrimaryButton from "../../../components/buttons/PrimaryButton.jsx";
 import privateIcon from "/icons/PrivateVisIcon.svg"
 import {getIconForVisibility, getProjectNamedType} from "../../../api/proj.js";
+import {useNavigate} from "react-router-dom";
 
 function DetailView(props) {
+    const navigate = useNavigate();
     return (
         <>
             <div className={styles.title}>
@@ -20,7 +22,11 @@ function DetailView(props) {
                     <SecondaryButton className={styles.copyButton}>Copy</SecondaryButton>
                     <SecondaryButton className={styles.deleteButton}>Delete</SecondaryButton>
                 </div>
-                <PrimaryButton className={styles.openButton}>Open</PrimaryButton>
+                <PrimaryButton className={styles.openButton} onClick={()=>{
+                    navigate("/editor", {state: {projectMetadata: props.project}});
+                }}>
+                    Open
+                </PrimaryButton>
             </div>
         </>
     );
