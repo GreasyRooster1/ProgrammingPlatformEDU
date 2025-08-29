@@ -34,11 +34,11 @@ class EditorType {
 }
 
 function useEditor(initialData) {
-    const carRef = useRef();
-    if (!carRef.current) {
-        carRef.current = new EditorType(initialData);
+    const editorRef = useRef();
+    if (!editorRef.current) {
+        editorRef.current = new EditorType(initialData);
     }
-    return carRef.current;
+    return editorRef.current;
 }
 
 function useEditorProjection(editor) {
