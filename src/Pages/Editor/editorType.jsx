@@ -6,6 +6,7 @@ import CodePanel from "./panels/code/CodePanel.jsx";
 import OutputPanel from "./panels/output/OutputPanel.jsx";
 import ConsolePanel from "./panels/console/ConsolePanel.jsx";
 import {handle} from "../../api/util.js"
+import EditorPage from "./EditorPage.jsx";
 
 class EditorType extends React.Component {
     constructor(props) {
@@ -50,29 +51,4 @@ class EditorType extends React.Component {
     }
 }
 
-function useEditor(initialData) {
-    const editorRef = useRef();
-    if (!editorRef.current) {
-        editorRef.current = new EditorType(initialData);
-    }
-    return editorRef.current;
-}
-
-function useEditorProjection(editor) {
-    const [projection, setProjection] = useState(editorProjection(editor));
-    return {
-        ...projection,
-        // each change function modifies the car AND updates the projection
-        changeColor: (newColor) => {
-            editor.changeColor(newColor);
-            setProjection(editorProjection(editor));
-        },
-    };
-}
-
-function editorProjection(editor) {
-    // include any data your components need
-    return { id: editor.projectMetadata.id};
-}
-
-export {EditorType,useEditor,useEditorProjection};
+export default EditorPage;
