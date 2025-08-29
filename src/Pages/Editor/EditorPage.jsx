@@ -14,16 +14,26 @@ import {useLocation} from "react-router-dom";
 import EditorType from "./editorType.jsx";
 import TypedLanguageType from "./typedLanguageType.jsx";
 import SingleFileLanguageType from "./singleFileLanguageType.jsx";
+import {useAuth0} from "@auth0/auth0-react";
+import LoadingScreen from "../../LoadingScreen.jsx";
 
 function EditorPage() {
     const [userData, setUserData] = useState(defaultAuthData());
+    let {user, isLoading, isAuthenticated,loginWithRedirect} = useAuth0();
     const {state} = useLocation();
+
+    if(isLoading) {
+        return (<LoadingScreen/>);
+    }else if(!isAuthenticated) {
+        loginWithRedirect({redirectUrl: window.location.href});
+        return (<LoadingScreen/>);
+    }
 
     return (
         <AuthLock setUserData={setUserData}>
         <ScreenPage>
 
-            <SingleFileLanguageType projectMetadata={state.projectMetadata} />
+            <SingleFileLanguageType projectMetadata={state.projectMetadata} userToken={userData.token}/>
         </ScreenPage>
         </AuthLock>
     );
