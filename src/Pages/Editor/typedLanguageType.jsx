@@ -4,14 +4,21 @@ import CodePanel from "./panels/code/CodePanel.jsx";
 class TypedLanguageType extends EditorType {
     constructor(props) {
         super(props);
-        this.codeEditor = (<CodePanel callbacks={{
-            onMount:this.monacoOnMount
-        }}/>);
+
         this.editorRef =null;
+        this.editorUpdateValue = ""
+
+        this.codeEditor = (<CodePanel value={this.editorUpdateValue} callbacks={{
+            onMount:this.monacoOnMount,
+            onChange:this.monacoOnChange,
+        }}/>);
     }
 
     monacoOnMount = (editor, monaco)=>{
         this.editorRef = editor;
+    }
+    monacoOnChange = (value, event)=>{
+        this.onChange(value, event);
     }
 
     getEditorData(){
@@ -21,7 +28,11 @@ class TypedLanguageType extends EditorType {
         this.editorRef.current.getValue();
     }
 
-    setEditorData(){
+    setEditorData(data){
+        this.editorUpdateValue = data;
+    }
+
+    onEditorChange(){
 
     }
 }

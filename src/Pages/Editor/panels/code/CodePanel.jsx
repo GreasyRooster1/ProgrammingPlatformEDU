@@ -25,6 +25,7 @@ function CodePanel(props) {
             height="100vh"
             defaultLanguage={props.defaultLanguage??"javascript"}
             defaultValue="// some comment"
+            value={props.value}
 
             onMount={callbacks.onMount}
             onChange={callbacks.onChange}
