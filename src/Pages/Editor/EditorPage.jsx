@@ -11,7 +11,8 @@ import ConsolePanel from "./panels/console/ConsolePanel.jsx";
 import AuthLock from "../../components/AuthLock.jsx";
 import {defaultAuthData} from "../../components/AuthProvider.jsx";
 import {useLocation} from "react-router-dom";
-import {EditorType} from "./editorType.jsx";
+import EditorType from "./editorType.jsx";
+import TypedLanguageType from "./typedLanguageType.jsx";
 
 function EditorPage() {
     const [userData, setUserData] = useState(defaultAuthData());
@@ -20,7 +21,7 @@ function EditorPage() {
     return (
         <AuthLock setUserData={setUserData}>
         <ScreenPage>
-            <EditorType projectMetadata={state.projectMetadata} />
+            <TypedLanguageType projectMetadata={state.projectMetadata} />
         </ScreenPage>
         </AuthLock>
     );

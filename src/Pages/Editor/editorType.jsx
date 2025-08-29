@@ -14,7 +14,7 @@ class EditorType extends React.Component {
         this.state = {
             ...props.projectMetadata
         }
-        console.log(this.state)
+        this.codeEditor = (<></>);
     }
 
     save = () => {
@@ -30,7 +30,7 @@ class EditorType extends React.Component {
                 <PanelResizeHandle />
 
                 <Panel className={styles.codePanel}>
-                    <CodePanel />
+                    {this.codeEditor}
                 </Panel>
                 <PanelResizeHandle />
 
@@ -51,4 +51,4 @@ class EditorType extends React.Component {
     }
 }
 
-export default EditorPage;
+export default EditorType;
