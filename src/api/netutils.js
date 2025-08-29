@@ -8,6 +8,9 @@ function authReq(uri, method, func){
         if(setError===undefined){
             setError = ()=>{}
         }
+        if(setLoading===undefined){
+            setLoading = ()=>{}
+        }
         try {
             const response = await fetch(API_URL + uri + argsUri,{
                 method: method,
