@@ -34,4 +34,10 @@ function jsonReq(uri){
     })
 }
 
-export {authReq,jsonReq}
+function fileReq(uri){
+    return authReq(uri,"GET", async (response)=>{
+        return response.blob();
+    })
+}
+
+export {authReq,jsonReq,fileReq}

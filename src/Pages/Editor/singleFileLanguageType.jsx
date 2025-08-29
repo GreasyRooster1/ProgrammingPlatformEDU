@@ -6,7 +6,9 @@ class SingleFileLanguageType extends TypedLanguageType {
         super(projectMetadata);
     }
 
-    onLoadProject() {}
+    loadProject() {
+
+    }
 }
 
 export default SingleFileLanguageType;

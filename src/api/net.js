@@ -1,4 +1,4 @@
-import {jsonReq} from "./netutils.js";
+import {fileReq, jsonReq} from "./netutils.js";
 
 const API_URL = "http://localhost:8000";
 
@@ -15,6 +15,9 @@ const netProj = {
 
     // /get_user_proj_id_list/<page>
     getUserProjIdList:jsonReq("/project/get_user_proj_id_list"),
+
+    // /get_file/<proj_id>/<path..>
+    getFile:fileReq("/project/project_get_file"),
 }
 
 const netAuth = {
