@@ -9,7 +9,7 @@ class TypedLanguageType extends EditorType {
         this.editorUpdateValue = ""
     }
 
-    getCodeEditor = () => {
+    getCodeEditor(){
         return (<CodePanel value={this.editorUpdateValue} callbacks={{
             onMount:this.monacoOnMount,
             onChange:this.monacoOnChange,

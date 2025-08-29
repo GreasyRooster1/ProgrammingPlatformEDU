@@ -8,7 +8,9 @@ class SingleFileLanguageType extends TypedLanguageType {
     }
 
     loadProject() {
-        net.proj.getFile(this.token,[this.state.id,"main"])
+        net.proj.getFile(this.token,[this.state.id,"main"],undefined,this.onRequestError).then((contents)=>{
+            this.setEditorData(contents);
+        });
     }
 }
 

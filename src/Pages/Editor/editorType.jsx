@@ -63,8 +63,8 @@ class EditorType extends React.Component {
         console.warn("onMount not implemented.")
     }
 
-    onRequestError = () => {
-        console.warn("onRequestError not implemented.")
+    onRequestError = (err) => {
+        console.warn("error occurred in project type api call: "+err);
     }
 
     loadProject = () => {
