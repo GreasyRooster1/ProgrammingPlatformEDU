@@ -12,8 +12,9 @@ class EditorType extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            ...props.projectMetadata
+            ...props.projectMetadata,
         }
+        this.token = props.token;
         this.codeEditor = (<></>);
     }
 
@@ -60,6 +61,10 @@ class EditorType extends React.Component {
 
     onMount = () => {
         console.warn("onMount not implemented.")
+    }
+
+    onRequestError = () => {
+        console.warn("onRequestError not implemented.")
     }
 
     loadProject = () => {
