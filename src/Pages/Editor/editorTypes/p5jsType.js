@@ -6,7 +6,7 @@ class P5jsType extends EditorType{
         super(projectMetadata);
     }
 
-    save(){
+    onSave(){
 
     }
 }

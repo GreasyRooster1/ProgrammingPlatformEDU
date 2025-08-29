@@ -54,7 +54,7 @@ class EditorType extends React.Component {
 
     /* EVENTS */
 
-    save = () => {
+    onSave = () => {
         console.warn("save not implemented.")
     }
 
