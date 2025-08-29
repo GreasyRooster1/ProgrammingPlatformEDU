@@ -15,6 +15,8 @@ class EditorType extends React.Component {
             ...props.projectMetadata,
         }
         this.token = props.token;
+
+        //if issues with functions calling in CodeEditor, revert to the functional way
         this.codeEditor = (<></>);
     }
 
@@ -66,8 +68,8 @@ class EditorType extends React.Component {
         console.warn("error occurred in project type api call: "+err);
     }
 
-    loadProject = () => {
-        console.warn("onMount not implemented.")
+    loadProject = ()=>{
+        console.warn("loadProject not implemented.")
     }
 
 }
