@@ -17,9 +17,7 @@ class EditorType extends React.Component {
     }
 
     save = () => {
-        //throw new Error("Save must be implemented.")
-        console.log(this);
-        this.setState({id:"asd"})
+        throw new Error("Save must be implemented.")
     }
 
     render(){
@@ -42,8 +40,7 @@ class EditorType extends React.Component {
                         </Panel>
                         <PanelResizeHandle />
 
-                        <Panel defaultSize={60} className={styles.consolePanel} onClick={this.save}>
-                            {this.state.id}
+                        <Panel defaultSize={60} className={styles.consolePanel}>
                             <ConsolePanel />
                         </Panel>
                     </PanelGroup>
