@@ -16,12 +16,11 @@ import {EditorType} from "./editorType.jsx";
 function EditorPage() {
     const [userData, setUserData] = useState(defaultAuthData());
     const {state} = useLocation();
-    const editor = new EditorType(state.projectMetadata);
 
     return (
         <AuthLock setUserData={setUserData}>
         <ScreenPage>
-            {editor.getEditorUI()}
+            <EditorType projectMetadata={state.projectMetadata} />
         </ScreenPage>
         </AuthLock>
     );

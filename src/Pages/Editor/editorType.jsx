@@ -13,12 +13,13 @@ class EditorType extends React.Component {
         this.state = {
             ...props.projectMetadata
         }
+        console.log(this.state)
     }
 
-    save(){
+    save = () => {
         //throw new Error("Save must be implemented.")
         console.log(this);
-        this.setState({projectMetadata:{id:"asd"}})
+        this.setState({id:"asd"})
     }
 
     render(){
@@ -41,8 +42,8 @@ class EditorType extends React.Component {
                         </Panel>
                         <PanelResizeHandle />
 
-                        <Panel defaultSize={60} className={styles.consolePanel} onClick={handle(this.save,this)}>
-                            {this.state.projectMetadata.id}
+                        <Panel defaultSize={60} className={styles.consolePanel} onClick={this.save}>
+                            {this.state.id}
                             <ConsolePanel />
                         </Panel>
                     </PanelGroup>
