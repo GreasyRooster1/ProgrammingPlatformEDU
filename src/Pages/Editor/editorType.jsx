@@ -19,7 +19,6 @@ class EditorType extends React.Component {
     }
 
     componentDidMount() {
-        this.codeEditor = this.getCodeEditor()
         this.onMount()
         this.loadProject();
     }
@@ -69,10 +68,6 @@ class EditorType extends React.Component {
 
     loadProject = () => {
         console.warn("onMount not implemented.")
-    }
-
-    getCodeEditor = () => {
-        return (<></>);
     }
 
 }
