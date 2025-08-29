@@ -12,7 +12,10 @@ class SingleFileLanguageType extends TypedLanguageType {
     loadProject = ()=> {
         console.log("Loading project...");
         net.proj.getFile(this.token,[this.state.id,"main"],undefined,this.onRequestError).then((contents)=>{
-            this.setEditorData(contents);
+            contents.text().then((text)=>{
+                console.log(text);
+                this.setEditorData(text);
+            })
         });
     }
 }

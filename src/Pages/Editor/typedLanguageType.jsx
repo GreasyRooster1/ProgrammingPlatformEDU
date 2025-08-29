@@ -6,11 +6,15 @@ class TypedLanguageType extends EditorType {
         super(props);
 
         this.editorRef =null;
-        this.editorUpdateValue = ""
-        this.codeEditor = (<CodePanel value={this.editorUpdateValue} callbacks={{
+        this.codeEditor = (<CodePanel value={this.state.editorUpdateValue} callbacks={{
             onMount:this.monacoOnMount,
             onChange:this.monacoOnChange,
         }}/>);
+
+        this.state = {
+            ...this.state,
+            editorUpdateValue: ""
+        }
     }
 
     monacoOnMount = (editor, monaco)=>{
@@ -28,7 +32,7 @@ class TypedLanguageType extends EditorType {
     }
 
     setEditorData(data){
-        this.editorUpdateValue = data;
+        this.setState({editorUpdateValue:data});
     }
 
     onEditorChange(){

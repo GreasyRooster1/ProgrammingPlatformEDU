@@ -14,7 +14,7 @@ class EditorType extends React.Component {
         this.state = {
             ...props.projectMetadata,
         }
-        this.token = props.token;
+        this.token = props.userToken;
 
         //if issues with functions calling in CodeEditor, revert to the functional way
         this.codeEditor = (<></>);

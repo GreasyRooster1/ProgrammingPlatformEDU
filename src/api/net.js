@@ -17,7 +17,7 @@ const netProj = {
     getUserProjIdList:jsonReq("/project/get_user_proj_id_list"),
 
     // /get_file/<proj_id>/<path..>
-    getFile:fileReq("/project/project_get_file"),
+    getFile:fileReq("/project/get_file"),
 }
 
 const netAuth = {
