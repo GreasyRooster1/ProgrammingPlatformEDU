@@ -17,8 +17,9 @@ class EditorType extends React.Component {
         this.codeEditor = (<></>);
     }
 
-    save = () => {
-        throw new Error("Save must be implemented.")
+    componentDidMount() {
+        this.codeEditor = this.getCodeEditor()
+        this.onMount()
     }
 
     render(){
@@ -49,6 +50,21 @@ class EditorType extends React.Component {
             </PanelGroup>
         )
     }
+
+    /* EVENTS */
+
+    save = () => {
+        throw new Error("save not implemented.")
+    }
+
+    onMount = () => {
+        throw new Error("onMount not implemented.")
+    }
+
+    getCodeEditor = () => {
+        return (<></>);
+    }
+
 }
 
 export default EditorType;

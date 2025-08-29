@@ -13,6 +13,7 @@ import {defaultAuthData} from "../../components/AuthProvider.jsx";
 import {useLocation} from "react-router-dom";
 import EditorType from "./editorType.jsx";
 import TypedLanguageType from "./typedLanguageType.jsx";
+import SingleFileLanguageType from "./singleFileLanguageType.jsx";
 
 function EditorPage() {
     const [userData, setUserData] = useState(defaultAuthData());
@@ -21,7 +22,8 @@ function EditorPage() {
     return (
         <AuthLock setUserData={setUserData}>
         <ScreenPage>
-            <TypedLanguageType projectMetadata={state.projectMetadata} />
+
+            <SingleFileLanguageType projectMetadata={state.projectMetadata} />
         </ScreenPage>
         </AuthLock>
     );
