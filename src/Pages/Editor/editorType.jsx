@@ -20,6 +20,7 @@ class EditorType extends React.Component {
     componentDidMount() {
         this.codeEditor = this.getCodeEditor()
         this.onMount()
+        this.loadProject();
     }
 
     render(){
@@ -54,11 +55,15 @@ class EditorType extends React.Component {
     /* EVENTS */
 
     save = () => {
-        throw new Error("save not implemented.")
+        console.warn("save not implemented.")
     }
 
     onMount = () => {
-        throw new Error("onMount not implemented.")
+        console.warn("onMount not implemented.")
+    }
+
+    loadProject = () => {
+        console.warn("onMount not implemented.")
     }
 
     getCodeEditor = () => {
