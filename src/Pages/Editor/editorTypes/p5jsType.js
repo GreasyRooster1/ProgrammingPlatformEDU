@@ -1,5 +1,5 @@
 
-import EditorType from "../editorType.js";
+import EditorType from "../editorType.jsx";
 
 class P5jsType extends EditorType{
     constructor(projectMetadata) {

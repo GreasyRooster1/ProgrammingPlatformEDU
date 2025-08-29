@@ -1,4 +1,4 @@
-import EditorType from "./editorType.js";
+import EditorType from "./editorType.jsx";
 
 class TypedLanguageType extends EditorType {
     constructor(projectMetadata) {

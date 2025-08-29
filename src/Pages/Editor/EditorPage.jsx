@@ -11,40 +11,17 @@ import ConsolePanel from "./panels/console/ConsolePanel.jsx";
 import AuthLock from "../../components/AuthLock.jsx";
 import {defaultAuthData} from "../../components/AuthProvider.jsx";
 import {useLocation} from "react-router-dom";
+import {EditorType} from "./editorType.jsx";
 
 function EditorPage() {
     const [userData, setUserData] = useState(defaultAuthData());
     const {state} = useLocation();
-    const 
-    console.log(state);
+    const editor = new EditorType(state.projectMetadata);
 
     return (
         <AuthLock setUserData={setUserData}>
         <ScreenPage>
-            <PanelGroup direction="horizontal">
-                <Panel defaultSize={25} className={styles.stepsPanel}>
-                    <LessonPanel />
-                </Panel>
-                <PanelResizeHandle />
-
-                <Panel className={styles.codePanel}>
-                    <CodePanel />
-                </Panel>
-                <PanelResizeHandle />
-
-                <Panel defaultSize={25}>
-                    <PanelGroup direction="vertical">
-                        <Panel defaultSize={60} className={styles.outputPanel}>
-                            <OutputPanel />
-                        </Panel>
-                        <PanelResizeHandle />
-
-                        <Panel defaultSize={60} className={styles.consolePanel}>
-                            <ConsolePanel />
-                        </Panel>
-                    </PanelGroup>
-                </Panel>
-            </PanelGroup>;
+            {editor.getEditorUI()}
         </ScreenPage>
         </AuthLock>
     );
