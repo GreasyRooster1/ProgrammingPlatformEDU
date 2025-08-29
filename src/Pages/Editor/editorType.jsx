@@ -48,12 +48,6 @@ class EditorType {
     }
 }
 
-function handle(func,thiss,...args){
-    return ()=>{
-        func.apply(thiss,args)
-    }
-}
-
 function useEditor(initialData) {
     const editorRef = useRef();
     if (!editorRef.current) {
