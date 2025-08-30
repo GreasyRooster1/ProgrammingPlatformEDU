@@ -12,7 +12,9 @@ function Executor(props) {
     }, [props.projectData]);
 
     return (
-        <div></div>
+        <div>
+            {props.children}
+        </div>
     );
 }
 
