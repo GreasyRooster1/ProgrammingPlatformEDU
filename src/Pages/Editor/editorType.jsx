@@ -7,6 +7,7 @@ import OutputPanel from "./panels/output/OutputPanel.jsx";
 import ConsolePanel from "./panels/console/ConsolePanel.jsx";
 import {EMPTY_FUNC, handle} from "../../api/util.js"
 import EditorPage from "./EditorPage.jsx";
+import Loading from "../../Loading.jsx";
 
 /*
 * onMount
@@ -38,7 +39,7 @@ function EditorType(props){
             <PanelResizeHandle />
 
             <Panel className={styles.codePanel}>
-                {loadedProject?props.codeEditor:""}
+                {loadedProject?props.codeEditor:<Loading />}
             </Panel>
             <PanelResizeHandle />
 

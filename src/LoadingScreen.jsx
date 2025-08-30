@@ -6,7 +6,7 @@ function LoadingScreen() {
     return (
         <ScreenPage className={styles.background}>
             <div className={styles.textContainer}>
-                <span className={styles.text}>LOADING...</span>
+                <span className={styles.text}>Loading...</span>
             </div>
         </ScreenPage>
     );
