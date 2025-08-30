@@ -21,6 +21,7 @@ function SingleFileLanguageType(props){
         <TypedLanguageType
             loadProject={loadProject}
             setEditorData={setEditorData}
+            editorData={editorData}
             {...props}
         />
     )

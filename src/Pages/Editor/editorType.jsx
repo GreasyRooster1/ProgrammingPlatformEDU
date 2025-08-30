@@ -5,7 +5,7 @@ import LessonPanel from "./panels/lesson/LessonPanel.jsx";
 import CodePanel from "./panels/code/CodePanel.jsx";
 import OutputPanel from "./panels/output/OutputPanel.jsx";
 import ConsolePanel from "./panels/console/ConsolePanel.jsx";
-import {handle} from "../../api/util.js"
+import {EMPTY_FUNC, handle} from "../../api/util.js"
 import EditorPage from "./EditorPage.jsx";
 
 /*
@@ -15,6 +15,11 @@ import EditorPage from "./EditorPage.jsx";
 * onRequestError
 */
 function EditorType(props){
+    props.onMount = props.onMount||EMPTY_FUNC;
+    props.loadProjects = props.loadProjects||EMPTY_FUNC;
+    props.onSave = props.onSave||EMPTY_FUNC;
+    props.onRequestError = props.onRequestError||EMPTY_FUNC;
+
 
     useEffect(() => {
         props.onMount();
