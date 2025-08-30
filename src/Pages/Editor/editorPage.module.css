@@ -4,13 +4,13 @@
 
 .codePanel{
     background: var(--neutral-med);
-    border-right:2px solid var(--neutral-light);
-    border-left:2px solid var(--neutral-light);
+    border-right:1px solid var(--neutral-light);
+    border-left:1px solid var(--neutral-light);
 }
 
 .outputPanel{
     background: var(--neutral-dark);
-    border-bottom:2px solid var(--neutral-light)
+    border-bottom:1px solid var(--neutral-light)
 }
 
 .consolePanel{

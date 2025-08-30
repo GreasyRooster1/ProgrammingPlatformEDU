@@ -1,8 +1,10 @@
 import React, {useEffect} from 'react';
 import {Editor, useMonaco} from "@monaco-editor/react";
 
-function CodePanel() {
+function CodePanel(props) {
     let monaco = useMonaco();
+
+    let callbacks = props.callbacks??{};
 
     useEffect(() => {
         if(monaco) {
@@ -18,9 +20,17 @@ function CodePanel() {
             monaco.editor.setTheme("brand-default")
         }
     },[monaco]);
-
     return (
-        <Editor height="100vh" defaultLanguage="javascript" defaultValue="// some comment" />
+        <Editor
+            height="100vh"
+            defaultLanguage={props.defaultLanguage??"javascript"}
+            defaultValue="// some comment"
+            value={props.value}
+
+            onMount={callbacks.onMount}
+            onChange={callbacks.onChange}
+            beforeMount={callbacks.beforeMount}
+        />
     );
 }
 

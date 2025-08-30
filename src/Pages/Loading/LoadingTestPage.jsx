@@ -1,9 +1,9 @@
 import React from 'react';
-import Loading from "../../Loading.jsx";
+import LoadingScreen from "../../LoadingScreen.jsx";
 
 function LoadingTestPage() {
     return (
-        <Loading />
+        <LoadingScreen />
     );
 }
 

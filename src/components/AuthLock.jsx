@@ -1,26 +1,36 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import AuthProvider  from "./AuthProvider.jsx";
 import {useAuth0} from "@auth0/auth0-react";
-import Loading from "../Loading.jsx";
+import LoadingScreen from "../LoadingScreen.jsx";
 
 function AuthLock(props) {
-    const {isAuthenticated,isLoading,loginWithRedirect} = useAuth0();
-
-    let content = props.children;
+    const {user, isAuthenticated,isLoading,getAccessTokenSilently,loginWithRedirect } = useAuth0();
+    let setUserData = props.setUserData;
+    const [finishedWriting, setFinishedWriting] = useState(false);
+    useEffect(() => {
+        if(!isLoading && isAuthenticated) {
+            getAccessTokenSilently().then((e)=>{
+                setUserData({
+                    token:e,
+                    isAuthenticated:true,
+                })
+                setFinishedWriting(true);
+            })
+        }
+    },[isLoading,isAuthenticated])
 
     if(isLoading) {
-        content = (<Loading/>);
+        return (<LoadingScreen/>);
+    }else if(!finishedWriting) {
+        return (<LoadingScreen/>);
     }else if(!isAuthenticated) {
-        loginWithRedirect({
-            redirectUrl: window.location.href,
-        });
-        content = (<Loading/>);
+        loginWithRedirect({redirectUrl: window.location.href});
+        return (<LoadingScreen/>);
     }
-
     return (
-       <AuthProvider setUserData={props.setUserData}>
-           {content}
-       </AuthProvider>
+        <>
+            {props.children}
+        </>
     );
 }
 

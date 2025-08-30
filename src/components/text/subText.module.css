@@ -1,0 +1,10 @@
+.subText{
+    font-size: 1rem;
+    color:var(--sub-text);
+}
+.icon{
+    display: inline;
+    padding-right:4px;
+    top:3px;
+    position:relative;
+}

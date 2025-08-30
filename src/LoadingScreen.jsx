@@ -4,9 +4,11 @@ import ScreenPage from "./components/screenPage/ScreenPage.jsx";
 
 function LoadingScreen() {
     return (
-        <div className={styles.textContainer}>
-            <span className={styles.textNorm}>LOADING...</span>
-        </div>
+        <ScreenPage className={styles.background}>
+            <div className={styles.textContainer}>
+                <span className={styles.text}>LOADING...</span>
+            </div>
+        </ScreenPage>
     );
 }
 
