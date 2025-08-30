@@ -16,6 +16,7 @@ import TypedLanguageType from "./typedLanguageType.jsx";
 import SingleFileLanguageType from "./singleFileLanguageType.jsx";
 import {useAuth0} from "@auth0/auth0-react";
 import LoadingScreen from "../../LoadingScreen.jsx";
+import P5jsType from "./editorTypes/p5jsType.jsx";
 
 function EditorPage() {
     const [userData, setUserData] = useState(defaultAuthData());
@@ -33,7 +34,7 @@ function EditorPage() {
         <AuthLock setUserData={setUserData}>
         <ScreenPage>
 
-            <SingleFileLanguageType projectMetadata={state.projectMetadata} token={userData.token}/>
+            <P5jsType projectMetadata={state.projectMetadata} token={userData.token}/>
         </ScreenPage>
         </AuthLock>
     );
