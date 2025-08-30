@@ -23,6 +23,7 @@ function CodePanel(props) {
     return (
         <Editor
             height="100vh"
+            theme="brand-default"
             defaultLanguage={props.defaultLanguage??"javascript"}
             defaultValue="// some comment"
             value={props.value}

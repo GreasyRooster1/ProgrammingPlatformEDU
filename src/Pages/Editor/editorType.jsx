@@ -22,8 +22,8 @@ function EditorType(props){
 
 
     useEffect(() => {
-        onMount();
         loadProject();
+        onMount();
     }, []);
 
     return (
