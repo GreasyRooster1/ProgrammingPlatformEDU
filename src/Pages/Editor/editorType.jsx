@@ -10,7 +10,7 @@ import EditorPage from "./EditorPage.jsx";
 
 /*
 * onMount
-* loadProjects
+* async loadProjects
 * onSave
 * onRequestError
 */
@@ -20,9 +20,13 @@ function EditorType(props){
     let onSave = props.onSave||EMPTY_FUNC;
     let onRequestError = props.onRequestError||EMPTY_FUNC;
 
+    let [loadedProject,setLoadedProject] = useState(false);
+
 
     useEffect(() => {
-        loadProject();
+        loadProject().then(()=>{
+            setLoadedProject(true)
+        });
         onMount();
     }, []);
 
@@ -34,7 +38,7 @@ function EditorType(props){
             <PanelResizeHandle />
 
             <Panel className={styles.codePanel}>
-                {props.codeEditor}
+                {loadedProject?props.codeEditor:""}
             </Panel>
             <PanelResizeHandle />
 

@@ -7,13 +7,11 @@ function SingleFileLanguageType(props){
     const [editorData,setEditorData] = useState("");
 
 
-    const loadProject = ()=>{
+    const loadProject = async ()=>{
         console.log("Loading project...");
-        net.proj.getFile(props.token,[props.projectMetadata.id,"main"],undefined,undefined).then((contents)=>{
-            contents.text().then((text)=>{
-                setEditorData(text)
-            })
-        });
+        let blob = await net.proj.getFile(props.token,[props.projectMetadata.id,"main"],undefined,undefined)
+        let text = await blob.text();
+        setEditorData(text)
     }
 
     return (
