@@ -4,4 +4,6 @@ function handle(func,thiss,...args){
     }
 }
 
-export {handle}
+const EMPTY_FUNC = ()=>{}
+
+export {handle,EMPTY_FUNC}
