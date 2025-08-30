@@ -33,7 +33,7 @@ function EditorPage() {
         <AuthLock setUserData={setUserData}>
         <ScreenPage>
 
-            <SingleFileLanguageType projectMetadata={state.projectMetadata} userToken={userData.token}/>
+            <SingleFileLanguageType projectMetadata={state.projectMetadata} token={userData.token}/>
         </ScreenPage>
         </AuthLock>
     );

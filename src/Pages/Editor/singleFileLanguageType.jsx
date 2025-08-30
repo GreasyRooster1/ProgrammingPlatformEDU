@@ -9,11 +9,8 @@ function SingleFileLanguageType(props){
 
     const loadProject = ()=>{
         console.log("Loading project...");
-        net.proj.getFile(this.token,[this.state.id,"main"],undefined,this.onRequestError).then((contents)=>{
-            contents.text().then((text)=>{
-                console.log(text);
-                setEditorData(text);
-            })
+        net.proj.getFile(props.token,[props.projectMetadata.id,"main"],undefined,undefined).then((contents)=>{
+            setEditorData(contents)
         });
     }
 
