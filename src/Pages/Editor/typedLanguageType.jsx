@@ -1,43 +1,36 @@
 import EditorType from "./editorType.jsx";
 import CodePanel from "./panels/code/CodePanel.jsx";
+import {useRef} from "react";
 
-class TypedLanguageType extends EditorType {
-    constructor(props) {
-        super(props);
 
-        this.editorRef =null;
-        this.codeEditor = (<CodePanel value={this.state.editorUpdateValue} callbacks={{
-            onMount:this.monacoOnMount,
-            onChange:this.monacoOnChange,
-        }}/>);
+/*
+* onEditorMount
+* onEditorChange
+*/
+function TypedLanguageType(props){
+    const editorRef = useRef(null);
 
-        this.state = {
-            ...this.state,
-            editorUpdateValue: ""
-        }
+    const onMonacoMount = (editor,monaco)=>{
+        editorRef.current = editor
+        props.onEditorMount();
     }
 
-    monacoOnMount = (editor, monaco)=>{
-        this.editorRef = editor;
-    }
-    monacoOnChange = (value, event)=>{
-        this.onChange(value, event);
+    const onMonacoChange = (value,event)=>{
+        props.onEditorChange();
+        props.setEditorData(value);
     }
 
-    getEditorData(){
-        if(this.editorRef===null){
-            throw new Error("Editor has not yet been mounted")
-        }
-        this.editorRef.current.getValue();
-    }
+    let codeEditor = (<CodePanel value={this.state.editorUpdateValue} callbacks={{
+        onMount:onMonacoMount,
+        onChange:onMonacoChange,
+    }}/>);
 
-    setEditorData(data){
-        this.setState({editorUpdateValue:data});
-    }
-
-    onEditorChange(){
-
-    }
+    return (
+        <EditorType
+            codeEditor={codeEditor}
+            {...props}
+        />
+    )
 }
 
 export default TypedLanguageType;

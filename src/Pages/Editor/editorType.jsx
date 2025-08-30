@@ -29,7 +29,7 @@ function EditorType(props){
             <PanelResizeHandle />
 
             <Panel className={styles.codePanel}>
-                {this.codeEditor}
+                {props.codeEditor}
             </Panel>
             <PanelResizeHandle />
 
