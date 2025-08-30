@@ -38,19 +38,9 @@ function jsonReq(uri){
 }
 
 function fileReq(uri){
-    return {
-        asText:()=>{
-            return authReq(uri,"GET", async (response)=>{
-                return await response.blob().text();
-            })
-        },
-        asBlob:()=>{
-            return authReq(uri,"GET", async (response)=>{
-                return response.blob()
-            })
-        }
-    }
-
+    return authReq(uri,"GET", async (response)=>{
+        return response.blob();
+    })
 }
 
 export {authReq,jsonReq,fileReq}
