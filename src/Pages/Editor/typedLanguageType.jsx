@@ -11,20 +11,21 @@ import {EMPTY_FUNC} from "../../api/util.js";
 function TypedLanguageType(props){
     const editorRef = useRef(null);
 
-    props.onEditorMount = props.onEditorMount||EMPTY_FUNC;
-    props.onEditorChange = props.onEditorChange||EMPTY_FUNC;
+    let onEditorMount = props.onEditorMount||EMPTY_FUNC;
+    let onEditorChange = props.onEditorChange||EMPTY_FUNC;
+    let setEditorData = props.setEditorData||EMPTY_FUNC;
 
     const onMonacoMount = (editor,monaco)=>{
         editorRef.current = editor
-        props.onEditorMount();
+        onEditorMount();
     }
 
     const onMonacoChange = (value,event)=>{
-        props.onEditorChange();
-        props.setEditorData(value);
+        onEditorChange();
+        setEditorData(value);
     }
 
-    let codeEditor = (<CodePanel value={props.editorData} callbacks={{
+    let codeEditor = (<CodePanel value={props.editorData??""} callbacks={{
         onMount:onMonacoMount,
         onChange:onMonacoChange,
     }}/>);

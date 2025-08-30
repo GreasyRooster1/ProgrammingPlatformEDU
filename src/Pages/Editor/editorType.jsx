@@ -15,15 +15,15 @@ import EditorPage from "./EditorPage.jsx";
 * onRequestError
 */
 function EditorType(props){
-    props.onMount = props.onMount||EMPTY_FUNC;
-    props.loadProjects = props.loadProjects||EMPTY_FUNC;
-    props.onSave = props.onSave||EMPTY_FUNC;
-    props.onRequestError = props.onRequestError||EMPTY_FUNC;
+    let onMount = props.onMount||EMPTY_FUNC;
+    let loadProject = props.loadProject||EMPTY_FUNC;
+    let onSave = props.onSave||EMPTY_FUNC;
+    let onRequestError = props.onRequestError||EMPTY_FUNC;
 
 
     useEffect(() => {
-        props.onMount();
-        props.loadProject();
+        onMount();
+        loadProject();
     }, []);
 
     return (
