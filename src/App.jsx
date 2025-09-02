@@ -13,7 +13,6 @@ function App() {
         <Route path="/editor" element={<EditorPage />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/loadingTest" element={<LoadingTestPage />} />
-        {/* Add more routes as needed */}
       </Routes>
   )
 }
