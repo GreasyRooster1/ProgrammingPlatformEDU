@@ -46,7 +46,7 @@ function EditorType(props){
             <Panel defaultSize={25}>
                 <PanelGroup direction="vertical">
                     <Panel defaultSize={60} className={styles.outputPanel}>
-                        <OutputPanel />
+                        <OutputPanel executor={props.executor}/>
                     </Panel>
                     <PanelResizeHandle />
 
