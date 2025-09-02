@@ -1,6 +1,6 @@
 
-import EditorType from "../editorType.jsx";
-import SingleFileLanguageType from "../singleFileLanguageType.jsx";
+import EditorType from "../EditorType.jsx";
+import SingleFileLanguageType from "../SingleFileLanguageType.jsx";
 
 function P5jsType(props){
     return (

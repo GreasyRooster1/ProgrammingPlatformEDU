@@ -1,5 +1,5 @@
-import EditorType from "./editorType.jsx";
-import TypedLanguageType from "./typedLanguageType.jsx";
+import EditorType from "./EditorType.jsx";
+import TypedLanguageType from "./TypedLanguageType.jsx";
 import {net} from "../../api/net.js";
 import {useState} from "react";
 

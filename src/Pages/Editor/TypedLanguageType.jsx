@@ -1,4 +1,4 @@
-import EditorType from "./editorType.jsx";
+import EditorType from "./EditorType.jsx";
 import CodePanel from "./panels/code/CodePanel.jsx";
 import {useRef} from "react";
 import {EMPTY_FUNC} from "../../api/util.js";
