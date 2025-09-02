@@ -1,3 +1,5 @@
+ADD
+
 let p5FunctionsAndConstants = [
     "ADD",
     "ALT",
@@ -938,3 +940,24 @@ const WAIT="wait"
 const WEBGL="webgl"
 const WEBGL2="webgl2"
 const WORD="WORD"
+
+function generateP5Hanles(){
+    for(let funcName of p5jsFunctions){
+        window[funcName]=(...args)=>{
+            postMessage({
+                name:funcName,
+                args:args,
+            })
+        }
+    }
+}
+
+function execute(code){
+    generateP5Hanles();
+
+}
+
+onmessage = (e)=>{
+    console.log("worker received message")
+    execute(e.data.code)
+}
