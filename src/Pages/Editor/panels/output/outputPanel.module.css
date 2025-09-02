@@ -28,11 +28,17 @@
 .body{
     display: flex;
     flex:1;
-    padding: 10px;
 }
 
 .executorContainer{
     border:none;
     width: 100%;
     flex:1;
+    padding: 0;
+    margin:0;
+}
+.executorContainer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }

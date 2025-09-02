@@ -2,12 +2,13 @@
 import EditorType from "../EditorType.jsx";
 import SingleFileLanguageType from "../SingleFileLanguageType.jsx";
 import Executor from "../Executor.jsx";
+import P5jsExecutor from "../Executors/P5jsExecutor.jsx";
 
 function P5jsType(props){
     return (
         <SingleFileLanguageType
             executor={(
-                <Executor />
+                <P5jsExecutor />
             )}
             {...props}
         />

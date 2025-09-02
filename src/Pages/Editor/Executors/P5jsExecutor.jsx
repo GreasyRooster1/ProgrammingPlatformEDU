@@ -16,7 +16,7 @@ function P5JsExecutor(props) {
             onCleanup={onCleanup}
             {...props}
         >
-            <iframe src={}>
+            <iframe src={"./home"}>
 
             </iframe>
         </Executor>

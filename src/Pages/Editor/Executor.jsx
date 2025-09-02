@@ -18,9 +18,7 @@ function Executor(props) {
     }, [props.projectData]);
 
     return (
-        <div>
-            {props.children}
-        </div>
+        <>{props.children}</>
     );
 }
 
