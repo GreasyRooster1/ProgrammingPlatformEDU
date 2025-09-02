@@ -954,7 +954,23 @@ function generateP5Hanles(){
 
 function execute(code){
     generateP5Hanles();
-
+    const sandbox = function(){
+        window.XMLHttpRequest=null;
+        window.XMLDocument=null;
+        window.XMLSerializer=null;
+        window.XMLHttpRequestEventTarget=null;
+        window.XMLHttpRequestUpload=null;
+        window.openDatabase=null;
+        //fallback if for some reason p5 is present
+        window.p5 = null;
+        window.document=null;
+        window.alert = null;
+        window.localStorage=null;
+        window.sessionStorage=null;
+        window.ajax = null;
+        eval(code);
+    }
+    sandbox()
 }
 
 onmessage = (e)=>{
