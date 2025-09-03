@@ -8,6 +8,10 @@ import ConsolePanel from "./panels/console/ConsolePanel.jsx";
 import {EMPTY_FUNC, handle} from "../../api/util.js"
 import EditorPage from "./EditorPage.jsx";
 import Loading from "../../Loading.jsx";
+import play from "/icons/Play.svg"
+import stop from "/icons/Stop.svg"
+import link from "/icons/ExternalLink.svg"
+import HeaderFlex from "../../components/headerFlex/HeaderFlex.jsx";
 
 /*
 * onMount
@@ -32,30 +36,42 @@ function EditorType(props){
     }, []);
 
     return (
-        <PanelGroup direction="horizontal">
-            <Panel defaultSize={25} className={styles.stepsPanel}>
-                <LessonPanel />
-            </Panel>
-            <PanelResizeHandle />
+        <HeaderFlex className={styles.wrapper} headClassName={styles.head} bodyClassName={styles.body} headContent={
+            <>
+                <div className={`${styles.controlButtons} ${styles.iconContainers}`}>
+                    <img src={play}/>
+                    <img src={stop}/>
+                </div>
+                <div className={`${styles.popButtons} ${styles.iconContainers}`}>
+                    <img src={link}/>
+                </div>
+            </>
+        }>
+            <PanelGroup direction="horizontal">
+                <Panel defaultSize={25} className={styles.stepsPanel}>
+                    <LessonPanel />
+                </Panel>
+                <PanelResizeHandle />
 
-            <Panel className={styles.codePanel}>
-                {loadedProject?props.codeEditor:<Loading />}
-            </Panel>
-            <PanelResizeHandle />
+                <Panel className={styles.codePanel}>
+                    {loadedProject?props.codeEditor:<Loading />}
+                </Panel>
+                <PanelResizeHandle />
 
-            <Panel defaultSize={25}>
-                <PanelGroup direction="vertical">
-                    <Panel defaultSize={60} className={styles.outputPanel}>
-                        <OutputPanel executor={props.executor}/>
-                    </Panel>
-                    <PanelResizeHandle />
+                <Panel defaultSize={25}>
+                    <PanelGroup direction="vertical">
+                        <Panel defaultSize={60} className={styles.outputPanel}>
+                            <OutputPanel executor={props.executor}/>
+                        </Panel>
+                        <PanelResizeHandle />
 
-                    <Panel defaultSize={60} className={styles.consolePanel}>
-                        <ConsolePanel />
-                    </Panel>
-                </PanelGroup>
-            </Panel>
-        </PanelGroup>
+                        <Panel defaultSize={60} className={styles.consolePanel}>
+                            <ConsolePanel />
+                        </Panel>
+                    </PanelGroup>
+                </Panel>
+            </PanelGroup>
+        </HeaderFlex>
     )
 }
 
