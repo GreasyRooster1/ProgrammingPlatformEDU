@@ -1,12 +1,15 @@
 .wrapper{
     height: 100vh;
+    --navbar-height: 48px;
 }
 
 .head{
-    height: 96px;
+    height: var(--navbar-height);
+    background: var(--neutral-dark);
 }
 .body{
     flex:1;
+    height: calc(100vh - var(--navbar-height));
 }
 
 

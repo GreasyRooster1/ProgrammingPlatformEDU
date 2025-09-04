@@ -37,8 +37,8 @@ function EditorType(props){
 
     return (
         <HeaderFlex className={styles.wrapper} headClassName={styles.head} bodyClassName={styles.body} headContent={
-            <>
-            </>
+            <div>
+            </div>
         }>
             <PanelGroup direction="horizontal">
                 <Panel defaultSize={25} className={styles.stepsPanel}>
