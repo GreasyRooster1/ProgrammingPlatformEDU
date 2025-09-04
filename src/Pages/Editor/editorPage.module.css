@@ -2,8 +2,11 @@
     height: 100vh;
 }
 
+.head{
+    height: 96px;
+}
 .body{
-    height: 100vh;
+    flex:1;
 }
 
 
