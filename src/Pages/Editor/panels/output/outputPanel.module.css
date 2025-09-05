@@ -28,6 +28,7 @@
 .body{
     display: flex;
     flex:1;
+    height:100%;
 }
 
 .executorContainer{
@@ -36,6 +37,7 @@
     flex:1;
     padding: 0;
     margin:0;
+
 }
 .executorContainer iframe {
     width: 100%;
