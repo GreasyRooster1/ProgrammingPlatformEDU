@@ -6,6 +6,8 @@
 .head{
     height: var(--navbar-height);
     background: var(--neutral-dark);
+    display: flex;
+    justify-content: space-between;
 }
 
 
