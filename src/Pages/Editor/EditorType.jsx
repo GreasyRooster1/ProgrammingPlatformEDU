@@ -15,6 +15,7 @@ import play from "/icons/Play.svg";
 import stop from "/icons/Stop.svg";
 import save from "/icons/Save.svg";
 import share from "/icons/Share.svg";
+import PrimaryButton from "../../components/buttons/PrimaryButton.jsx";
 
 /*
 * onMount
@@ -45,6 +46,7 @@ function EditorType(props){
                     <img src={home}/>
                 </div>
                 <div className={styles.iconGroup}>
+                    <PrimaryButton className={styles.runButton} icon={play}>Run</PrimaryButton>
                     <img src={save}/>
                     <img src={share}/>
                 </div>

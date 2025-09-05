@@ -18,6 +18,21 @@
 .iconGroup{
     display: flex;
 }
+.runButton{
+    display: flex;
+    padding:3px;
+    margin-right:8px;
+}
+.runButton span{
+    display: flex;
+    align-items: center;
+    flex:1;
+}
+
+.runButton img{
+    width: 24px;
+    margin-left:8px;
+}
 
 .body{
     flex:1;
