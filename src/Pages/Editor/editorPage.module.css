@@ -8,8 +8,16 @@
     background: var(--neutral-dark);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-left:8px;
 }
 
+.iconGroup img{
+    margin-right:8px;
+}
+.iconGroup{
+    display: flex;
+}
 
 .body{
     flex:1;

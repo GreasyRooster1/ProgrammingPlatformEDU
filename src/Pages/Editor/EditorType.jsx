@@ -8,10 +8,13 @@ import ConsolePanel from "./panels/console/ConsolePanel.jsx";
 import {EMPTY_FUNC, handle} from "../../api/util.js"
 import EditorPage from "./EditorPage.jsx";
 import Loading from "../../Loading.jsx";
-import play from "/icons/Play.svg"
-import stop from "/icons/Stop.svg"
 import link from "/icons/ExternalLink.svg"
 import HeaderFlex from "../../components/headerFlex/HeaderFlex.jsx";
+import home from "/icons/Home.svg";
+import play from "/icons/Play.svg";
+import stop from "/icons/Stop.svg";
+import save from "/icons/Save.svg";
+import share from "/icons/Share.svg";
 
 /*
 * onMount
@@ -38,9 +41,12 @@ function EditorType(props){
     return (
         <HeaderFlex className={styles.wrapper} headClassName={styles.head} bodyClassName={styles.body} headContent={
             <>
-                <div className={styles.headerLeftIcons}>
+                <div className={styles.iconGroup}>
+                    <img src={home}/>
                 </div>
-                <div className={styles.headerRightIcons}>
+                <div className={styles.iconGroup}>
+                    <img src={save}/>
+                    <img src={share}/>
                 </div>
             </>
         }>
