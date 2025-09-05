@@ -37,11 +37,15 @@ function EditorType(props){
 
     return (
         <HeaderFlex className={styles.wrapper} headClassName={styles.head} bodyClassName={styles.body} headContent={
-            <div>
-            </div>
+            <>
+                <div className={styles.headerLeftIcons}>
+                </div>
+                <div className={styles.headerRightIcons}>
+                </div>
+            </>
         }>
             <PanelGroup direction="horizontal">
-                <Panel defaultSize={25} className={styles.stepsPanel}>
+            <Panel defaultSize={25} className={styles.stepsPanel}>
                     <LessonPanel />
                 </Panel>
                 <PanelResizeHandle />
