@@ -1,5 +1,3 @@
-ADD
-
 let p5FunctionsAndConstants = [
     "ADD",
     "ALT",
