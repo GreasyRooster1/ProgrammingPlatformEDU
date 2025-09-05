@@ -7,11 +7,12 @@
     height: var(--navbar-height);
     background: var(--neutral-dark);
 }
+
+
 .body{
     flex:1;
     height: calc(100vh - var(--navbar-height));
 }
-
 
 .stepsPanel{
     background: var(--neutral-dark);
