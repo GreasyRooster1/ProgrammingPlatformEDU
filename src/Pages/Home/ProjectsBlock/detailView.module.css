@@ -15,3 +15,6 @@
 .secondaryButtons div{
     flex-basis: 50%;
 }
+.openButton{
+    padding: 12px;
+}
