@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {EMPTY_FUNC} from "../../api/util.js";
+import {EMPTY_FUNC} from "../../api/func.js";
 
 /*
 * onMount

@@ -1,6 +1,6 @@
 import React, {use, useEffect, useState} from 'react';
 import Project from "./Project.jsx";
-import {net} from "../../../api/net.js";
+import {net} from "../../../api/net/net.js";
 import LoadingScreen from "../../../LoadingScreen.jsx";
 import Loading from "../../../Loading.jsx";
 
