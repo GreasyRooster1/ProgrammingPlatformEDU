@@ -25,7 +25,8 @@ function TypedLanguageType(props){
     const onMonacoChange = (value,event)=>{
         onEditorChange();
         setEditorData(value);
-        setEditorChanged(editorChanged);
+        setEditorChanged(true);
+        console.log(editorChanged)
     }
 
     let codeEditor = (<CodePanel value={props.editorData??""} callbacks={{
@@ -36,6 +37,7 @@ function TypedLanguageType(props){
     return (
         <EditorType
             codeEditor={codeEditor}
+            saveHighlight={editorChanged}
             {...props}
         />
     )

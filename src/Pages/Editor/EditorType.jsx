@@ -8,14 +8,12 @@ import ConsolePanel from "./panels/console/ConsolePanel.jsx";
 import {EMPTY_FUNC, handle} from "../../api/func.js"
 import EditorPage from "./EditorPage.jsx";
 import Loading from "../../Loading.jsx";
-import link from "/icons/ExternalLink.svg"
 import HeaderFlex from "../../components/headerFlex/HeaderFlex.jsx";
-import home from "/icons/Home.svg";
-import play from "/icons/Play.svg";
-import stop from "/icons/Stop.svg";
-import save from "/icons/Save.svg";
-import highSave from "/icons/SaveHighlighted.svg";
-import share from "/icons/Share.svg";
+import home from "../../icons/Home.svg";
+import play from "../../icons/Play.svg";
+import stop from "../../icons/Stop.svg"
+import SaveIcon from "../../icons/Save.svg?react"
+import share from "../../icons/Share.svg";
 import PrimaryButton from "../../components/buttons/PrimaryButton.jsx";
 
 /*
@@ -48,7 +46,7 @@ function EditorType(props){
                 </div>
                 <div className={styles.iconGroup}>
                     <PrimaryButton className={styles.runButton} icon={play}>Run</PrimaryButton>
-                    <img className={styles.saveIcon} src={props.saveHighlight?highSave:save} onClick={onSave}/>
+                    <SaveIcon className={styles.saveIcon} onClick={onSave}/>
                     <img src={share}/>
                 </div>
             </>
