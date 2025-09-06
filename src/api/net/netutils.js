@@ -1,4 +1,5 @@
 import {API_URL} from "../constants.js";
+import {useState} from "react";
 
 //quickly build a request handler for the backend
 function authReq(uri, method, func){
@@ -70,6 +71,14 @@ function uploadReq(uri){
             console.error(err)
         }
     };
+}
+
+function useReqState(){
+    return useState({
+        isLoading: true,
+        isError: false,
+        error: null,
+    })
 }
 
 export {authReq,jsonReq,fileReq}
