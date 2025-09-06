@@ -9,11 +9,10 @@ import {EMPTY_FUNC, handle} from "../../api/func.js"
 import EditorPage from "./EditorPage.jsx";
 import Loading from "../../Loading.jsx";
 import HeaderFlex from "../../components/headerFlex/HeaderFlex.jsx";
-import home from "../../icons/Home.svg";
 import play from "../../icons/Play.svg";
-import stop from "../../icons/Stop.svg"
 import SaveIcon from "../../icons/Save.svg?react"
-import share from "../../icons/Share.svg";
+import ShareIcon from "../../icons/Share.svg?react"
+import HomeIcon from "../../icons/Home.svg?react"
 import PrimaryButton from "../../components/buttons/PrimaryButton.jsx";
 import IconButton from "../../components/buttons/IconButton.jsx";
 
@@ -43,12 +42,12 @@ function EditorType(props){
         <HeaderFlex className={styles.wrapper} headClassName={styles.head} bodyClassName={styles.body} headContent={
             <>
                 <div className={styles.iconGroup}>
-                    <img src={home}/>
+                    <IconButton icon={(<HomeIcon />)}/>
                 </div>
                 <div className={styles.iconGroup}>
                     <PrimaryButton className={styles.runButton} icon={play}>Run</PrimaryButton>
                     <IconButton icon={(<SaveIcon />)} isHighlighted={props.saveHighlight} onClick={onSave} />
-                    <img src={share}/>
+                    <IconButton icon={(<ShareIcon />)}/>
                 </div>
             </>
         }>

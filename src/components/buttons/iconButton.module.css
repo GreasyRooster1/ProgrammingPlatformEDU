@@ -1,6 +1,6 @@
 .icon path{
     stroke:var(--neutral-icon);
-    transition: stroke 1s;
+    transition: stroke .25s;
 }
 
 .highlight path{
