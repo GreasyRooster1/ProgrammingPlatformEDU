@@ -15,7 +15,7 @@ function SingleFileLanguageType(props){
     }
 
     const onSave = ()=>{
-        net.proj.saveFile()
+        net.proj.saveFile(props.token,[props.projectMetadata.id,"main"],editorData)
     }
 
     return (

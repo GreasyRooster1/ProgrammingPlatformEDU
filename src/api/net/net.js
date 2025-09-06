@@ -1,4 +1,4 @@
-import {fileReq, jsonReq} from "./netutils.js";
+import {fileReq, jsonReq, uploadReq} from "./netutils.js";
 
 const netUser = {
 
