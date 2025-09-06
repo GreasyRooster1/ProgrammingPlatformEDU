@@ -23,6 +23,10 @@ function EditorPage() {
     let {user, isLoading, isAuthenticated,loginWithRedirect} = useAuth0();
     const {state} = useLocation();
 
+    if(state===null){
+        location.href="/home";
+    }
+
     if(isLoading) {
         return (<LoadingScreen/>);
     }else if(!isAuthenticated) {
