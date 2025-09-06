@@ -14,6 +14,7 @@ import home from "/icons/Home.svg";
 import play from "/icons/Play.svg";
 import stop from "/icons/Stop.svg";
 import save from "/icons/Save.svg";
+import highSave from "/icons/SaveHighlighted.svg";
 import share from "/icons/Share.svg";
 import PrimaryButton from "../../components/buttons/PrimaryButton.jsx";
 
@@ -47,7 +48,7 @@ function EditorType(props){
                 </div>
                 <div className={styles.iconGroup}>
                     <PrimaryButton className={styles.runButton} icon={play}>Run</PrimaryButton>
-                    <img src={save}/>
+                    <img className={styles.saveIcon} src={props.saveHighlight?highSave:save} onClick={onSave}/>
                     <img src={share}/>
                 </div>
             </>
