@@ -40,17 +40,12 @@ function TypedLanguageType(props){
         onChange:onMonacoChange,
     }}/>);
 
-    const overrideProps = {
-        onSave:onSaveOverride,
-        ...props
-    }
-    overrideProps.onSave=onSaveOverride;
-
     return (
         <EditorType
             codeEditor={codeEditor}
             saveHighlight={editorChanged}
-            {...overrideProps}
+            {...props}
+            onSave={onSaveOverride}
         />
     )
 }
