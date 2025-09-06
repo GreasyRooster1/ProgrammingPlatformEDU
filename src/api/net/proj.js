@@ -1,6 +1,6 @@
-import privateIcon from "/icons/PrivateVisIcon.svg";
-import publicIcon from "/icons/PublicVisIcon.svg";
-import unlistedIcon from "/icons/UnlistedVisIcon.svg";
+import privateIcon from "../../icons/PrivateVisIcon.svg";
+import publicIcon from "../../icons/PublicVisIcon.svg";
+import unlistedIcon from "../../icons/UnlistedVisIcon.svg";
 import vite from "/vite.svg";
 
 const projTypesMap = {
