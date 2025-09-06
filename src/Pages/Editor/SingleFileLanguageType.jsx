@@ -14,11 +14,16 @@ function SingleFileLanguageType(props){
         setEditorData(text)
     }
 
+    const onSave = ()=>{
+        // net.proj.
+    }
+
     return (
         <TypedLanguageType
             loadProject={loadProject}
             setEditorData={setEditorData}
             editorData={editorData}
+            onSave={onSave}
             {...props}
         />
     )
