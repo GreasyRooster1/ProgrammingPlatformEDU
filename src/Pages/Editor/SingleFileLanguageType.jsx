@@ -15,7 +15,7 @@ function SingleFileLanguageType(props){
     }
 
     const onSave = ()=>{
-        // net.proj.
+        net.proj.saveFile()
     }
 
     return (

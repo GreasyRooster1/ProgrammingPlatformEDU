@@ -4,13 +4,10 @@ import {useState} from "react";
 //quickly build a request handler for the backend
 function authReq(uri, method, func){
     //args for the request
-    return async (authToken,reqArgs,setLoading,setError) => {
+    return async (authToken,reqArgs,setReqState) => {
         let argsUri = "/" + reqArgs.join("/");
-        if(setError===undefined){
-            setError = ()=>{}
-        }
-        if(setLoading===undefined){
-            setLoading = ()=>{}
+        if(setReqState===undefined){
+            setReqState = ()=>{}
         }
         try {
             const response = await fetch(API_URL + uri + argsUri,{
@@ -20,13 +17,20 @@ function authReq(uri, method, func){
                 }
             })
             if (!response.ok) {
-                setError(await response.text());
+                setReqState({
+                    isLoading:false,
+                    isError:true,
+                    error:response.message,
+                });
                 return response;
             }
-            setLoading(false);
             return await func(response,reqArgs);
         } catch (err) {
-            setError(err)
+            setReqState({
+                isLoading:false,
+                isError:true,
+                error:err,
+            });
             console.error(err)
         }
     };
@@ -45,13 +49,10 @@ function fileReq(uri){
 }
 
 function uploadReq(uri){
-    return async (authToken,reqArgs,body,setLoading,setError) => {
+    return async (authToken,reqArgs,body,setReqState) => {
         let argsUri = "/" + reqArgs.join("/");
-        if(setError===undefined){
-            setError = ()=>{}
-        }
-        if(setLoading===undefined){
-            setLoading = ()=>{}
+        if(setReqState===undefined){
+            setReqState = ()=>{}
         }
         try {
             const response = await fetch(API_URL + uri + argsUri,{
@@ -62,12 +63,18 @@ function uploadReq(uri){
                 body:body,
             })
             if (!response.ok) {
-                setError(await response.text());
-                return response;
+                setReqState({
+                    isLoading:false,
+                    isError:true,
+                    error:response.message,
+                });
             }
-            setLoading(false);
         } catch (err) {
-            setError(err)
+            setReqState({
+                isLoading:false,
+                isError:true,
+                error:err,
+            });
             console.error(err)
         }
     };
