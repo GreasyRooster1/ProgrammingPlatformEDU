@@ -19,7 +19,7 @@ const netProj = {
 
     // /save_file/<proj_id>/<path..>
     // body: file
-    saveFile:uploadReq("/project/get_file"),
+    saveFile:uploadReq("/project/save_file"),
 }
 
 const netAuth = {
