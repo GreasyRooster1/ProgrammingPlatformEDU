@@ -14,7 +14,6 @@ function App() {
         <Route path="/editor" element={<EditorPage />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/loadingTest" element={<LoadingTestPage />} />
-        <Route path="/p5jsexecutor" element={<P5ExecPage />} />
       </Routes>
   )
 }
