@@ -16,6 +16,10 @@ const netProj = {
 
     // /get_file/<proj_id>/<path..>
     getFile:fileReq("/project/get_file"),
+
+    // /save_file/<proj_id>/<path..>
+    // body: file
+    saveFile:fileReq("/project/get_file"),
 }
 
 const netAuth = {
