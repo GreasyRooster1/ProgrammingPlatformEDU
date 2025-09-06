@@ -1,4 +1,8 @@
-.icon{
-    color:var(--neutral-icon);
-    transition: color 1s;
+.icon path{
+    stroke:var(--neutral-icon);
+    transition: stroke 1s;
+}
+
+.highlight path{
+    stroke: var(--default-text-color);
 }

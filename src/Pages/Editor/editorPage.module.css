@@ -34,10 +34,6 @@
     margin-right: 0;
 }
 
-.saveIcon{
-    transition: 1s;
-}
-
 .body{
     flex:1;
     height: calc(100vh - var(--navbar-height));

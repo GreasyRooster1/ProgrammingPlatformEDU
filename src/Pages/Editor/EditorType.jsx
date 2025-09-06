@@ -15,6 +15,7 @@ import stop from "../../icons/Stop.svg"
 import SaveIcon from "../../icons/Save.svg?react"
 import share from "../../icons/Share.svg";
 import PrimaryButton from "../../components/buttons/PrimaryButton.jsx";
+import IconButton from "../../components/buttons/IconButton.jsx";
 
 /*
 * onMount
@@ -46,7 +47,7 @@ function EditorType(props){
                 </div>
                 <div className={styles.iconGroup}>
                     <PrimaryButton className={styles.runButton} icon={play}>Run</PrimaryButton>
-                    <SaveIcon className={styles.saveIcon} onClick={onSave} />
+                    <IconButton icon={(<SaveIcon />)} isHighlighted={props.saveHighlight} onClick={onSave} />
                     <img src={share}/>
                 </div>
             </>
