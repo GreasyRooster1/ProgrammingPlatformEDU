@@ -4,7 +4,7 @@ import styles from "./iconButton.module.css"
 
 function IconButton(props) {
     let [highlight, setHighlight] = useState(null);
-    let [hoverHighlight, sethoverHighlight] = useState(null);
+    let [hoverHighlight, setHoverHighlight] = useState(null);
     useEffect(() => {
         if(props.isHighlighted||hoverHighlight) {
             setHighlight(true);
@@ -15,11 +15,11 @@ function IconButton(props) {
     }, [props.isHighlighted,hoverHighlight]);
 
     const handleMouseEnter = () => {
-        sethoverHighlight(true);
+        setHoverHighlight(true);
     };
 
     const handleMouseLeave = () => {
-        sethoverHighlight(false );
+        setHoverHighlight(false );
     };
 
     return (
