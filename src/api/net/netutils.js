@@ -1,4 +1,4 @@
-import {API_URL} from "./net.js";
+import {API_URL} from "../constants.js";
 
 //quickly build a request handler for the backend
 function authReq(uri, method, func){

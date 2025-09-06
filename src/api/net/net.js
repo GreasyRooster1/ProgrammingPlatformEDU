@@ -1,7 +1,5 @@
 import {fileReq, jsonReq} from "./netutils.js";
 
-const API_URL = "http://localhost:8000";
-
 const netUser = {
 
 }
@@ -30,4 +28,4 @@ const net = {
     auth:netAuth,
 }
 
-export {net,API_URL};
+export {net};
