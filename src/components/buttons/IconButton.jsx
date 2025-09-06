@@ -4,16 +4,30 @@ import styles from "./iconButton.module.css"
 
 function IconButton(props) {
     let [highlight, setHighlight] = useState(null);
+    let [hoverHighlight, sethoverHighlight] = useState(null);
     useEffect(() => {
-        setHighlight(
-            props.isHighlighted?true:highlight
-        );
-    }, [props.isHighlighted]);
+        if(props.isHighlighted||hoverHighlight) {
+            setHighlight(true);
+        }
+        if(!props.isHighlighted&&!hoverHighlight) {
+            setHighlight(false);
+        }
+    }, [props.isHighlighted,hoverHighlight]);
+
+    const handleMouseEnter = () => {
+        sethoverHighlight(true);
+    };
+
+    const handleMouseLeave = () => {
+        sethoverHighlight(false );
+    };
 
     return (
         <>
             {cloneElement(props.icon,{
                 className: `${props.className} ${styles.icon} ${highlight?styles.highlight:""}`,
+                onMouseEnter: handleMouseEnter,
+                onMouseLeave: handleMouseLeave,
                 ...props
             })}
         </>
