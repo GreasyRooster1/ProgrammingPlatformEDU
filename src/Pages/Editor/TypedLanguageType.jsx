@@ -13,6 +13,7 @@ function TypedLanguageType(props){
 
     let onEditorMount = props.onEditorMount||EMPTY_FUNC;
     let onEditorChange = props.onEditorChange||EMPTY_FUNC;
+    let onSave = props.onEditorChange||EMPTY_FUNC;
     let setEditorData = props.setEditorData||EMPTY_FUNC;
 
     let [editorChanged, setEditorChanged] = useState(false);
@@ -26,7 +27,12 @@ function TypedLanguageType(props){
         onEditorChange();
         setEditorData(value);
         setEditorChanged(true);
-        console.log(editorChanged)
+    }
+
+    const onSaveOverride = ()=>{
+        setEditorChanged(false);
+        console.log(editorChanged);
+        onSave()
     }
 
     let codeEditor = (<CodePanel value={props.editorData??""} callbacks={{
@@ -34,11 +40,17 @@ function TypedLanguageType(props){
         onChange:onMonacoChange,
     }}/>);
 
+    const overrideProps = {
+        onSave:onSaveOverride,
+        ...props
+    }
+    overrideProps.onSave=onSaveOverride;
+
     return (
         <EditorType
             codeEditor={codeEditor}
             saveHighlight={editorChanged}
-            {...props}
+            {...overrideProps}
         />
     )
 }
