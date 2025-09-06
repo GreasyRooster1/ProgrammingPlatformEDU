@@ -1,6 +1,6 @@
 import EditorType from "./EditorType.jsx";
 import TypedLanguageType from "./TypedLanguageType.jsx";
-import {net} from "../../api/net.js";
+import {net} from "../../api/net/net.js";
 import {useState} from "react";
 
 function SingleFileLanguageType(props){
