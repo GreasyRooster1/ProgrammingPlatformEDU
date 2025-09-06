@@ -23,6 +23,12 @@ function authReq(uri, method, func){
                     error:response.message,
                 });
                 return response;
+            }else{
+                setReqState({
+                    isLoading:false,
+                    isError:false,
+                    error:null,
+                });
             }
             return await func(response,reqArgs);
         } catch (err) {
@@ -67,6 +73,12 @@ function uploadReq(uri){
                     isLoading:false,
                     isError:true,
                     error:response.message,
+                });
+            }else{
+                setReqState({
+                    isLoading:false,
+                    isError:false,
+                    error:null,
                 });
             }
             return response;
