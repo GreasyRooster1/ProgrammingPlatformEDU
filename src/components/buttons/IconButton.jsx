@@ -6,12 +6,7 @@ function IconButton(props) {
     let [highlight, setHighlight] = useState(null);
     let [hoverHighlight, setHoverHighlight] = useState(null);
     useEffect(() => {
-        if(props.isHighlighted||hoverHighlight) {
-            setHighlight(true);
-        }
-        if(!props.isHighlighted&&!hoverHighlight) {
-            setHighlight(false);
-        }
+        setHighlight(props.isHighlighted||hoverHighlight);
     }, [props.isHighlighted,hoverHighlight]);
 
     const handleMouseEnter = () => {
