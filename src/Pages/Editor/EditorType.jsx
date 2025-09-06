@@ -46,7 +46,7 @@ function EditorType(props){
                 </div>
                 <div className={styles.iconGroup}>
                     <PrimaryButton className={styles.runButton} icon={play}>Run</PrimaryButton>
-                    <SaveIcon className={styles.saveIcon} onClick={onSave}/>
+                    <SaveIcon className={styles.saveIcon} onClick={onSave} />
                     <img src={share}/>
                 </div>
             </>

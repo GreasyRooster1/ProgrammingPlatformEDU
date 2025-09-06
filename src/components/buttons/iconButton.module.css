@@ -1,0 +1,4 @@
+.icon{
+    color:var(--neutral-icon);
+    transition: color 1s;
+}
