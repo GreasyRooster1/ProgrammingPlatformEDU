@@ -3,19 +3,20 @@ import Project from "./Project.jsx";
 import {net} from "../../../api/net/net.js";
 import LoadingScreen from "../../../LoadingScreen.jsx";
 import Loading from "../../../Loading.jsx";
+import {useReqState} from "../../../api/net/netutils.js";
 
 function ProjectsList(props) {
 
-    const [loading,setLoading] = useState(true);
+    const [requestState,setRequestState] = useReqState(true);
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        net.proj.getUserProjDataList(props.userData.token, [1] ,setLoading).then(response => {
+        net.proj.getUserProjDataList(props.userData.token, [1] ,setRequestState).then(response => {
             setProjects(response)
         })
     }, []);
 
-    if(loading){
+    if(requestState.isLoading){
         return <Loading />;
     }
 

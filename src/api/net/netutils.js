@@ -69,6 +69,7 @@ function uploadReq(uri){
                     error:response.message,
                 });
             }
+            return response;
         } catch (err) {
             setReqState({
                 isLoading:false,
@@ -88,4 +89,4 @@ function useReqState(){
     })
 }
 
-export {authReq,jsonReq,fileReq}
+export {authReq,jsonReq,fileReq,useReqState};
