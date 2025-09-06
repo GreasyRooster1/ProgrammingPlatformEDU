@@ -101,4 +101,4 @@ function useReqState(){
     })
 }
 
-export {authReq,jsonReq,fileReq,useReqState};
+export {authReq,jsonReq,fileReq,useReqState,uploadReq};
