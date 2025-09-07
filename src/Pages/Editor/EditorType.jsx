@@ -38,11 +38,15 @@ function EditorType(props){
         onMount();
     }, []);
 
+    const homeRedirect=()=>{
+        location.href="/home";
+    }
+
     return (
         <HeaderFlex className={styles.wrapper} headClassName={styles.head} bodyClassName={styles.body} headContent={
             <>
                 <div className={styles.iconGroup}>
-                    <IconButton icon={(<HomeIcon />)}/>
+                    <IconButton icon={(<HomeIcon />)} onClick={homeRedirect}/>
                 </div>
                 <div className={styles.iconGroup}>
                     <PrimaryButton className={styles.runButton} icon={play}>Run</PrimaryButton>
