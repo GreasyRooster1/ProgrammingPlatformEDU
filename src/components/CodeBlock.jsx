@@ -4,10 +4,34 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 function CodeBlock(props) {
+    let diffFunc = lineNumber => {
+        let style = { display: 'block' };
+        if (props.added.includes(lineNumber)) {
+            style.backgroundColor = '#dbffdb';
+        } else if (props.removed.includes(lineNumber)) {
+            style.backgroundColor = '#ffecec';
+        }
+        return { style };
+    }
+
     return (
-        <SyntaxHighlighter language="javascript" style={vs2015} className={styles.editor}>
-            {props.children}
-        </SyntaxHighlighter>
+        <>
+            <style>
+                {`.react-syntax-highlighter-line-number{
+                    display: none !important;
+                }`}
+            </style>
+            <SyntaxHighlighter
+                language="javascript"
+                style={vs2015}
+                className={styles.editor}
+                wrapLines={true}
+                showLineNumbers={true}
+                lineProps={diffFunc}
+            >
+                {props.children}
+            </SyntaxHighlighter>
+        </>
     );
 }
 

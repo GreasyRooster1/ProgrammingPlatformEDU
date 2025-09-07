@@ -13,7 +13,12 @@ function LessonPanel() {
             <div className={styles.textDescription}>
                 test desc
             </div>
-            <CodeBlock />
+            <CodeBlock added={[1]} removed={[2]} >
+{`let x
+x=10
+y=10
+f(x);`}
+            </CodeBlock>
         </div>
     );
 }
