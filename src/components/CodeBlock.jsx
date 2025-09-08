@@ -5,11 +5,13 @@ import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 function CodeBlock(props) {
     let diffFunc = lineNumber => {
-        let style = { display: 'block' };
-        if (props.added.includes(lineNumber)) {
-            style.backgroundColor = '#dbffdb';
-        } else if (props.removed.includes(lineNumber)) {
-            style.backgroundColor = '#ffecec';
+        let style = {
+            display: 'block',
+        };
+        if (props.removed.includes(lineNumber)) {
+            style.backgroundColor = 'rgba(232,25,25,0.35)';
+        }else if (!props.added.includes(lineNumber)) {
+            style.opacity = '0.4';
         }
         return { style };
     }
