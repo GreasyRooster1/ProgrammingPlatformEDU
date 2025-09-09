@@ -13,7 +13,7 @@ function TypedLanguageType(props){
 
     let onEditorMount = props.onEditorMount||EMPTY_FUNC;
     let onEditorChange = props.onEditorChange||EMPTY_FUNC;
-    let onSave = props.onEditorChange||EMPTY_FUNC;
+    let onSave = props.onSave||EMPTY_FUNC;
     let setEditorData = props.setEditorData||EMPTY_FUNC;
 
     let [editorChanged, setEditorChanged] = useState(false);

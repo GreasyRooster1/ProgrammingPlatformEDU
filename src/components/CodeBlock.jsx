@@ -11,7 +11,7 @@ function CodeBlock(props) {
         if (props.removed.includes(lineNumber)) {
             style.backgroundColor = 'rgba(232,25,25,0.35)';
             style["text-decoration"]= "line-through 3px";
-            style["text-decoration-color"]= "rgba(103,0,0,0.69)";
+            style["text-decoration-color"]= "rgba(255,255,255,0.69)";
         }else if (!props.added.includes(lineNumber)) {
             style.opacity = '0.4';
         }
