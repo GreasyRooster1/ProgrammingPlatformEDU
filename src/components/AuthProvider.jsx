@@ -1,5 +1,4 @@
-import React, {useEffect} from 'react';
-import {useAuth0} from "@auth0/auth0-react";
+import React from 'react';
 import {useAuth} from "react-oidc-context";
 import LoadingScreen from "../LoadingScreen.jsx";
 

@@ -2,36 +2,26 @@ import React, {useEffect, useState} from 'react';
 import AuthProvider  from "./AuthProvider.jsx";
 import {useAuth0} from "@auth0/auth0-react";
 import LoadingScreen from "../LoadingScreen.jsx";
+import {useAuth} from "react-oidc-context";
+import {Navigate} from "react-router-dom";
 
 function AuthLock(props) {
-    const {user, isAuthenticated,isLoading,getAccessTokenSilently,loginWithRedirect } = useAuth0();
-    let setUserData = props.setUserData;
-    const [finishedWriting, setFinishedWriting] = useState(false);
-    useEffect(() => {
-        if(!isLoading && isAuthenticated) {
-            getAccessTokenSilently().then((e)=>{
-                setUserData({
-                    token:e,
-                    isAuthenticated:true,
-                })
-                setFinishedWriting(true);
-            })
-        }
-    },[isLoading,isAuthenticated])
+    const auth = useAuth();
 
-    if(isLoading) {
-        return (<LoadingScreen/>);
-    }else if(!finishedWriting) {
-        return (<LoadingScreen/>);
-    }else if(!isAuthenticated) {
-        loginWithRedirect({redirectUrl: window.location.href});
-        return (<LoadingScreen/>);
+    if (auth.isLoading) {
+        return <LoadingScreen />;
     }
-    return (
-        <>
-            {props.children}
-        </>
-    );
+
+    if (auth.error) {
+        //todo error screen
+        return <div>Encountering error... {auth.error.message}</div>;
+    }
+
+    if(auth.isAuthenticated) {
+        return props.children;
+    }else{
+        return <Navigate to="/" replace />
+    }
 }
 
 export default AuthLock;
