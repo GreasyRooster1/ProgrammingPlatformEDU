@@ -4,14 +4,16 @@ import {net} from "../../../api/net/net.js";
 import LoadingScreen from "../../../LoadingScreen.jsx";
 import Loading from "../../../Loading.jsx";
 import {useReqState} from "../../../api/net/netutils.js";
+import {useAuth} from "react-oidc-context";
 
 function ProjectsList(props) {
+    const auth = useAuth();
 
     const [requestState,setRequestState] = useReqState(true);
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        net.proj.getUserProjDataList(props.userData.token, [1] ,setRequestState).then(response => {
+        net.proj.getUserProjDataList(auth.user?.id_token, [1] ,setRequestState).then(response => {
             setProjects(response)
         })
     }, []);
@@ -22,7 +24,7 @@ function ProjectsList(props) {
 
     return (
         <div className={props.className}>
-            {projects.map(projData => <Project key={projData.id} data={projData} userData={props.userData} clickHandle={props.clickHandle}/>)}
+            {projects.map(projData => <Project key={projData.id} data={projData} clickHandle={props.clickHandle}/>)}
         </div>
     );
 }

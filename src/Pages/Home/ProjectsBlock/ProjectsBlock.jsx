@@ -16,7 +16,7 @@ function ProjectsBlock(props) {
         <>
             <div className={styles.list}>
                 <MedTitle>Projects</MedTitle>
-                <ProjectsList className={styles.projList} clickHandle={clickHandle} userData={props.userData}/>
+                <ProjectsList className={styles.projList} clickHandle={clickHandle}/>
                 <div className={styles.viewAllContainer}><SubText>View All...</SubText></div>
             </div>
             <div className={styles.details}>

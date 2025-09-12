@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
-import {useAuth0} from "@auth0/auth0-react";
-import AuthProvider, {defaultAuthData, signOutRedirect} from "../../components/AuthProvider.jsx";
+import React from 'react';
+import AuthProvider, {signOutRedirect} from "../../components/AuthProvider.jsx";
 import {useAuth} from "react-oidc-context";
 
 function LandingPage() {
