@@ -3,22 +3,23 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import {BrowserRouter} from "react-router-dom";
-import {Auth0Provider} from "@auth0/auth0-react";
+import { AuthProvider } from "react-oidc-context";
+
+const cognitoAuthConfig = {
+    authority: "https://cognito-idp.us-east-2.amazonaws.com/us-east-2_nQhVA9vHC",
+    client_id: "3jssdi6ka6iq8s2aeil20f9jg5",
+    redirect_uri: "https://d84l1y8p4kdic.cloudfront.net",
+    response_type: "code",
+    scope: "phone openid email",
+};
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-      <Auth0Provider
-          domain="dev-pqbjxkbpmw3pn3x7.us.auth0.com"
-          clientId="ZDY58e8OF70FyubRaf6r7VtoGaVNanNV"
-          authorizationParams={{
-              redirect_uri: window.location.origin,
-              audience:"https://generalapi.com"
-          }}
-      >
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-      </Auth0Provider>
+      <AuthProvider {...cognitoAuthConfig}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+      </AuthProvider>
   </StrictMode>,
 )
