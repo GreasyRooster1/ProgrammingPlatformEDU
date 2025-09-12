@@ -1,33 +1,21 @@
-import React, {useState} from 'react';
+import React from 'react';
 import ScreenPage from "../../components/screenPage/ScreenPage.jsx";
 import AuthLock from "../../components/AuthLock.jsx";
-import {defaultAuthData} from "../../components/AuthProvider.jsx";
-import {useLocation} from "react-router-dom";
-import {useAuth0} from "@auth0/auth0-react";
-import LoadingScreen from "../../LoadingScreen.jsx";
+import {Navigate, useLocation} from "react-router-dom";
 import P5jsType from "./editorTypes/p5jsType.jsx";
 
 function EditorPage() {
-    const [userData, setUserData] = useState(defaultAuthData());
-    let {user, isLoading, isAuthenticated,loginWithRedirect} = useAuth0();
     const {state} = useLocation();
 
     if(state===null){
-        location.href="/home";
-    }
-
-    if(isLoading) {
-        return (<LoadingScreen/>);
-    }else if(!isAuthenticated) {
-        loginWithRedirect({redirectUrl: window.location.href});
-        return (<LoadingScreen/>);
+        return (<Navigate to={"/home"} replace />);
     }
 
     return (
-        <AuthLock setUserData={setUserData}>
+        <AuthLock>
         <ScreenPage>
 
-            <P5jsType projectMetadata={state.projectMetadata} token={userData.token}/>
+            <P5jsType projectMetadata={state.projectMetadata}/>
         </ScreenPage>
         </AuthLock>
     );
