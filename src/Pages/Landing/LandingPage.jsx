@@ -1,20 +1,20 @@
 import React, {useState} from 'react';
 import {useAuth0} from "@auth0/auth0-react";
-import AuthProvider, {defaultAuthData} from "../../components/AuthProvider.jsx";
+import AuthProvider, {defaultAuthData, signOutRedirect} from "../../components/AuthProvider.jsx";
+import {useAuth} from "react-oidc-context";
 
 function LandingPage() {
-    const {loginWithRedirect, logout} = useAuth0();
-    const [userData, setUserData] = useState(defaultAuthData());
+    const auth = useAuth();
 
     return (
-        <AuthProvider setUserData={setUserData}>
+        <AuthProvider>
             <div>
                 landing
-                <button onClick={() => loginWithRedirect()}>Login</button>
-                <button onClick={() => logout({logoutParams: {returnTo: window.location.origin}})}>
+                <button onClick={() => auth.signinRedirect()}>Login</button>
+                <button onClick={() => signOutRedirect()}>
                     Log Out
                 </button>
-                token: {userData.token}
+                token: {auth.user?.id_token}
             </div>
         </AuthProvider>
     )
