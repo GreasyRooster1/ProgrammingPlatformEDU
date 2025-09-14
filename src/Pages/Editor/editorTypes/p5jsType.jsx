@@ -1,11 +1,11 @@
 import SingleFileLanguageType from "../SingleFileLanguageType.jsx";
-import P5jsExecutor from "../Executors/P5jsExecutor.jsx";
+import P5jsExecutor from "../Executors/DomainExecutor.jsx";
 
 function P5jsType(props){
     return (
         <SingleFileLanguageType
             executor={(
-                <P5jsExecutor />
+                <P5jsExecutor projectMetadata={props.projectMetadata}/>
             )}
             {...props}
         />
