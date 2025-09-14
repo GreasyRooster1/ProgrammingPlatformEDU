@@ -23,7 +23,8 @@ const netProj = {
 }
 
 const netAuth = {
-
+    // /get_username
+    getUsername:jsonReq("/auth/get_username"),
 }
 
 const net = {
