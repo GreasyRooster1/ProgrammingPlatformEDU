@@ -1,9 +1,23 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Executor from "../Executor.jsx";
 import {EXEC_URL, IS_EXEC_DEV} from "../../../api/constants.js";
+import {useAuth} from "react-oidc-context";
+import {net} from "../../../api/net/net.js";
+import {useReqState} from "../../../api/net/netutils.js";
+import Loading from "../../../Loading.jsx";
 
 
 function DomainExecutor(props) {
+    let auth = useAuth();
+    const [requestState,setRequestState] = useReqState();
+    const [username,setUsername] = useState("");
+
+    useEffect(() => {
+        net.auth.getUsername(auth.user?.access_token,setRequestState).then((d)=>{
+            setUsername(d);
+        })
+    }, []);
+
     const onExecute = () => {
 
     }
@@ -11,10 +25,14 @@ function DomainExecutor(props) {
     const onCleanup = () => {
 
     }
-    let username = ""
+
     const execUrl = IS_EXEC_DEV?
         `${EXEC_URL}/dev/${username}/${props.projectMetadata.named_ref}`:
         `${username}.${EXEC_URL}/${props.projectMetadata.named_ref}`;
+
+    if(requestState.isLoading){
+        return <Loading />;
+    }
 
     return (
         <Executor
