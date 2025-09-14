@@ -54,6 +54,15 @@ function fileReq(uri){
     })
 }
 
+function noArgReq(uri){
+    let reqFunc = authReq(uri,"GET", async (response)=>{
+        return response.blob();
+    })
+    return function(authToken,setReqState){
+        reqFunc(authToken,[],setReqState);
+    }
+}
+
 function uploadReq(uri){
     return async (authToken,reqArgs,body,setReqState) => {
         let argsUri = "/" + reqArgs.join("/");
@@ -101,4 +110,4 @@ function useReqState(){
     })
 }
 
-export {authReq,jsonReq,fileReq,useReqState,uploadReq};
+export {authReq,jsonReq,fileReq,useReqState,uploadReq,noArgReq};
