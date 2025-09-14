@@ -25,6 +25,12 @@ const netProj = {
 const netAuth = {
     // /get_username
     getUsername:noArgReq("/auth/get_username"),
+
+    // /get_uid
+    getUid:noArgReq("/auth/get_uid"),
+
+    // /verify_uid
+    verifyUid:noArgReq("/auth/verify_uid"),
 }
 
 const net = {
