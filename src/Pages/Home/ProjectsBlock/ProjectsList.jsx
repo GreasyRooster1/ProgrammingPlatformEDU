@@ -13,7 +13,7 @@ function ProjectsList(props) {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        net.proj.getUserProjDataList(auth.user?.id_token, [1] ,setRequestState).then(response => {
+        net.proj.getUserProjDataList(auth.user?.access_token, [1] ,setRequestState).then(response => {
             setProjects(response)
         })
     }, []);

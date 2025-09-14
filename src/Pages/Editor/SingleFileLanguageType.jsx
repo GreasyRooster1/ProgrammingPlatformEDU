@@ -11,13 +11,13 @@ function SingleFileLanguageType(props){
 
     const loadProject = async ()=>{
         console.log("Loading project...");
-        let blob = await net.proj.getFile(auth.user?.id_token,[props.projectMetadata.id,"main"])
+        let blob = await net.proj.getFile(auth.user?.access_token,[props.projectMetadata.id,"main"])
         let text = await blob.text();
         setEditorData(text)
     }
 
     const onSave = ()=>{
-        net.proj.saveFile(auth.user?.id_token,[props.projectMetadata.id,"main"],editorData,undefined)
+        net.proj.saveFile(auth.user?.access_token,[props.projectMetadata.id,"main"],editorData,undefined)
     }
 
     return (

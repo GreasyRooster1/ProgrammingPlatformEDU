@@ -15,7 +15,7 @@ function LandingPage() {
                 <button onClick={() => signOutRedirect()}>
                     Log Out
                 </button>
-                token: {auth.user?.id_token}
+                token: {auth.user?.access_token}
                 <button onClick={() => navigate("/home")}>
                     Home
                 </button>
