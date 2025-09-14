@@ -1,9 +1,11 @@
 import React from 'react';
 import AuthProvider, {signOutRedirect} from "../../components/AuthProvider.jsx";
 import {useAuth} from "react-oidc-context";
+import {useNavigate} from "react-router-dom";
 
 function LandingPage() {
     const auth = useAuth();
+    const navigate = useNavigate();
 
     return (
         <AuthProvider>
@@ -14,6 +16,9 @@ function LandingPage() {
                     Log Out
                 </button>
                 token: {auth.user?.id_token}
+                <button onClick={() => navigate("/home")}>
+                    Home
+                </button>
             </div>
         </AuthProvider>
     )
