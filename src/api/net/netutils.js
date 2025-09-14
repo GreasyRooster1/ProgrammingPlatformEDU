@@ -59,7 +59,7 @@ function noArgReq(uri){
         return response.text();
     })
     return function(authToken,setReqState){
-        reqFunc(authToken,[],setReqState);
+        return reqFunc(authToken,[],setReqState);
     }
 }
 
