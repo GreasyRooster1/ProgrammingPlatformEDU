@@ -1,4 +1,4 @@
-import {fileReq, jsonReq, uploadReq} from "./netutils.js";
+import {fileReq, jsonReq, noArgReq, uploadReq} from "./netutils.js";
 
 const netUser = {
 
@@ -24,7 +24,7 @@ const netProj = {
 
 const netAuth = {
     // /get_username
-    getUsername:jsonReq("/auth/get_username"),
+    getUsername:noArgReq("/auth/get_username"),
 }
 
 const net = {
