@@ -56,7 +56,9 @@ function fileReq(uri){
 
 function noArgReq(uri){
     let reqFunc = authReq(uri,"GET", async (response)=>{
-        return response.text();
+        let t = response.text()
+        console.log(t);
+        return t;
     })
     return function(authToken,setReqState){
         return reqFunc(authToken,[],setReqState);
