@@ -1,5 +1,5 @@
 .svg{
-    height: 100%;
+    height: calc(100% - 16px);
 }
 
 .parent{
@@ -7,4 +7,5 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    padding:8px;
 }
