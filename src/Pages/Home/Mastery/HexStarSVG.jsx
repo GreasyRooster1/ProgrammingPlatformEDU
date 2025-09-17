@@ -1,6 +1,6 @@
 import React from 'react';
 
-function HexSvg(props) {
+function HexStarSvg(props) {
 
     let points = []
     let ratio = Math.PI*2/6.0
@@ -23,4 +23,4 @@ function HexSvg(props) {
     );
 }
 
-export default HexSvg;
+export default HexStarSvg;
