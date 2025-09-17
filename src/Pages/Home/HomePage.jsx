@@ -6,6 +6,7 @@ import HomeGrid from "./HomeGrid.jsx";
 import HomeGridItem from "./HomeGridItem.jsx";
 import ProjectsBlock from "./ProjectsBlock/ProjectsBlock.jsx";
 import {useAuth} from "react-oidc-context";
+import MasteryBlock from "./Mastery/MasteryBlock.jsx";
 
 function HomePage() {
     let auth = useAuth();
@@ -24,7 +25,7 @@ function HomePage() {
                         projects
                     </HomeGridItem>
                     <HomeGridItem>
-                        projects
+                        <MasteryBlock/>
                     </HomeGridItem>
                     <HomeGridItem isLong={true}>
                         <ProjectsBlock/>
