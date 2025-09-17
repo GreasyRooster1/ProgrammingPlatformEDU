@@ -14,9 +14,14 @@ function DomainExecutor(props) {
 
     useEffect(() => {
         net.auth.getUsername(auth.user?.access_token,setRequestState).then((d)=>{
+            console.log(d)
             setUsername(d);
         })
     }, []);
+
+    useEffect(() => {
+        console.log(requestState.error)
+    },[requestState]);
 
     const onExecute = () => {
 

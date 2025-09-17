@@ -5,7 +5,12 @@ import {useState} from "react";
 function authReq(uri, method, func){
     //args for the request
     return async (authToken,reqArgs,setReqState) => {
-        let argsUri = "/" + reqArgs.join("/");
+        let argsUri;
+        if(reqArgs===null){
+            argsUri = "";
+        }else {
+            argsUri = "/" + reqArgs.join("/");
+        }
         if(setReqState===undefined){
             setReqState = ()=>{}
         }
@@ -61,7 +66,7 @@ function noArgReq(uri){
         return t;
     })
     return function(authToken,setReqState){
-        return reqFunc(authToken,[],setReqState);
+        return reqFunc(authToken,null,setReqState);
     }
 }
 
