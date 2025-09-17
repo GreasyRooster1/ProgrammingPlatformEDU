@@ -19,10 +19,10 @@ function HomePage() {
             <div className={styles.gridWrapper}>
                 <HomeGrid>
                     <HomeGridItem>
-                        projects
+                        <MasteryBlock/>
                     </HomeGridItem>
                     <HomeGridItem>
-                        projects
+                        <MasteryBlock/>
                     </HomeGridItem>
                     <HomeGridItem>
                         <MasteryBlock/>
