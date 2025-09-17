@@ -1,44 +1,45 @@
 
 :root {
-  line-height: 1.5;
-  font-weight: 400;
+    line-height: 1.5;
+    font-weight: 400;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
-  --mono-font: "JetBrains Mono";
-  --ui-font: "JetBrains Mono";
-  font-family: sans-serif, system-ui, monospace, Helvetica, Arial, sans-serif;
-  font-family: var(--ui-font);
+    --mono-font: "JetBrains Mono";
+    --ui-font: "JetBrains Mono";
+    font-family: sans-serif, system-ui, monospace, Helvetica, Arial, sans-serif;
+    font-family: var(--ui-font);
 
-  --neutral-dark:#0F0F10;
-  --neutral-med:#151516;
-  --neutral-light:#46494C;
+    --neutral-dark:#0F0F10;
+    --neutral-med:#151516;
+    --neutral-light:#46494C;
 
-  --neutral-icon:#7D7C7C;
+    --neutral-icon:#7D7C7C;
 
-  --primary:#8A13E5;
-  --primary-dark:#3C0466;
+    --transparent-primary:#8A13E5;
+    --primary:#8A13E5;
+    --primary-dark:#3C0466;
 
-  --step-info:#1974E8;
-  --step-code:#19E823;
-  --step-challenge:#E83C19;
-  --step-check:#D019E8;
-  --step-next:#F1C31C;
+    --step-info:#1974E8;
+    --step-code:#19E823;
+    --step-challenge:#E83C19;
+    --step-check:#D019E8;
+    --step-next:#F1C31C;
 
-  --default-text-color:#fff;
-  --sub-text: #6d7071;
+    --default-text-color:#fff;
+    --sub-text: #6d7071;
 
-  color: var(--default-text-color)
+    color: var(--default-text-color)
 }
 
 html{
-  font-size: 14pt;
+    font-size: 14pt;
 }
 
 body{
-  margin: 0;
-  background-color: var(--neutral-med);
+    margin: 0;
+    background-color: var(--neutral-med);
 }
