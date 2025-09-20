@@ -6,21 +6,30 @@ import ProjectsList from "./ProjectsList.jsx";
 import DetailView from "./DetailView.jsx";
 import SecondaryButton from "../../../components/buttons/SecondaryButton.jsx";
 import LinkButton from "../../../components/buttons/LinkButton.jsx";
+import {useAuth} from "react-oidc-context";
+import {net} from "../../../api/net/net.js";
 
 function ProjectsBlock(props) {
+    const auth = useAuth();
     const [selectedProject, setSelectedProject] = useState(null);
 
-    let clickHandle = (data) => {
+    let projClickHandle = (data) => {
         setSelectedProject(data)
+    }
+
+    let newProject = () => {
+        net.proj.new(auth.user?.access_token,[]).then(()=>{
+
+        })
     }
 
     return (
         <>
             <div className={styles.list}>
                 <MedTitle>Projects</MedTitle>
-                <ProjectsList className={styles.projList} clickHandle={clickHandle}/>
+                <ProjectsList className={styles.projList} clickHandle={projClickHandle}/>
                 <div className={styles.newButtonContainer}>
-                    <LinkButton>New Project</LinkButton>
+                    <LinkButton onClick={newProject}>New Project</LinkButton>
                 </div>
                 <div className={styles.viewAllContainer}><SubText>View All...</SubText></div>
             </div>
