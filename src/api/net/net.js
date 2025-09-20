@@ -1,4 +1,4 @@
-import {fileReq, jsonReq, noArgReq, uploadReq} from "./netutils.js";
+import {fileReq, jsonReq, noArgReq, postReq, uploadReq} from "./netutils.js";
 
 const netUser = {
 
@@ -20,6 +20,9 @@ const netProj = {
     // /save_file/<proj_id>/<path..>
     // body: file
     saveFile:uploadReq("/project/save_file"),
+
+    //new/<name>/<proj_type>
+    new:postReq("/project/new")
 }
 
 const netAuth = {

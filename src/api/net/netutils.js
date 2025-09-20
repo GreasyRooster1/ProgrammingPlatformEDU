@@ -53,6 +53,12 @@ function jsonReq(uri){
     })
 }
 
+function postReq(uri){
+    return authReq(uri,"POST", async (response)=>{
+        return await response;
+    })
+}
+
 function fileReq(uri){
     return authReq(uri,"GET", async (response)=>{
         return response.blob();
@@ -117,4 +123,4 @@ function useReqState(){
     })
 }
 
-export {authReq,jsonReq,fileReq,useReqState,uploadReq,noArgReq};
+export {authReq,jsonReq,fileReq,useReqState,uploadReq,noArgReq,postReq};
