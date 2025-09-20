@@ -4,6 +4,8 @@ import MedTitle from "../../../components/text/MedTitle.jsx";
 import SubText from "../../../components/text/SubText.jsx";
 import ProjectsList from "./ProjectsList.jsx";
 import DetailView from "./DetailView.jsx";
+import SecondaryButton from "../../../components/buttons/SecondaryButton.jsx";
+import LinkButton from "../../../components/buttons/LinkButton.jsx";
 
 function ProjectsBlock(props) {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -17,6 +19,9 @@ function ProjectsBlock(props) {
             <div className={styles.list}>
                 <MedTitle>Projects</MedTitle>
                 <ProjectsList className={styles.projList} clickHandle={clickHandle}/>
+                <div className={styles.newButtonContainer}>
+                    <LinkButton>New Project</LinkButton>
+                </div>
                 <div className={styles.viewAllContainer}><SubText>View All...</SubText></div>
             </div>
             <div className={styles.details}>
