@@ -15,7 +15,7 @@ function Modal(props) {
     return (
         <div className={styles.overlay} onClick={handleClick}>
             <div className={styles.modal}>
-
+                {props.children}
             </div>
         </div>
     );

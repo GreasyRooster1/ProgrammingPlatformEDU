@@ -7,7 +7,7 @@ function ModalOpener(props) {
     let [active, setActive] = useState(false);
     return (
         <>
-            {active && <Modal hideCallback={()=>setActive(false)}/>}
+        {active && <Modal hideCallback={()=>setActive(false)}>{props.modalContent} </Modal>}
             <div onClick={()=>setActive(!active)}>
                 {props.children}
             </div>

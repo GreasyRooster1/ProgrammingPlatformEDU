@@ -9,6 +9,7 @@ import LinkButton from "../../../components/buttons/LinkButton.jsx";
 import {useAuth} from "react-oidc-context";
 import {net} from "../../../api/net/net.js";
 import ModalOpener from "../../../components/ModalOpener.jsx";
+import NewProjectModal from "./NewProjectModal.jsx";
 
 function ProjectsBlock(props) {
     const auth = useAuth();
@@ -18,19 +19,14 @@ function ProjectsBlock(props) {
         setSelectedProject(data)
     }
 
-    let newProject = () => {
-        net.proj.new(auth.user?.access_token,[]).then(()=>{
-
-        })
-    }
 
     return (
         <>
             <div className={styles.list}>
                 <MedTitle>Projects</MedTitle>
                 <ProjectsList className={styles.projList} clickHandle={projClickHandle}/>
-                <ModalOpener>
-                    <LinkButton onClick={newProject}>New Project</LinkButton>
+                <ModalOpener modalContent={(<NewProjectModal />)}>
+                    <LinkButton>New Project</LinkButton>
                 </ModalOpener>
                 <div className={styles.viewAllContainer}><SubText>View All...</SubText></div>
             </div>

@@ -1,6 +1,6 @@
 .item{
     display: flex;
-    padding:12px;
+    padding: 8px 16px;
     height: 33vh;
     flex-grow: 1;
     flex-shrink: 1;
