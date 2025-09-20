@@ -45,7 +45,7 @@ function DomainExecutor(props) {
             onCleanup={onCleanup}
             {...props}
         >
-            <iframe src={execUrl}>
+            <iframe src={execUrl} sandbox={"allow-scripts"}>
 
             </iframe>
         </Executor>
