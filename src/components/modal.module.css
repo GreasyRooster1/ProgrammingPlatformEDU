@@ -1,0 +1,17 @@
+.modal{
+    background:var(--neutral-med);
+    border: 1px solid var(--neutral-light);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 50vh;
+    min-width: 50vw;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
