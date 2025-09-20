@@ -18,6 +18,7 @@ function TextBox(props) {
             type={'text'}
             value={value}
             onChange={handleChange}
+            placeholder={props.placeholder}
         >
 
         </input>

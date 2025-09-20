@@ -8,7 +8,7 @@ function NewProjectModal(props) {
     return (
         <>
             <MedTitle>New Project</MedTitle>
-            <TextBox setValue={setName}></TextBox>
+            <TextBox placeholder={"Enter a name..."} setValue={setName}></TextBox>
             <PrimaryButton>Create</PrimaryButton>
         </>
     );
