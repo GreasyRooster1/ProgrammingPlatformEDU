@@ -8,6 +8,7 @@ import SecondaryButton from "../../../components/buttons/SecondaryButton.jsx";
 import LinkButton from "../../../components/buttons/LinkButton.jsx";
 import {useAuth} from "react-oidc-context";
 import {net} from "../../../api/net/net.js";
+import ModalOpener from "../../../components/ModalOpener.jsx";
 
 function ProjectsBlock(props) {
     const auth = useAuth();
@@ -28,9 +29,9 @@ function ProjectsBlock(props) {
             <div className={styles.list}>
                 <MedTitle>Projects</MedTitle>
                 <ProjectsList className={styles.projList} clickHandle={projClickHandle}/>
-                <div className={styles.newButtonContainer}>
+                <ModalOpener>
                     <LinkButton onClick={newProject}>New Project</LinkButton>
-                </div>
+                </ModalOpener>
                 <div className={styles.viewAllContainer}><SubText>View All...</SubText></div>
             </div>
             <div className={styles.details}>
