@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Executor from "../Executor.jsx";
 import {EXEC_URL, IS_EXEC_DEV} from "../../../api/constants.js";
 import {useAuth} from "react-oidc-context";
@@ -8,18 +8,31 @@ import Loading from "../../../Loading.jsx";
 
 
 function P5Executor(props) {
+    const iframeRef = useRef(null);
     let iframe = (
-        <iframe src={"http://localhost:8001/static/p5js-dev.html"} sandbox={"allow-scripts"}>
-
-        </iframe>
+        <iframe
+            ref={iframeRef}
+            src={"http://localhost:8001/static/p5js-dev.html"}
+            sandbox={"allow-scripts"}
+        />
     )
 
+    useEffect(() => {
+
+    }, []);
+
     const onExecute = () => {
-        iframe.contentWindow.postMessage(props.editorData)
+        if (iframeRef.current) {
+            const contentWindow = iframeRef.current.contentWindow;
+            contentWindow.postMessage(props.editorData)
+        }
     }
 
     const onCleanup = () => {
-        iframe.contentWindow.location.reload()
+        if (iframeRef.current) {
+            const contentWindow = iframeRef.current.contentWindow;
+            contentWindow.location.reload();
+        }
     }
 
     return (

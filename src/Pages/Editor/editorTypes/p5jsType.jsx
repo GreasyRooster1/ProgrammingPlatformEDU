@@ -1,6 +1,6 @@
 import SingleFileLanguageType from "../SingleFileLanguageType.jsx";
-import P5jsExecutor from "../Executors/DomainExecutor.jsx";
 import {useState} from "react";
+import P5Executor from "../Executors/P5Executor.jsx";
 
 function P5jsType(props){
     const [editorData,setEditorData] = useState("");
@@ -8,7 +8,7 @@ function P5jsType(props){
     return (
         <SingleFileLanguageType
             executor={(
-                <P5jsExecutor projectMetadata={props.projectMetadata} editorData={props.editorData}/>
+                <P5Executor projectMetadata={props.projectMetadata} editorData={props.editorData}/>
             )}
             editorData={editorData}
             setEditorData={setEditorData}
