@@ -13,10 +13,6 @@ function Executor(props) {
         onMount()
     }, []);
 
-    useEffect(() => {
-        onExecute()
-    }, [props.projectData]);
-
     return (
         <>{props.children}</>
     );

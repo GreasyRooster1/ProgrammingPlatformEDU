@@ -20,13 +20,13 @@ import IconButton from "../../components/buttons/IconButton.jsx";
 * onMount
 * async loadProjects
 * onSave
-* onRequestError
+* onRun
 */
 function EditorType(props){
     let onMount = props.onMount||EMPTY_FUNC;
     let loadProject = props.loadProject||EMPTY_FUNC;
     let onSave = props.onSave||EMPTY_FUNC;
-    let onRequestError = props.onRequestError||EMPTY_FUNC;
+    let onRun = props.onRun||EMPTY_FUNC;
 
     let [loadedProject,setLoadedProject] = useState(false);
 
@@ -37,6 +37,13 @@ function EditorType(props){
         });
         onMount();
     }, []);
+
+    const runHandle = ()=>{
+        onRun();
+        if(props.execRef?.current){
+            props.execRef.current.onExecute(loadProject);
+        }
+    }
 
     const homeRedirect=()=>{
         location.href="/home";
@@ -49,7 +56,7 @@ function EditorType(props){
                     <IconButton icon={(<HomeIcon />)} onClick={homeRedirect}/>
                 </div>
                 <div className={styles.iconGroup}>
-                    <PrimaryButton className={styles.runButton} icon={play}>Run</PrimaryButton>
+                    <PrimaryButton className={styles.runButton} icon={play} onClick={runHandle}>Run</PrimaryButton>
                     <IconButton icon={(<SaveIcon />)} isHighlighted={props.saveHighlight} onClick={onSave} />
                     <IconButton icon={(<ShareIcon />)}/>
                 </div>
