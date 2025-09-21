@@ -1,30 +1,28 @@
 import EditorType from "./EditorType.jsx";
 import TypedLanguageType from "./TypedLanguageType.jsx";
 import {net} from "../../api/net/net.js";
-import {useState} from "react";
 import {useAuth} from "react-oidc-context";
 
 function SingleFileLanguageType(props){
     const auth = useAuth();
-    const [editorData,setEditorData] = useState("");
 
 
     const loadProject = async ()=>{
         console.log("Loading project...");
         let blob = await net.proj.getFile(auth.user?.access_token,[props.projectMetadata.id,"main"])
         let text = await blob.text();
-        setEditorData(text)
+        props.setEditorData(text)
     }
 
     const onSave = ()=>{
-        net.proj.saveFile(auth.user?.access_token,[props.projectMetadata.id,"main"],editorData,undefined)
+        net.proj.saveFile(auth.user?.access_token,[props.projectMetadata.id,"main"],props.editorData,undefined)
     }
 
     return (
         <TypedLanguageType
             loadProject={loadProject}
-            setEditorData={setEditorData}
-            editorData={editorData}
+            setEditorData={props.setEditorData}
+            editorData={props.editorData}
             onSave={onSave}
             {...props}
         />
