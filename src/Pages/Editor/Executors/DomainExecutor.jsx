@@ -31,9 +31,7 @@ function DomainExecutor(props) {
 
     }
 
-    const execUrl = IS_EXEC_DEV?
-        `${EXEC_URL}/dev/${username}/${props.projectMetadata.named_ref}`:
-        `${username}.${EXEC_URL}/${props.projectMetadata.named_ref}`;
+    const execUrl = `${EXEC_URL}/dev/${username}/${props.projectMetadata.named_ref}`;
 
     if(requestState.isLoading){
         return <Loading />;
