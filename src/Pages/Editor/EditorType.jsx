@@ -15,6 +15,7 @@ import ShareIcon from "../../icons/Share.svg?react"
 import HomeIcon from "../../icons/Home.svg?react"
 import PrimaryButton from "../../components/buttons/PrimaryButton.jsx";
 import IconButton from "../../components/buttons/IconButton.jsx";
+import {useNavigate, useNavigation} from "react-router-dom";
 
 /*
 * onMount
@@ -23,6 +24,8 @@ import IconButton from "../../components/buttons/IconButton.jsx";
 * onRun
 */
 function EditorType(props){
+    let navigate = useNavigate();
+
     let onMount = props.onMount||EMPTY_FUNC;
     let loadProject = props.loadProject||EMPTY_FUNC;
     let onSave = props.onSave||EMPTY_FUNC;
@@ -46,7 +49,7 @@ function EditorType(props){
     }
 
     const homeRedirect=()=>{
-        location.href="/home";
+        navigate("/home");
     }
 
     return (
