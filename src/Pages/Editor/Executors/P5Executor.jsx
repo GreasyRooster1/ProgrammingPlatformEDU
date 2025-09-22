@@ -23,9 +23,10 @@ const P5Executor = React.forwardRef((props, ref) =>  {
     }, []);
 
     const onExecute = () => {
-        console.log("Execute");
+
         if (iframeRef.current) {
             const contentWindow = iframeRef.current.contentWindow;
+            console.log(contentWindow);
             contentWindow.postMessage(props.editorData)
         }
     }
