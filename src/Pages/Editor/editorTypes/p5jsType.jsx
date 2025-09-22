@@ -13,6 +13,7 @@ function P5jsType(props){
             )}
             editorData={editorData}
             setEditorData={setEditorData}
+            execRef={execRef}
             {...props}
         />
     )

@@ -7,7 +7,7 @@ import {useReqState} from "../../../api/net/netutils.js";
 import Loading from "../../../Loading.jsx";
 
 
-function P5Executor(props) {
+const P5Executor = React.forwardRef((props, ref) =>  {
     const iframeRef = useRef(null);
 
     let iframe = (
@@ -23,6 +23,7 @@ function P5Executor(props) {
     }, []);
 
     const onExecute = () => {
+        console.log("Execute");
         if (iframeRef.current) {
             const contentWindow = iframeRef.current.contentWindow;
             contentWindow.postMessage(props.editorData)
@@ -36,6 +37,11 @@ function P5Executor(props) {
         }
     }
 
+    React.useImperativeHandle(ref, () => ({
+        onExecute: onExecute,
+        onCleanup: onCleanup,
+    }));
+
     return (
         <Executor
             onExecute={onExecute}
@@ -45,6 +51,6 @@ function P5Executor(props) {
             {iframe}
         </Executor>
     );
-}
+});
 
 export default P5Executor;
