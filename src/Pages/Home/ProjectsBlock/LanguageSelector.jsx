@@ -26,9 +26,9 @@ function LanguageSelector(props) {
                     ))
                 }
             </div>
-                <div className={styles.desc}>{
-                    selectedLanguage?.desc
-                }</div>
+            {/*<div className={styles.desc}>{*/}
+            {/*    selectedLanguage?.desc*/}
+            {/*}</div>*/}
         </div>
     );
 }
