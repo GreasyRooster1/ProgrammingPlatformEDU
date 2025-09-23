@@ -10,7 +10,9 @@ function NewProjectModal(props) {
         <>
             <MedTitle>New Project</MedTitle>
             <TextBox placeholder={"Enter a name..."} setValue={setName}></TextBox>
-            <LanguageSelector />
+            <LanguageSelector languages={[
+                {name:"Javascript",icon:""}
+            ]}/>
             <PrimaryButton>Create</PrimaryButton>
         </>
     );

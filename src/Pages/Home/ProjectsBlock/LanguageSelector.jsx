@@ -4,7 +4,13 @@ import styles from "./languageSelector.module.css"
 function LanguageSelector(props) {
     return (
         <div className={styles.selector}>
-            <div className={styles.item}></div>
+            {
+                props.languages.map((language) => (
+                    <div key={language.name} className={styles.item}>
+                        <span>{language.name}</span>
+                    </div>
+                ))
+            }
         </div>
     );
 }
