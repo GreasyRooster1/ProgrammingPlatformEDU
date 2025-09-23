@@ -1,0 +1,18 @@
+.selector{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    border: 1px solid var(--neutral-light);
+    border-radius: 10px;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--neutral-light);
+    border-radius: 10px;
+}
