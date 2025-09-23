@@ -8,7 +8,7 @@ function LanguageSelector(props) {
                 props.languages.map((language) => (
                     <div key={language.name} className={styles.item}>
                         {language.icon}
-                        <span>{language.name}</span>
+                        <span className={styles.itemName}>{language.name}</span>
                     </div>
                 ))
             }
