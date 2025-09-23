@@ -9,6 +9,8 @@
 
     min-height: 50vh;
     min-width: 50vw;
+
+    justify-content: space-between;
 }
 
 .overlay{

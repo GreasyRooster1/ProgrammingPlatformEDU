@@ -12,8 +12,10 @@ function NewProjectModal(props) {
     let [name, setName] = useState("");
     return (
         <>
-            <MedTitle>New Project</MedTitle>
-            <TextBox placeholder={"Enter a name..."} setValue={setName}></TextBox>
+            <div className={styles.head}>
+                <MedTitle>New Project</MedTitle>
+                <TextBox placeholder={"Enter a name..."} setValue={setName}></TextBox>
+            </div>
             <LanguageSelector languages={[
                 {name:"Javascript",icon:jsIcon},
                 {name:"Javascript1",icon:jsIcon},
@@ -21,7 +23,7 @@ function NewProjectModal(props) {
                 {name:"Javascript3",icon:jsIcon},
                 {name:"Javascript4",icon:jsIcon},
             ]}/>
-            <PrimaryButton>Create</PrimaryButton>
+            <PrimaryButton className={styles.create}>Create</PrimaryButton>
         </>
     );
 }

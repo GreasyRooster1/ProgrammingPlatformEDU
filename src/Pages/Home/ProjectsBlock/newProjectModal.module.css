@@ -1,2 +1,8 @@
-.modal{
+.head{
+    display: flex;
+    flex-direction: column;
+}
+
+.create{
+    padding: 8px;
 }
