@@ -11,10 +11,7 @@
     flex:1;
     gap: 12px;
 }
-.viewAllContainer{
-    display: flex;
-    flex-direction: row-reverse;
-}
+
 .openButton{
     font-size:1.5rem;
 }
@@ -38,4 +35,10 @@
 
 .newButtonContainer{
     flex:0;
+}
+
+.bottomContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

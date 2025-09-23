@@ -25,10 +25,12 @@ function ProjectsBlock(props) {
             <div className={styles.list}>
                 <MedTitle>Projects</MedTitle>
                 <ProjectsList className={styles.projList} clickHandle={projClickHandle}/>
-                <ModalOpener modalContent={(<NewProjectModal />)}>
-                    <LinkButton>New Project</LinkButton>
-                </ModalOpener>
-                <div className={styles.viewAllContainer}><SubText>View All...</SubText></div>
+                <div className={styles.bottomContent}>
+                    <ModalOpener modalContent={(<NewProjectModal />)}>
+                        <LinkButton>New Project</LinkButton>
+                    </ModalOpener>
+                    <LinkButton>View All...</LinkButton>
+                </div>
             </div>
             <div className={styles.details}>
                 {
