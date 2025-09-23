@@ -27,11 +27,15 @@
     flex-grow: 0;
     flex-basis: 18%;
 
-    transition: background-color 0.25s;
+    transition: background-color 0.25s, border-color 0.25s;
 }
 
 .item:hover{
     background-color: var(--neutral-med);
+}
+
+.item.selected{
+    border-color: var(--primary);
 }
 
 .itemName{
