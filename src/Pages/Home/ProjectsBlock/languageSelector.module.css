@@ -1,11 +1,11 @@
 .selector{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 
     border: 1px solid var(--neutral-light);
     border-radius: 10px;
     padding: 8px;
+    max-width: 60vw;
 }
 
 .item{
@@ -17,12 +17,12 @@
     border: 1px solid var(--neutral-light);
     border-radius: 10px;
 
-    flex-basis:20%;
     aspect-ratio: 1;
     margin:8px;
-    flex-shrink: 1;
 
+    flex-shrink: 1;
     flex-grow: 0;
+    flex-basis: 18%;
 }
 
 .itemName{
