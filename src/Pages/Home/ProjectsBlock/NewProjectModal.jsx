@@ -4,6 +4,8 @@ import PrimaryButton from "../../../components/buttons/PrimaryButton.jsx";
 import TextBox from "../../../components/TextBox.jsx";
 import LanguageSelector from "./LanguageSelector.jsx";
 
+import JsIcon from "../../../icons/lang/js.svg?react";
+
 function NewProjectModal(props) {
     let [name, setName] = useState("");
     return (
@@ -11,7 +13,7 @@ function NewProjectModal(props) {
             <MedTitle>New Project</MedTitle>
             <TextBox placeholder={"Enter a name..."} setValue={setName}></TextBox>
             <LanguageSelector languages={[
-                {name:"Javascript",icon:""}
+                {name:"Javascript",icon:<JsIcon/>}
             ]}/>
             <PrimaryButton>Create</PrimaryButton>
         </>
