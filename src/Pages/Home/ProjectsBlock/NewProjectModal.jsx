@@ -17,7 +17,7 @@ function NewProjectModal(props) {
                 <TextBox placeholder={"Enter a name..."} setValue={setName}></TextBox>
             </div>
             <LanguageSelector languages={[
-                {name:"Javascript",icon:jsIcon},
+                {name:"Javascript",icon:jsIcon,desc:"d"},
                 {name:"Javascript1",icon:jsIcon},
                 {name:"Javascript2",icon:jsIcon},
                 {name:"Javascript3",icon:jsIcon},

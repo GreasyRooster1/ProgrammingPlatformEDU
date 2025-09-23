@@ -15,15 +15,20 @@ function LanguageSelector(props) {
     }
 
     return (
-        <div className={styles.selector}>
-            {
-                props.languages.map((language) => (
-                    <div key={language.name} className={`${styles.item} ${getSelectedClass(language)}`} onClick={()=>{clickHandle(language)}} >
-                        <img src={language.icon} />
-                        <span className={styles.itemName}>{language.name}</span>
-                    </div>
-                ))
-            }
+        <div className={styles.container}>
+            <div className={styles.selector}>
+                {
+                    props.languages.map((language) => (
+                        <div key={language.name} className={`${styles.item} ${getSelectedClass(language)}`} onClick={()=>{clickHandle(language)}} >
+                            <img src={language.icon} />
+                            <span className={styles.itemName}>{language.name}</span>
+                        </div>
+                    ))
+                }
+            </div>
+                <div className={styles.desc}>{
+                    selectedLanguage?.desc
+                }</div>
         </div>
     );
 }
