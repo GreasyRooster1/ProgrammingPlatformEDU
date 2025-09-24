@@ -11,6 +11,8 @@
     min-width: 50vw;
 
     justify-content: space-between;
+
+    z-index: 99;
 }
 
 .overlay{
