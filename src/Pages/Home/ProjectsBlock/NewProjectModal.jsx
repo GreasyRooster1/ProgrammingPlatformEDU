@@ -9,6 +9,7 @@ import jsIcon from "../../../icons/lang/js.svg";
 import styles from "./newProjectModal.module.css";
 
 function NewProjectModal(props) {
+    const [selectedLanguage, setSelectedLanguage] = useState(null);
     let [name, setName] = useState("");
     return (
         <>
@@ -22,8 +23,8 @@ function NewProjectModal(props) {
                 {name:"Javascript2",icon:jsIcon},
                 {name:"Javascript3",icon:jsIcon},
                 {name:"Javascript4",icon:jsIcon},
-            ]}/>
-            <PrimaryButton className={styles.create}>Create</PrimaryButton>
+            ]} selectedLanguage={selectedLanguage} setSelectedLanguage={setSelectedLanguage}/>
+            <PrimaryButton className={styles.create} inactive={selectedLanguage===null}>Create</PrimaryButton>
         </>
     );
 }

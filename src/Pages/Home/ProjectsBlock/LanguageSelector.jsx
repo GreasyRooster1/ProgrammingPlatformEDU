@@ -2,16 +2,16 @@ import React, {useState} from 'react';
 import styles from "./languageSelector.module.css"
 
 function LanguageSelector(props) {
-    const [selectedLanguage, setSelectedLanguage] = useState(null);
+
 
     let clickHandle = (language)=>{
-        setSelectedLanguage(language)
+        props.setSelectedLanguage(language)
     }
     let getSelectedClass = (language) => {
-        if(!selectedLanguage){
+        if(!props.selectedLanguage){
             return "";
         }
-        return selectedLanguage.name === language.name ? styles.selected : "";
+        return props.selectedLanguage.name === language.name ? styles.selected : "";
     }
 
     return (
