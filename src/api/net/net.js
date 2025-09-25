@@ -22,7 +22,10 @@ const netProj = {
     saveFile:uploadReq("/project/save_file"),
 
     //new/<name>/<proj_type>
-    new:postReq("/project/new")
+    new:postReq("/project/new"),
+
+    //check_ref_exists/<named_ref>/
+    checkRefExists: jsonReq("/project/check_ref_exists"),
 }
 
 const netAuth = {
