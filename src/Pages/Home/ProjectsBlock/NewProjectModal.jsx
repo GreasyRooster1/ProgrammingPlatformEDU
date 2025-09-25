@@ -13,7 +13,7 @@ function NewProjectModal(props) {
     let [name, setName] = useState("");
 
     const validateText = (text)=>{
-        return text.length > 0 && text.length < 100;
+        return text.length > 0 && text.length <= 100;
     }
 
     return (

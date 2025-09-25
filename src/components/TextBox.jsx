@@ -11,7 +11,6 @@ function TextBox(props) {
 
     useEffect(() => {
         props.setValue(value);
-        console.log(value)
         if(value.length) {
             setValid(props.validate?.(value));
         }
