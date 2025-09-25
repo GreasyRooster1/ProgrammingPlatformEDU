@@ -5,9 +5,16 @@ import Modal from "./Modal.jsx";
 
 function ModalOpener(props) {
     let [active, setActive] = useState(false);
+
+    let closeModal = () => {
+        setActive(false);
+    }
+
     return (
         <>
-        {active && <Modal hideCallback={()=>setActive(false)}>{props.modalContent} </Modal>}
+        {active && <Modal hideCallback={()=>setActive(false)}>{
+            React.cloneElement(props.modalContent, { closeModal: closeModal})
+        } </Modal>}
             <div onClick={()=>setActive(!active)}>
                 {props.children}
             </div>
