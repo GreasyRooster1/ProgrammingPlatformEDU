@@ -17,3 +17,7 @@
 .textBox:focus-visible {
     border: 1px solid var(--primary);
 }
+
+.textBox.invalid {
+    border: 1px solid var(--error);
+}
