@@ -7,13 +7,22 @@ import LanguageSelector from "./LanguageSelector.jsx";
 import jsIcon from "../../../icons/lang/js.svg";
 
 import styles from "./newProjectModal.module.css";
+import {net} from "../../../api/net/net.js";
 
 function NewProjectModal(props) {
     const [selectedLanguage, setSelectedLanguage] = useState(null);
-    let [name, setName] = useState("");
+    let [name, setName] = useState(null);
 
     const validateText = (text)=>{
         return text.length > 0 && text.length <= 100;
+    }
+
+    const createProject = () => {
+        if(name===null){return;}
+        if(name.length < 1||name.length > 100){return;}
+        if(selectedLanguage===null){return;}
+
+        net.proj.checkRefExists()
     }
 
     return (
@@ -29,7 +38,7 @@ function NewProjectModal(props) {
                 {name:"Javascript3",icon:jsIcon},
                 {name:"Javascript4",icon:jsIcon},
             ]} selectedLanguage={selectedLanguage} setSelectedLanguage={setSelectedLanguage}/>
-            <PrimaryButton className={styles.create} inactive={selectedLanguage===null}>Create</PrimaryButton>
+            <PrimaryButton className={styles.create} inactive={selectedLanguage===null||name===null} onClick={createProject}>Create</PrimaryButton>
         </>
     );
 }
