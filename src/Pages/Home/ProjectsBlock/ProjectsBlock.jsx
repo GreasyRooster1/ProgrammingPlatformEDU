@@ -26,7 +26,7 @@ function ProjectsBlock(props) {
                 <MedTitle>Projects</MedTitle>
                 <ProjectsList className={styles.projList} clickHandle={projClickHandle}/>
                 <div className={styles.bottomContent}>
-                    <ModalOpener modalContent={(<NewProjectModal />)}>
+                    <ModalOpener modalContent={(<NewProjectModal/>)}>
                         <LinkButton>New Project</LinkButton>
                     </ModalOpener>
                     <LinkButton>View All...</LinkButton>

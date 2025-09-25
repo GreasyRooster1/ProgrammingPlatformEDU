@@ -26,7 +26,7 @@ function NewProjectModal(props) {
         if(name.length < 1||name.length > 100){return;}
         if(selectedLanguage===null){return;}
 
-        net.proj.checkRefExists(auth.user?.access_token,[name],setRequestState)
+        net.proj.new(auth.user?.access_token,[name,selectedLanguage.identifier],setRequestState)
     }
 
     return (
@@ -36,7 +36,7 @@ function NewProjectModal(props) {
                 <TextBox placeholder={"Enter a name..."} setValue={setName} validate={validateText}></TextBox>
             </div>
             <LanguageSelector languages={[
-                {name:"Javascript",icon:jsIcon,desc:"Javascript is a beginner friendly language perfect for learning the basics! This template comes with built in graphics support for making games and apps"},
+                {name:"Javascript",icon:jsIcon,identifier:"p5js"},
                 {name:"Javascript1",icon:jsIcon},
                 {name:"Javascript2",icon:jsIcon},
                 {name:"Javascript3",icon:jsIcon},
