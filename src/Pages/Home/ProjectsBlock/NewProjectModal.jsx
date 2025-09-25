@@ -8,9 +8,13 @@ import jsIcon from "../../../icons/lang/js.svg";
 
 import styles from "./newProjectModal.module.css";
 import {net} from "../../../api/net/net.js";
+import {useAuth} from "react-oidc-context";
+import {useReqState} from "../../../api/net/netutils.js";
 
 function NewProjectModal(props) {
+    let auth = useAuth();
     const [selectedLanguage, setSelectedLanguage] = useState(null);
+    const [requestState, setRequestState] = useReqState();
     let [name, setName] = useState(null);
 
     const validateText = (text)=>{
@@ -22,7 +26,7 @@ function NewProjectModal(props) {
         if(name.length < 1||name.length > 100){return;}
         if(selectedLanguage===null){return;}
 
-        net.proj.checkRefExists()
+        net.proj.checkRefExists(auth.user?.access_token,[name],setRequestState)
     }
 
     return (
