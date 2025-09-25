@@ -36,11 +36,11 @@ function NewProjectModal(props) {
                 <TextBox placeholder={"Enter a name..."} setValue={setName} validate={validateText}></TextBox>
             </div>
             <LanguageSelector languages={[
-                {name:"Javascript",icon:jsIcon,identifier:"p5js"},
-                {name:"Javascript1",icon:jsIcon},
-                {name:"Javascript2",icon:jsIcon},
-                {name:"Javascript3",icon:jsIcon},
-                {name:"Javascript4",icon:jsIcon},
+                {name:"Javascript",icon:jsIcon,identifier:"P5js"},
+                {name:"Javascript1",icon:jsIcon,identifier:"P5js"},
+                {name:"Javascript2",icon:jsIcon,identifier:"P5js"},
+                {name:"Javascript3",icon:jsIcon,identifier:"P5js"},
+                {name:"Javascript4",icon:jsIcon,identifier:"P5js"},
             ]} selectedLanguage={selectedLanguage} setSelectedLanguage={setSelectedLanguage}/>
             <PrimaryButton className={styles.create} inactive={selectedLanguage===null||name===null} onClick={createProject}>Create</PrimaryButton>
         </>
