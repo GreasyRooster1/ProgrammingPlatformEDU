@@ -6,6 +6,8 @@ import Loading from "../../../Loading.jsx";
 import {useReqState} from "../../../api/net/netutils.js";
 import {useAuth} from "react-oidc-context";
 import Error from "../../../Error.jsx";
+import SubText from "../../../components/text/SubText.jsx";
+import styles from "./projectsList.module.css";
 
 function ProjectsList(props) {
     const auth = useAuth();
@@ -28,7 +30,13 @@ function ProjectsList(props) {
 
     return (
         <div className={props.className}>
-            {projects.map(projData => <Project key={projData.id} data={projData} clickHandle={props.clickHandle}/>)}
+            {
+                projects.length > 0 ?
+                projects.map(projData => <Project key={projData.id} data={projData} clickHandle={props.clickHandle}/>) :
+                (<div className={styles.noProjContainer}>
+                    <SubText>No projects yet...</SubText>
+                </div>)
+            }
         </div>
     );
 }
