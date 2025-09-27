@@ -5,6 +5,7 @@ import LoadingScreen from "../../../LoadingScreen.jsx";
 import Loading from "../../../Loading.jsx";
 import {useReqState} from "../../../api/net/netutils.js";
 import {useAuth} from "react-oidc-context";
+import Error from "../../../Error.jsx";
 
 function ProjectsList(props) {
     const auth = useAuth();
@@ -14,12 +15,15 @@ function ProjectsList(props) {
 
     useEffect(() => {
         net.proj.getUserProjDataList(auth.user?.access_token, [1] ,setRequestState).then(response => {
-            setProjects(response)
+            setProjects(response??[])
         })
     }, []);
 
     if(requestState.isLoading){
         return <Loading />;
+    }
+    if(requestState.isError){
+        return <Error />;
     }
 
     return (
