@@ -20,3 +20,6 @@
     align-items: center;
     background: var(--neutral-dark)
 }
+.error{
+    color:var(--error);
+}
