@@ -12,9 +12,11 @@ function LandingPage() {
             <div>
                 landing
                 <button onClick={() => auth.signinRedirect()}>Login</button>
-                <button onClick={() => signOutRedirect()}>
+                {auth.isAuthenticated &&
+                (<button onClick={() => auth.removeUser()}>
                     Log Out
-                </button>
+                </button>)
+                }
                 token: {auth.user?.access_token}
                 <button onClick={() => navigate("/home")}>
                     Home
