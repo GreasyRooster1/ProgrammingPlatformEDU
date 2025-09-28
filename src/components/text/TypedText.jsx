@@ -22,7 +22,7 @@ function TypedText(props) {
     }, [props.text]);
 
     return (
-        <span>{currentText}</span>
+        <span className={`${props.className}`}>{currentText}</span>
     );
 }
 
