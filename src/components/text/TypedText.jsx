@@ -27,9 +27,17 @@ function TypedText(props) {
         setCurrentText("");
     },[props.text])
 
-    return (
-        <span className={`${props.className} ${props.fade?styles.fadeIn:""}`}>{currentText}</span>
-    );
+    if(props.fade){
+        return (<span className={`${props.className}`}>{
+            currentText.split("").map((letter,index) =>
+                (<span key={index} className={styles.fadeIn}>{letter}</span>)
+            )
+        }</span>)
+    }else {
+        return (
+            <span className={`${props.className}`}>{currentText}</span>
+        );
+    }
 }
 
 export default TypedText;
