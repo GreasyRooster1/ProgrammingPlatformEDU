@@ -32,7 +32,7 @@ function EditorType(props){
     let onRun = props.onRun||EMPTY_FUNC;
 
     let [loadedProject,setLoadedProject] = useState(false);
-
+    let hasLesson = props.projectMetadata.lessonid!==null;
 
     useEffect(() => {
         loadProject().then(()=>{
@@ -66,17 +66,19 @@ function EditorType(props){
             </>
         }>
             <PanelGroup direction="horizontal">
-            <Panel defaultSize={25} className={styles.stepsPanel}>
-                    <LessonPanel />
-                </Panel>
-                <PanelResizeHandle />
+                {hasLesson &&
+                    (<><Panel defaultSize={25} minSize={15} className={styles.stepsPanel}>
+                            <LessonPanel />
+                        </Panel>
+                        <PanelResizeHandle /></>
+                )}
 
-                <Panel className={styles.codePanel}>
+                <Panel className={styles.codePanel} defaultSize={hasLesson?50:70} minSize={20}>
                     {loadedProject?props.codeEditor:<Loading />}
                 </Panel>
                 <PanelResizeHandle />
 
-                <Panel defaultSize={25}>
+                <Panel defaultSize={25} minSize={20}>
                     <PanelGroup direction="vertical">
                         <Panel defaultSize={60} className={styles.outputPanel}>
                             <OutputPanel executor={props.executor}/>
