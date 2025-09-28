@@ -13,3 +13,7 @@
 .heading2{
     font-size: 1.5em;
 }
+
+.inlineCode{
+    background:var(--neutral-med)
+}

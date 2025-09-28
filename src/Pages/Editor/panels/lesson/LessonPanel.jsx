@@ -23,11 +23,14 @@ f(x);`}
             </CodeBlock>
             <Markdown text={`
             hello world!
-            # text
-            ## text
+            # h1
+            ## h2
             
-            *test*
-            
+            *bold*
+            **italic**
+            - list 1
+            - list 2
+            - list 3
             `}>
 
             </Markdown>

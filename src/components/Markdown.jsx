@@ -33,6 +33,7 @@ function Markdown(props) {
                 if (trimmed.startsWith(s)&&trimmed.endsWith(s)) {
                     let newLine = line.replace(s,'')
                     newLine = newLine.split("").reverse().join("").replace(s,'')
+                    newLine = newLine.split("").reverse().join("")
                     return {style:rule.style,content:newLine}
                 }
             }
