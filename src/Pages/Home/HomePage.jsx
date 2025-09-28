@@ -7,6 +7,7 @@ import HomeGridItem from "./HomeGridItem.jsx";
 import ProjectsBlock from "./ProjectsBlock/ProjectsBlock.jsx";
 import MasteryBlock from "./Mastery/MasteryBlock.jsx";
 import {useAdvAuth} from "../../api/auth.js";
+import TypedText from "../../components/text/TypedText.jsx";
 
 function HomePage() {
     let auth = useAdvAuth();
@@ -22,7 +23,7 @@ function HomePage() {
     return (
         <AuthLock>
             <div className={styles.header}>
-                {name && (<span className={styles.welcome}>Welcome, {name}</span>)}
+                <TypedText className={styles.welcome} text={`Welcome, ${name}`} />
             </div>
             <div className={styles.gridWrapper}>
                 <HomeGrid>

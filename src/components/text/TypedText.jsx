@@ -9,17 +9,23 @@ function TypedText(props) {
         if(props.disableAnim){
             return;
         }
+        console.log(props.text,currentText,currentIndex);
 
-        if (currentIndex < props.text) {
+        if (currentIndex < props.text.length) {
             const timeout = setTimeout(() => {
-                setCurrentText(prevText => prevText + text[currentIndex]);
+                setCurrentText(prevText => prevText + props.text[currentIndex]);
                 setCurrentIndex(prevIndex => prevIndex + 1);
             }, delay);
 
             return () => clearTimeout(timeout);
         }
 
-    }, [props.text]);
+    }, [currentIndex, delay]);
+
+    useEffect(() => {
+        setCurrentIndex(0);
+        setCurrentText("");
+    },[props.text])
 
     return (
         <span className={`${props.className}`}>{currentText}</span>
