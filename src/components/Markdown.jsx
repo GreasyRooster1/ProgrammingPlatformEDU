@@ -38,7 +38,7 @@ function Markdown(props) {
             }
         }
 
-        return ""
+        return {style:"",content:line}
     }
 
     useEffect(() => {
