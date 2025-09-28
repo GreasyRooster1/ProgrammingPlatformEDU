@@ -9,7 +9,6 @@ function TypedText(props) {
         if(props.disableAnim){
             return;
         }
-        console.log(props.text,currentText,currentIndex);
 
         if (currentIndex < props.text.length) {
             const timeout = setTimeout(() => {
@@ -20,7 +19,7 @@ function TypedText(props) {
             return () => clearTimeout(timeout);
         }
 
-    }, [currentIndex, delay]);
+    }, [currentIndex, delay, props.disableAnim]);
 
     useEffect(() => {
         setCurrentIndex(0);
