@@ -23,7 +23,7 @@ function HomePage() {
     return (
         <AuthLock>
             <div className={styles.header}>
-                <TypedText className={styles.welcome} text={`Welcome, ${name}`} disableAnim={name==null}/>
+                <TypedText className={styles.welcome} text={`Welcome, ${name}`} disableAnim={name==null} fade/>
             </div>
             <div className={styles.gridWrapper}>
                 <HomeGrid>

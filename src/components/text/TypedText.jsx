@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import styles from "./typedText.module.css"
 
 function TypedText(props) {
     const [currentText, setCurrentText] = useState('');
@@ -27,7 +28,7 @@ function TypedText(props) {
     },[props.text])
 
     return (
-        <span className={`${props.className}`}>{currentText}</span>
+        <span className={`${props.className} ${props.fade?styles.fadeIn:""}`}>{currentText}</span>
     );
 }
 
