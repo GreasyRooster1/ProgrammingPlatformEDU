@@ -16,4 +16,6 @@ export const useAdvAuth = ()=>{
     net.auth.getUsername(auth.user?.access_token,setRequestState).then(username=>{
         setUsername(username);
     });
+
+    return auth;
 }
