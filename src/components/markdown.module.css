@@ -15,5 +15,7 @@
 }
 
 .inlineCode{
-    background:var(--neutral-med)
+    background:var(--neutral-light);
+    padding:2px;
+    border-radius:3px;
 }
