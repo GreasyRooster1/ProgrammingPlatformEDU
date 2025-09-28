@@ -17,7 +17,7 @@ export const useAdvAuth = ()=>{
         if(auth.user?.access_token===undefined){
             return;
         }
-        net.auth.getUsername(auth.user?.access_token,setRequestState).then(username=>{
+        net.auth.getDisplayName(auth.user?.access_token,setRequestState).then(username=>{
             setUsername(username);
         });
     },[auth.user?.access_token])

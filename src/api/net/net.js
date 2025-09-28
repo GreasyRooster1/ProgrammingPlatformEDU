@@ -32,6 +32,9 @@ const netAuth = {
     // /get_username
     getUsername:noArgReq("/auth/get_username"),
 
+    // /get_display_name
+    getDisplayName:noArgReq("/auth/get_display_name"),
+
     // /get_uid
     getUid:noArgReq("/auth/get_uid"),
 
