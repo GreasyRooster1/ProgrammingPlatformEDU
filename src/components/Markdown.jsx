@@ -22,7 +22,7 @@ function Markdown(props) {
             let trimmed = line.trimStart()
             for(let s of rule.sym) {
                 if (trimmed.startsWith(s+" ")) {
-                    return rule.style
+                    return {style:rule.style,content:line.replace(s, '')}
                 }
             }
         }
@@ -31,7 +31,9 @@ function Markdown(props) {
             let trimmed = line.trim()
             for(let s of rule.sym) {
                 if (trimmed.startsWith(s)&&trimmed.endsWith(s)) {
-                    return rule.style
+                    let newLine = line.replace(s,'')
+                    newLine = newLine.split("").reverse().join("").replace(s,'')
+                    return {style:rule.style,content:newLine}
                 }
             }
         }
@@ -44,10 +46,7 @@ function Markdown(props) {
         let elClassPairs = []
 
         for(let line of lines) {
-            elClassPairs.push({
-                style:forEachLine(line),
-                content:line,
-            })
+            elClassPairs.push(forEachLine(line))
         }
 
         setElemnts(elClassPairs);
@@ -56,7 +55,11 @@ function Markdown(props) {
     return (
         <span>{
             elements.map((elem,index)=>{
-                return (<span key={index} className={elem.style}>{elem.content}</span>)
+                return (
+                    <>
+                        <span key={index} className={elem.style}>{elem.content}</span><br />
+                    </>
+                )
             })
         }</span>
     );

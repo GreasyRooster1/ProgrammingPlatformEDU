@@ -3,6 +3,7 @@ import styles from "./lessonPanel.module.css";
 import MedTitle from "../../../../components/text/MedTitle.jsx";
 import CodePanel from "../code/CodePanel.jsx";
 import CodeBlock from "../../../../components/CodeBlock.jsx";
+import Markdown from "../../../../components/Markdown.jsx";
 
 function LessonPanel() {
     return (
@@ -20,6 +21,16 @@ function LessonPanel() {
 let x = 100;
 f(x);`}
             </CodeBlock>
+            <Markdown text={`
+            hello world!
+            # text
+            ## text
+            
+            *test*
+            
+            `}>
+
+            </Markdown>
         </div>
     );
 }
