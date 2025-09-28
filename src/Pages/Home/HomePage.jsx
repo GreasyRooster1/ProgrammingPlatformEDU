@@ -22,7 +22,7 @@ function HomePage() {
     return (
         <AuthLock>
             <div className={styles.header}>
-                <span className={styles.welcome}>Welcome, {name}</span>
+                {name && (<span className={styles.welcome}>Welcome, {name}</span>)}
             </div>
             <div className={styles.gridWrapper}>
                 <HomeGrid>
