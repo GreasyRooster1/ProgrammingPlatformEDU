@@ -1,17 +1,23 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import AuthLock from "../../components/AuthLock.jsx";
 import styles from "./homePage.module.css";
 import LoadingScreen from "../../LoadingScreen.jsx";
 import HomeGrid from "./HomeGrid.jsx";
 import HomeGridItem from "./HomeGridItem.jsx";
 import ProjectsBlock from "./ProjectsBlock/ProjectsBlock.jsx";
-import {useAuth} from "react-oidc-context";
 import MasteryBlock from "./Mastery/MasteryBlock.jsx";
+import {useAdvAuth} from "../../api/auth.js";
 
 function HomePage() {
-    let auth = useAuth();
+    let auth = useAdvAuth();
+    let [name,setName] = useState("");
 
-    let name = auth.user?.name ?? auth.user?.given_name ?? "t";
+    useEffect(() => {
+        setName(
+            auth.user?.name ?? auth.user?.given_name ?? auth.usernameState.username
+        )
+    },[auth.usernameState.username]);
+
 
     return (
         <AuthLock>

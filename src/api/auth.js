@@ -1,5 +1,5 @@
 import {useAuth} from "react-oidc-context";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {net} from "./net/net.js";
 import {useReqState} from "./net/netutils.js";
 
@@ -13,9 +13,14 @@ export const useAdvAuth = ()=>{
         setUsername: setUsername,
         requestState: requestState,
     }
-    net.auth.getUsername(auth.user?.access_token,setRequestState).then(username=>{
-        setUsername(username);
-    });
+    useEffect(()=>{
+        if(auth.user?.access_token===undefined){
+            return;
+        }
+        net.auth.getUsername(auth.user?.access_token,setRequestState).then(username=>{
+            setUsername(username);
+        });
+    },[auth.user?.access_token])
 
     return auth;
 }
