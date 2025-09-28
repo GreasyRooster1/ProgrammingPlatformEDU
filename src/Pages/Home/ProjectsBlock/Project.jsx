@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./project.module.css"
 import SubText from "../../../components/text/SubText.jsx";
-import {getLangForType, getTimestampAge} from "../../../api/net/proj.js";
+import {getLangForType, getTimestampAge} from "../../../api/proj.js";
 
 function Project(props) {
 

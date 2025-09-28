@@ -5,7 +5,7 @@ import SubText from "../../../components/text/SubText.jsx";
 import SecondaryButton from "../../../components/buttons/SecondaryButton.jsx";
 import PrimaryButton from "../../../components/buttons/PrimaryButton.jsx";
 import privateIcon from "../../../icons/PrivateVisIcon.svg"
-import {getIconForVisibility, getProjectNamedType} from "../../../api/net/proj.js";
+import {getIconForVisibility, getProjectNamedType} from "../../../api/proj.js";
 import {useNavigate} from "react-router-dom";
 
 function DetailView(props) {

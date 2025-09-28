@@ -11,10 +11,11 @@ import MasteryBlock from "./Mastery/MasteryBlock.jsx";
 function HomePage() {
     let auth = useAuth();
 
+    let name = auth.user?.name ?? auth.user.given_name ?? auth.user.username;
     return (
         <AuthLock>
             <div className={styles.header}>
-                <span className={styles.welcome}>Welcome, {auth.user?.profile.name}</span>
+                <span className={styles.welcome}>Welcome, {auth.user?.name}</span>
             </div>
             <div className={styles.gridWrapper}>
                 <HomeGrid>
