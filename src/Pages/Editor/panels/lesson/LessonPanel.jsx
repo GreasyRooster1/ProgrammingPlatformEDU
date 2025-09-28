@@ -33,6 +33,9 @@ f(x);`}
             - list 3
             
             \`code()\`
+            
+            > quote
+            --- line
             `}>
 
             </Markdown>
