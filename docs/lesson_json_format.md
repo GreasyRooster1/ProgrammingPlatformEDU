@@ -1,6 +1,16 @@
 # Lesson Json Format
 
-## Root lesson
+## Lesson
+
+```json
+{
+  "steps": [
+    ...
+  ]
+}
+```
+
+## Step
 
 ```json
 {

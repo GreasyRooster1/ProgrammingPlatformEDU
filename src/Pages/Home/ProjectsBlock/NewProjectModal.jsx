@@ -37,7 +37,7 @@ function NewProjectModal(props) {
             </div>
             <LanguageSelector languages={[
                 {name:"Javascript",icon:jsIcon,identifier:"P5js"},
-                {name:"Javascript1",icon:jsIcon,identifier:"P5js"},
+                {name:"Lesson",icon:jsIcon,identifier:"Lesson"},
                 {name:"Javascript2",icon:jsIcon,identifier:"P5js"},
                 {name:"Javascript3",icon:jsIcon,identifier:"P5js"},
                 {name:"Javascript4",icon:jsIcon,identifier:"P5js"},
