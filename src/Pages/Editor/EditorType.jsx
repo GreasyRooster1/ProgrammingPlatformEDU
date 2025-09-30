@@ -19,7 +19,7 @@ import {useNavigate, useNavigation} from "react-router-dom";
 
 /*
 * onMount
-* async loadProjects
+* async loadProjects *
 * onSave
 * onRun
 */
@@ -27,7 +27,7 @@ function EditorType(props){
     let navigate = useNavigate();
 
     let onMount = props.onMount||EMPTY_FUNC;
-    let loadProject = props.loadProject||EMPTY_FUNC;
+    let loadProject = props.loadProject;
     let onSave = props.onSave||EMPTY_FUNC;
     let onRun = props.onRun||EMPTY_FUNC;
 
