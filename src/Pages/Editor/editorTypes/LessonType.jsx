@@ -8,6 +8,7 @@ function LessonType(props){
     return (
         <EditorType
             noOutput
+            {...props}
         />
     )
 }
