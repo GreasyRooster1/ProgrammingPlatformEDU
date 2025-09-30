@@ -5,22 +5,28 @@ import CodePanel from "../code/CodePanel.jsx";
 import CodeBlock from "../../../../components/CodeBlock.jsx";
 import Markdown from "../../../../components/Markdown.jsx";
 
+const textComponent = {
+    func:(data)=>{
+        return (<p>{data.text}</p>)
+    },
+    type:"text"
+}
+
+const titleComponent = {
+    func:(data)=>{
+        return (<MedTitle className={styles.title}>{data.text}</MedTitle>)
+    },
+    type:"text"
+}
+
 function LessonPanel() {
+    let components = [
+        textComponent,
+        titleComponent,
+    ]
+
     return (
         <div className={styles.lesson}>
-            <MedTitle className={styles.title}>
-                Title
-            </MedTitle>
-            <div className={styles.textDescription}>
-                test desc
-            </div>
-            <CodeBlock added={[3,4]} removed={[2]} >
-{`let x
-//old line
-// new lines
-let x = 100;
-f(x);`}
-            </CodeBlock>
         </div>
     );
 }

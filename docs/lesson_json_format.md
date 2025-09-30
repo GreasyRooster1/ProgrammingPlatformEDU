@@ -16,7 +16,7 @@
 ```json
 {
   "type": "title",
-  "content": "CONTENT"
+  "text": "CONTENT"
 }
 ```
 
@@ -25,7 +25,7 @@
 ```json
 {
   "type": "text",
-  "content": "CONTENT"
+  "text": "CONTENT"
 }
 ```
 
