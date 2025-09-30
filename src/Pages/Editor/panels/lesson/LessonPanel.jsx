@@ -25,8 +25,20 @@ function LessonPanel() {
         titleComponent,
     ]
 
+    let lessonData = props.lessonData;
+    let elements = [];
+
+    for(let component of lessonData.components){
+        for(let componentType of components){
+            if(component.type===componentType.type){
+                elements.push(componentType.func(component));
+            }
+        }
+    }
+
     return (
         <div className={styles.lesson}>
+            {elements}
         </div>
     );
 }
