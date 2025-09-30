@@ -19,7 +19,7 @@ const titleComponent = {
     type:"text"
 }
 
-function LessonPanel() {
+function LessonPanel(props) {
     let components = [
         textComponent,
         titleComponent,
