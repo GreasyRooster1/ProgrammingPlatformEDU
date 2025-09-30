@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./project.module.css"
 import SubText from "../../../components/text/SubText.jsx";
-import {getLangForType, getTimestampAge} from "../../../api/proj.js";
+import {getLangNameForType, getTimestampAge} from "../../../api/proj.js";
 
 function Project(props) {
 
@@ -13,7 +13,7 @@ function Project(props) {
             <span className={styles.extras}>
                 <SubText className={styles.age}>{getTimestampAge(props.data.date_updated)}</SubText>
                 <span className={styles.type}>
-                    {getLangForType(props.data.project_type)}
+                    {getLangNameForType(props.data.project_type)}
                 </span>
             </span>
         </div>

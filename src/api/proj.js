@@ -7,34 +7,42 @@ import jsIcon from "../icons/lang/js.svg";
 
 const projectTypes = {
     P5js:{
-        name: "JavaScript",
+        name: "p5.js",
         icon:jsIcon,
+        langName: "JavaScript",
     },
     PythonTurtle:{
         name: "Python",
         icon:jsIcon,
+        langName: "Python",
     },
     Web:{
         name: "Web",
         icon:jsIcon,
+        langName: "Web",
     },
     Lesson:{
-        name: "Lesson",
+        name: "Lesson Builder",
         icon:jsIcon,
+        langName: "Lesson",
     }
 }
 
 
-function getLangForType(rawType){
+function getLangNameForType(rawType){
+    let type =projectTypes[rawType];
+    if(type===undefined){
+        return "?"
+    }
+    return type.langName??"?";
+}
+
+function getProjectNamedType(rawType){
     let type =projectTypes[rawType];
     if(type===undefined){
         return "?"
     }
     return type.name??"?";
-}
-
-function getProjectNamedType(rawType){
-    return (projTypesMap[rawType]??"?")[1];
 }
 
 const iconFallback = vite;
@@ -90,4 +98,4 @@ function getTimestampAge(stamp){
 
 }
 
-export {getLangForType,getIconForVisibility,getTimestampAge,getProjectNamedType,projectTypes};
+export {getLangNameForType,getIconForVisibility,getTimestampAge,getProjectNamedType,projectTypes};
