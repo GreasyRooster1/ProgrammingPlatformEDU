@@ -68,7 +68,7 @@ function EditorType(props){
             <PanelGroup direction="horizontal">
                 {hasLesson &&
                     (<><Panel defaultSize={25} minSize={15} className={styles.stepsPanel}>
-                            <LessonPanel />
+                            <LessonPanel lessonData={{components:[{type:"text",text:"hello"}]}}/>
                         </Panel>
                         <PanelResizeHandle /></>
                 )}

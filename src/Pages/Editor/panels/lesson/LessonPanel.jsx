@@ -16,7 +16,7 @@ const titleComponent = {
     func:(data)=>{
         return (<MedTitle className={styles.title}>{data.text}</MedTitle>)
     },
-    type:"text"
+    type:"title"
 }
 
 function LessonPanel(props) {
