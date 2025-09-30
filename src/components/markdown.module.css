@@ -38,13 +38,24 @@
 
 .line{
     display:flex;
-
+    align-items: center;
 }
 .line::before{
     display:inline-block;
     content:"";
-    width:40%;
+    width:50%;
     height:1px;
+    flex:1;
+    margin:8px;
+
+    background:var(--neutral-light);
+}
+.line::after{
+    display:inline-block;
+    content:"";
+    flex:1;
+    height:1px;
+    margin:8px;
 
     background:var(--neutral-light);
 }
