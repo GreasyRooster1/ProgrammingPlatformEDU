@@ -4,27 +4,33 @@ import unlistedIcon from "../icons/UnlistedVisIcon.svg";
 import vite from "/vite.svg";
 
 import jsIcon from "../icons/lang/js.svg";
+import P5jsType from "../Pages/Editor/editorTypes/p5jsType.jsx";
+import LessonType from "../Pages/Editor/editorTypes/LessonType.jsx";
 
 const projectTypes = {
     P5js:{
         name: "p5.js",
         icon:jsIcon,
         langName: "JavaScript",
+        editorComponent:P5jsType,
     },
     PythonTurtle:{
         name: "Python",
         icon:jsIcon,
         langName: "Python",
+        editorComponent:null,
     },
     Web:{
         name: "Web",
         icon:jsIcon,
         langName: "Web",
+        editorComponent:null,
     },
     Lesson:{
         name: "Lesson Builder",
         icon:jsIcon,
         langName: "Lesson",
+        editorComponent:LessonType,
     }
 }
 
