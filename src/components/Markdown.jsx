@@ -17,11 +17,13 @@ function Markdown(props) {
         {style:styles.line,sym:["---","***"]},
     ]
 
+
+
     const forEachLine = (line)=>{
         for(let rule of lineStarterRules) {
             let trimmed = line.trimStart()
             for(let s of rule.sym) {
-                if (trimmed.startsWith(s+" ")||trimmed==s) {
+                if (trimmed.startsWith(s+" ")||trimmed===s) {
                     return {style:rule.style,content:line.replace(s, '')}
                 }
             }
@@ -58,7 +60,7 @@ function Markdown(props) {
             elements.map((elem,index)=>{
                 return (
                     <>
-                        <span key={index} className={elem.style}>{elem.content}</span><br />
+                        <span key={index} className={elem.style}>{elem.content}</span>
                     </>
                 )
             })
