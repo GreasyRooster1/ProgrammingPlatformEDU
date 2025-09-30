@@ -78,7 +78,7 @@ function EditorType(props){
                 </Panel>
                 <PanelResizeHandle />
 
-                <Panel defaultSize={25} minSize={20}>
+                {!props.noOutput && <Panel defaultSize={25} minSize={20}>
                     <PanelGroup direction="vertical">
                         <Panel defaultSize={60} className={styles.outputPanel}>
                             <OutputPanel executor={props.executor}/>
@@ -89,7 +89,7 @@ function EditorType(props){
                             <ConsolePanel />
                         </Panel>
                     </PanelGroup>
-                </Panel>
+                </Panel>}
             </PanelGroup>
         </HeaderFlex>
     )
