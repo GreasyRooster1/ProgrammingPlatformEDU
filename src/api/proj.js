@@ -90,4 +90,4 @@ function getTimestampAge(stamp){
 
 }
 
-export {getLangForType,getIconForVisibility,getTimestampAge,getProjectNamedType};
+export {getLangForType,getIconForVisibility,getTimestampAge,getProjectNamedType,projectTypes};

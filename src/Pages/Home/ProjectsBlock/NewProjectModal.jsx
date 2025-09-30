@@ -8,6 +8,7 @@ import styles from "./newProjectModal.module.css";
 import {net} from "../../../api/net/net.js";
 import {useAuth} from "react-oidc-context";
 import {useReqState} from "../../../api/net/netutils.js";
+import {projectTypes} from "../../../api/proj.js";
 
 function NewProjectModal(props) {
     let auth = useAuth();
@@ -33,13 +34,7 @@ function NewProjectModal(props) {
                 <MedTitle>New Project</MedTitle>
                 <TextBox placeholder={"Enter a name..."} setValue={setName} validate={validateText}></TextBox>
             </div>
-            <LanguageSelector languages={[
-                {name:"Javascript",icon:jsIcon,identifier:"P5js"},
-                {name:"Lesson",icon:jsIcon,identifier:"Lesson"},
-                {name:"Javascript2",icon:jsIcon,identifier:"P5js"},
-                {name:"Javascript3",icon:jsIcon,identifier:"P5js"},
-                {name:"Javascript4",icon:jsIcon,identifier:"P5js"},
-            ]} selectedLanguage={selectedLanguage} setSelectedLanguage={setSelectedLanguage}/>
+            <LanguageSelector languages={projectTypes} selectedLanguage={selectedLanguage} setSelectedLanguage={setSelectedLanguage}/>
             <PrimaryButton className={styles.create} inactive={selectedLanguage===null||name===null} onClick={createProject}>Create</PrimaryButton>
         </>
     );

@@ -2,7 +2,13 @@ import React, {useState} from 'react';
 import styles from "./languageSelector.module.css"
 
 function LanguageSelector(props) {
-
+    let langArr = []
+    for (const [key, value] of Object.entries(props.languages)) {
+        langArr.push({
+            identifier: key,
+            ...value,
+        })
+    }
 
     let clickHandle = (language)=>{
         props.setSelectedLanguage(language)
@@ -18,7 +24,7 @@ function LanguageSelector(props) {
         <div className={styles.container}>
             <div className={styles.selector}>
                 {
-                    props.languages.map((language) => (
+                    langArr.map((language) => (
                         <div key={language.name} className={`${styles.item} ${getSelectedClass(language)}`} onClick={()=>{clickHandle(language)}} >
                             <img src={language.icon} />
                             <span className={styles.itemName}>{language.name}</span>
