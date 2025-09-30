@@ -21,7 +21,7 @@ function Markdown(props) {
         for(let rule of lineStarterRules) {
             let trimmed = line.trimStart()
             for(let s of rule.sym) {
-                if (trimmed.startsWith(s+" ")) {
+                if (trimmed.startsWith(s+" ")||trimmed==s) {
                     return {style:rule.style,content:line.replace(s, '')}
                 }
             }
