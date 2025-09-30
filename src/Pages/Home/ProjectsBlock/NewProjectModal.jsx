@@ -4,8 +4,6 @@ import PrimaryButton from "../../../components/buttons/PrimaryButton.jsx";
 import TextBox from "../../../components/TextBox.jsx";
 import LanguageSelector from "./LanguageSelector.jsx";
 
-import jsIcon from "../../../icons/lang/js.svg";
-
 import styles from "./newProjectModal.module.css";
 import {net} from "../../../api/net/net.js";
 import {useAuth} from "react-oidc-context";

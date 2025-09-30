@@ -3,14 +3,34 @@ import publicIcon from "../icons/PublicVisIcon.svg";
 import unlistedIcon from "../icons/UnlistedVisIcon.svg";
 import vite from "/vite.svg";
 
-const projTypesMap = {
-    "P5js":             ["Javascript", "p5.js"],
-    "PythonTurtle":     ["Python","Python Turtle"],
-    "Web":              ["Web","Web"],
+import jsIcon from "../icons/lang/js.svg";
+
+const projectTypes = {
+    P5js:{
+        name: "JavaScript",
+        icon:jsIcon,
+    },
+    PythonTurtle:{
+        name: "Python",
+        icon:jsIcon,
+    },
+    Web:{
+        name: "Web",
+        icon:jsIcon,
+    },
+    Lesson:{
+        name: "Lesson",
+        icon:jsIcon,
+    }
 }
 
+
 function getLangForType(rawType){
-    return (projTypesMap[rawType]??"?")[0];
+    let type =projectTypes[rawType];
+    if(type===undefined){
+        return "?"
+    }
+    return type.name??"?";
 }
 
 function getProjectNamedType(rawType){
