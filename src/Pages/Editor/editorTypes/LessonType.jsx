@@ -10,12 +10,12 @@ import StepsTab from "./LessonType/StepsTab.jsx";
 
 function LessonType(props){
     let auth = useAuth();
-    const [lessonJson, setLessonJson] = useState({});
+    const [lessonData, setLessonData] = useState({});
 
     const loadProject = async ()=>{
         let blob = await net.proj.getFile(auth.user?.access_token,[props.projectMetadata.id,"main"])
         let text = await blob.text();
-        setLessonJson(text)
+        setLessonData(JSON.parse(text));
     }
 
     return (
@@ -27,7 +27,7 @@ function LessonType(props){
             <Panel>
                 <TabGroup
                     tabs={[
-                        {name:"Steps",element:(<StepsTab />)},
+                        {name:"Steps",element:(<StepsTab lessonData={lessonData}/>)},
                         {name:"Code",element:(<h1>Code</h1>)},
                         {name:"Data",element:(<h1>Data</h1>)}
                     ]}
