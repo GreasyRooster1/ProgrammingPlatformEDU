@@ -12,9 +12,11 @@ function TabGroup(props) {
 
     return (
         <HeaderFlex headContent = {
-            props.tabs.map((tab,index) => <Tab {...props} key={index} tabName={tab.name} selected={activeTab===tab.name} onClick={clickHandle} />)
+            props.tabs.map((tab,index) => <Tab {...props} key={index} tab={{name:tab.name,id:index}} selected={activeTab===index} handle={clickHandle} />)
         }>
-
+            {
+                activeTab!==null && props.tabs[activeTab].element
+            }
         </HeaderFlex>
     );
 }
