@@ -5,11 +5,14 @@ import Step from "./Step.jsx";
 function StepsTab(props) {
     return (
         <div className={styles.body}>
-            {
-                props.lessonData.steps.map((step,index) => (
-                    <Step key={index} step={step}/>
-                ))
-            }
+            <span className={styles.title}>Steps ({props.lessonData.steps.length})</span>
+            <div>
+                {
+                    props.lessonData.steps.map((step,index) => (
+                        <Step key={index} step={step}/>
+                    ))
+                }
+            </div>
         </div>
     );
 }

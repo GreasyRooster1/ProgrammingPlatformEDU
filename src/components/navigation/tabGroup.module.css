@@ -5,6 +5,12 @@
     background-color: var(--neutral-dark);
 }
 
+.body{
+    display:flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .tab{
     padding: 0 4px;
     margin-right:4px;

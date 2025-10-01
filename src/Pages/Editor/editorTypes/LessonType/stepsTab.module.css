@@ -1,6 +1,5 @@
 .body{
-    width:100%;
-    height:100%;
+    padding:8px;
 }
 
 .step{
@@ -9,6 +8,6 @@
     background-color: var(--neutral-dark);
     border: 2px solid var(--neutral-light);
     padding:4px;
-    margin:8px;
+    margin-top:12px;
     border-radius: 5px;
 }
