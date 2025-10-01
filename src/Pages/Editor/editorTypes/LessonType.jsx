@@ -18,7 +18,7 @@ function LessonType(props){
     }
 
     return (
-        <TypedLanguageType
+        <EditorType
             noOutput
             loadProject={loadProject}
             {...props}
@@ -27,7 +27,7 @@ function LessonType(props){
 
             </Panel>
             <PanelResizeHandle />
-        </TypedLanguageType>
+        </EditorType>
     )
 }
 

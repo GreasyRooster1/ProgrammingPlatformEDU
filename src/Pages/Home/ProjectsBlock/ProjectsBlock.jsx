@@ -8,7 +8,7 @@ import SecondaryButton from "../../../components/buttons/SecondaryButton.jsx";
 import LinkButton from "../../../components/buttons/LinkButton.jsx";
 import {useAuth} from "react-oidc-context";
 import {net} from "../../../api/net/net.js";
-import ModalOpener from "../../../components/ModalOpener.jsx";
+import ModalOpener from "../../../components/navigation/ModalOpener.jsx";
 import NewProjectModal from "./NewProjectModal.jsx";
 
 function ProjectsBlock(props) {

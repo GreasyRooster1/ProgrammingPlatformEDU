@@ -1,5 +1,5 @@
 import React from 'react';
-import ScreenPage from "./screenPage/ScreenPage.jsx";
+import ScreenPage from "../screenPage/ScreenPage.jsx";
 import styles from "./modal.module.css";
 
 function Modal(props) {
