@@ -73,6 +73,8 @@ function EditorType(props){
                         <PanelResizeHandle /></>
                 )}
 
+                {props.children}
+
                 <Panel className={styles.codePanel} defaultSize={hasLesson?50:70} minSize={20}>
                     {loadedProject?props.codeEditor:<Loading />}
                 </Panel>
