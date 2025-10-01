@@ -27,6 +27,8 @@ function LessonType(props){
             <Panel>
                 <TabGroup
                     tabs={[
+                        {name:"Steps",element:(<h1>Steps</h1>)},
+                        {name:"Steps",element:(<h1>Steps</h1>)},
                         {name:"Steps",element:(<h1>Steps</h1>)}
                     ]}
                 />
