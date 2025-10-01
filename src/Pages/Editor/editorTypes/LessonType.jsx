@@ -6,6 +6,7 @@ import {useAuth} from "react-oidc-context";
 import {Panel, PanelResizeHandle} from "react-resizable-panels";
 import TypedLanguageType from "../typedLanguageType.jsx";
 import TabGroup from "../../../components/navigation/TabGroup.jsx";
+import StepsTab from "./LessonType/StepsTab.jsx";
 
 function LessonType(props){
     let auth = useAuth();
@@ -26,7 +27,7 @@ function LessonType(props){
             <Panel>
                 <TabGroup
                     tabs={[
-                        {name:"Steps",element:(<h1>Steps</h1>)},
+                        {name:"Steps",element:(<StepsTab />)},
                         {name:"Code",element:(<h1>Code</h1>)},
                         {name:"Data",element:(<h1>Data</h1>)}
                     ]}
