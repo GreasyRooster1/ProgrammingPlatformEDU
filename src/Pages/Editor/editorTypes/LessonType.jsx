@@ -6,6 +6,7 @@ import {net} from "../../../api/net/net.js";
 import {useAuth} from "react-oidc-context";
 import {Panel, PanelResizeHandle} from "react-resizable-panels";
 import TypedLanguageType from "../typedLanguageType.jsx";
+import TabGroup from "../../../components/navigation/TabGroup.jsx";
 
 function LessonType(props){
     let auth = useAuth();
@@ -24,7 +25,11 @@ function LessonType(props){
             {...props}
         >
             <Panel>
-
+                <TabGroup
+                    tabs={[
+                        {name:"Steps",element:(<h1>Steps</h1>)}
+                    ]}
+                />
             </Panel>
             <PanelResizeHandle />
         </EditorType>
