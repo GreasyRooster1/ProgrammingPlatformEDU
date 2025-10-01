@@ -8,7 +8,7 @@ function Tab(props) {
     }
 
     return (
-        <div onClick={onClick} className={styles.tab}>
+        <div onClick={onClick} className={`${styles.tab} ${props.selected?styles.selected:""}`}>
             <span>{props.tab.name}</span>
         </div>
     );

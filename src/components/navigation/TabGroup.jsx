@@ -6,8 +6,8 @@ import Tab from "./Tab.jsx";
 function TabGroup(props) {
     const [activeTab, setActiveTab] = React.useState(null);
 
-    const clickHandle = ()=>{
-
+    const clickHandle = (tab,setSelected)=>{
+        setActiveTab(tab.id);
     }
 
     return (
