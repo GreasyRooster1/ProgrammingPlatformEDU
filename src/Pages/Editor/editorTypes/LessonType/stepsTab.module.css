@@ -8,4 +8,7 @@
     flex-direction: column;
     background-color: var(--neutral-dark);
     border: 2px solid var(--neutral-light);
+    padding:4px;
+    margin:8px;
+    border-radius: 5px;
 }
