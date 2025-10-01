@@ -11,6 +11,8 @@
     border-radius: 5px;
     min-width:200px;
     min-height:100px;
+
+    transition: border-color linear .2s;
 }
 
 .stepGrid{
@@ -18,4 +20,8 @@
     display:flex;
     flex-wrap: wrap;
     gap:12px;
+}
+
+.selected{
+    border: 2px solid var(--primary);
 }
