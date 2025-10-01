@@ -36,3 +36,8 @@
 .stepPreview{
     color:var(--sub-text)
 }
+
+.addButton{
+    margin-top:8px;
+    font-size:2em;
+}
