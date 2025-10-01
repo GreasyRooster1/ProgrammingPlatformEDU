@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import styles from './stepsTab.module.css';
 import Step from "./Step.jsx";
+import MedTitle from "../../../../components/text/MedTitle.jsx";
+import Loading from "../../../../Loading.jsx";
 
 function StepsTab(props) {
     const [selectedStep, setSelectedStep] = useState(null);
@@ -8,9 +10,13 @@ function StepsTab(props) {
         setSelectedStep(index);
     }
 
+    if(props.lessonData===null){
+        return <Loading />
+    }
+
     return (
         <div className={styles.body}>
-            <span className={styles.title}>Steps ({props.lessonData.steps.length})</span>
+            <MedTitle className={styles.title}>Steps ({props.lessonData.steps.length})</MedTitle>
             <div className={styles.stepGrid}>
                 {
                     props.lessonData.steps.map((step,index) => (

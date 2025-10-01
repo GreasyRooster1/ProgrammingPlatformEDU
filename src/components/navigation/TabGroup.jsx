@@ -4,7 +4,7 @@ import HeaderFlex from "../headerFlex/HeaderFlex.jsx";
 import Tab from "./Tab.jsx";
 
 function TabGroup(props) {
-    const [activeTab, setActiveTab] = React.useState(null);
+    const [activeTab, setActiveTab] = React.useState(0);
 
     const clickHandle = (tab,setSelected)=>{
         setActiveTab(tab.id);

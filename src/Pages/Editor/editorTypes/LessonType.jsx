@@ -10,7 +10,7 @@ import StepsTab from "./LessonType/StepsTab.jsx";
 
 function LessonType(props){
     let auth = useAuth();
-    const [lessonData, setLessonData] = useState({});
+    const [lessonData, setLessonData] = useState(null);
 
     const loadProject = async ()=>{
         let blob = await net.proj.getFile(auth.user?.access_token,[props.projectMetadata.id,"main"])
