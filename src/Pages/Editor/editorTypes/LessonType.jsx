@@ -4,6 +4,8 @@ import P5Executor from "../Executors/P5Executor.jsx";
 import EditorType from "../editorType.jsx";
 import {net} from "../../../api/net/net.js";
 import {useAuth} from "react-oidc-context";
+import {Panel, PanelResizeHandle} from "react-resizable-panels";
+import TypedLanguageType from "../typedLanguageType.jsx";
 
 function LessonType(props){
     let auth = useAuth();
@@ -16,11 +18,16 @@ function LessonType(props){
     }
 
     return (
-        <EditorType
+        <TypedLanguageType
             noOutput
             loadProject={loadProject}
             {...props}
-        />
+        >
+            <Panel>
+
+            </Panel>
+            <PanelResizeHandle />
+        </TypedLanguageType>
     )
 }
 
