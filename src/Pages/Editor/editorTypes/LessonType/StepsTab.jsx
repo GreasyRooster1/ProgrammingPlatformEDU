@@ -24,8 +24,10 @@ function StepsTab(props) {
                         <Step key={index} step={step} stepIndex={index} selected={selectedStep===index} handle={clickHandle} />
                     ))
                 }
+                <div className={styles.addButton}>
+                    +
+                </div>
             </div>
-            <PrimaryButton className={styles.addButton}>+</PrimaryButton>
         </div>
     );
 }

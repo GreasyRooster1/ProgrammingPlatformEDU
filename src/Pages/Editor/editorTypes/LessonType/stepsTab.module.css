@@ -38,6 +38,21 @@
 }
 
 .addButton{
-    margin-top:8px;
-    font-size:2em;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px dashed var(--neutral-light);
+    padding:6px;
+    border-radius: 10px;
+    min-width:200px;
+    min-height:100px;
+    align-items: center;
+    font-size: 2em;
+
+    transition: border-color ease-in .2s, font-size ease-in .2s;
+}
+
+.addButton:hover{
+    border-color: var(--primary);
+    font-size:3em;
 }
