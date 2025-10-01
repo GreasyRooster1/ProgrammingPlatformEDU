@@ -24,7 +24,7 @@ function LessonType(props){
             loadProject={loadProject}
             {...props}
         >
-            <Panel>
+            <Panel defaultSize={70}>
                 <TabGroup
                     tabs={[
                         {name:"Steps",element:(<StepsTab lessonData={lessonData}/>)},
