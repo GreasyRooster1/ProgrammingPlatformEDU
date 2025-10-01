@@ -1,0 +1,10 @@
+.head{
+    display: flex;
+    flex-direction: row;
+}
+
+.tab{
+    padding: 0 4px;
+    margin-right:4px;
+    border:1px solid var(--neutral-light);
+}

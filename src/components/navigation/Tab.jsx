@@ -8,7 +8,7 @@ function Tab(props) {
     }
 
     return (
-        <div onClick={onClick}>
+        <div onClick={onClick} className={styles.tab}>
             <span>{props.tab.name}</span>
         </div>
     );

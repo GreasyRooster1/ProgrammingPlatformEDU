@@ -13,7 +13,9 @@ function TabGroup(props) {
     return (
         <HeaderFlex headContent = {
             props.tabs.map((tab,index) => <Tab {...props} key={index} tab={{name:tab.name,id:index}} selected={activeTab===index} handle={clickHandle} />)
-        }>
+        }
+        headClassName={styles.head}
+        bodyClassName={styles.body}>
             {
                 activeTab!==null && props.tabs[activeTab].element
             }
