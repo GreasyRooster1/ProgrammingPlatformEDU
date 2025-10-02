@@ -9,6 +9,8 @@ import TabGroup from "../../../components/navigation/TabGroup.jsx";
 import StepsTab from "./LessonType/StepsTab.jsx";
 
 import styles from "./LessonType.module.css";
+import StepEditor from "./LessonType/StepEditor.jsx";
+import StepPreview from "./LessonType/StepPreview.jsx";
 
 function LessonType(props){
     let auth = useAuth();
@@ -39,7 +41,12 @@ function LessonType(props){
             <PanelResizeHandle />
 
             <Panel minSize={15}>
+                <StepEditor />
+            </Panel>
+            <PanelResizeHandle />
 
+            <Panel minSize={15}>
+                <StepPreview />
             </Panel>
         </EditorType>
     )
