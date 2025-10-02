@@ -13,7 +13,7 @@
     min-width:200px;
     min-height:100px;
 
-    transition: border-color linear .2s;
+    transition: border-color ease-out .2s;
 }
 
 .stepGrid{
