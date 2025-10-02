@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './stepEditor.module.css'
 import MedTitle from "../../../../components/text/MedTitle.jsx";
 import StepComponent from "../../panels/lesson/StepComponent.jsx";
-import EditableStep from "./EditableStep.jsx";
+import EditableComponent from "./EditableComponent.jsx";
 
 function StepEditor(props) {
     if(!props.stepData){
@@ -17,7 +17,7 @@ function StepEditor(props) {
         <div className={styles.editor}>
             {
                 props.stepData.components.map((component, index) => (
-                    <EditableStep key={index} component={component} />
+                    <EditableComponent key={index} component={component} />
                 ))
             }
         </div>
