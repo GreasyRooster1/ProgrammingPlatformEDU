@@ -13,7 +13,7 @@ function EditableComponent(props) {
 
     return (
         <div className={styles.editableStep}>
-            <StepComponent component={props.component} components={components} />
+            <StepComponent component={componentData} components={components} />
         </div>
     );
 }

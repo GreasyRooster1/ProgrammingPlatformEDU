@@ -1,8 +1,15 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import TextBox from "../../../../../components/TextBox.jsx";
 
 function EditableText(props) {
     const [text, setText] = useState(""); {}
+
+    useEffect(() => {
+        props.setComponentData({
+            text: text,
+            ...props.component,
+        })
+    },[text])
 
     return (
         <>
