@@ -8,6 +8,8 @@ import TypedLanguageType from "../typedLanguageType.jsx";
 import TabGroup from "../../../components/navigation/TabGroup.jsx";
 import StepsTab from "./LessonType/StepsTab.jsx";
 
+import styles from "./LessonType.module.css";
+
 function LessonType(props){
     let auth = useAuth();
     const [lessonData, setLessonData] = useState(null);
@@ -25,7 +27,7 @@ function LessonType(props){
             loadProject={loadProject}
             {...props}
         >
-            <Panel defaultSize={70}>
+            <Panel defaultSize={40} minSize={15} className={styles.tabsPanel}>
                 <TabGroup
                     tabs={[
                         {name:"Steps",element:(<StepsTab lessonData={lessonData}/>)},
@@ -36,7 +38,7 @@ function LessonType(props){
             </Panel>
             <PanelResizeHandle />
 
-            <Panel defaultSize={30}>
+            <Panel minSize={15}>
 
             </Panel>
         </EditorType>
