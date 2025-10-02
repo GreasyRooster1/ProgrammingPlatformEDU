@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from "./stepComponent.module.css"
 import TitleComponent from "./TitleComponent.jsx";
+import TextComponent from "./TextComponent.jsx";
 
 function StepComponent(props) {
 
