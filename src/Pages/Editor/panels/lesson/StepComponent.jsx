@@ -1,15 +1,16 @@
 import React from 'react';
 import styles from "./stepComponent.module.css"
+import TitleComponent from "./TitleComponent.jsx";
 
 function StepComponent(props) {
 
-    let components = {
+    const components = {
         "title":(<TitleComponent />),
         "text":(<TextComponent />),
     }
 
     return (
-        components[props.component.type]
+        React.cloneElement(components[props.component.type],{component:props.component})
     );
 }
 
