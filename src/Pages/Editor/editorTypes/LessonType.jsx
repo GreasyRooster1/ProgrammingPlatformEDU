@@ -21,6 +21,7 @@ function LessonType(props){
     return (
         <EditorType
             noOutput
+            noCode
             loadProject={loadProject}
             {...props}
         >
@@ -34,6 +35,10 @@ function LessonType(props){
                 />
             </Panel>
             <PanelResizeHandle />
+
+            <Panel defaultSize={30}>
+
+            </Panel>
         </EditorType>
     )
 }

@@ -75,10 +75,10 @@ function EditorType(props){
 
                 {props.children}
 
-                <Panel className={styles.codePanel} defaultSize={hasLesson?50:70} minSize={20}>
+                {!props.noCode && <><Panel className={styles.codePanel} defaultSize={hasLesson?50:70} minSize={20}>
                     {loadedProject?props.codeEditor:<Loading />}
                 </Panel>
-                <PanelResizeHandle />
+                <PanelResizeHandle /></>}
 
                 {!props.noOutput && <Panel defaultSize={25} minSize={20}>
                     <PanelGroup direction="vertical">
