@@ -2,5 +2,10 @@
     border: 2px solid var(--neutral-light);
     border-radius: 10px;
     background-color: var(--neutral-dark);
-    padding:4px;
+    padding:6px;
+
+    gap:4px;
+
+    display: flex;
+    flex-direction: column;
 }
