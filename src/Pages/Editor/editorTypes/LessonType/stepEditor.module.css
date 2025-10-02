@@ -1,5 +1,8 @@
 .editor{
     display: flex;
+    padding: 4px;
+    flex-direction: column;
+    gap:12px;
 }
 
 .selectPrompt{
@@ -8,5 +11,5 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    color:var(--sub-text)
+    color:var(--sub-text);
 }

@@ -14,7 +14,7 @@ function StepEditor(props) {
     }
 
     return (
-        <div className={styles.preview}>
+        <div className={styles.editor}>
             {
                 props.stepData.components.map((component, index) => (
                     <EditableStep key={index} component={component} />
