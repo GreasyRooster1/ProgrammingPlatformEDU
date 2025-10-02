@@ -3,7 +3,9 @@ import style from './stepPreview.module.css'
 
 function StepPreview(props) {
     return (
-        <div></div>
+        {
+            props.lessonData.s
+        }
     );
 }
 

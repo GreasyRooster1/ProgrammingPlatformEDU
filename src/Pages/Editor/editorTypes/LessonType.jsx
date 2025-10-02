@@ -46,7 +46,7 @@ function LessonType(props){
             <PanelResizeHandle />
 
             <Panel minSize={15}>
-                <StepPreview />
+                <StepPreview stepData={""} />
             </Panel>
         </EditorType>
     )
