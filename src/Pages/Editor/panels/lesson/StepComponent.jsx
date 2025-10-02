@@ -5,7 +5,7 @@ import TextComponent from "./TextComponent.jsx";
 
 function StepComponent(props) {
 
-    const components = {
+    const components = props.components??{
         "title":(<TitleComponent />),
         "text":(<TextComponent />),
     }
