@@ -1,3 +1,7 @@
 .tabsPanel {
     border-right: 2px solid var(--neutral-light);
 }
+
+.editorPanel{
+    border-right:2px solid var(--neutral-light)
+}

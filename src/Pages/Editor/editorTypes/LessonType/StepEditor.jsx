@@ -1,9 +1,11 @@
 import React from 'react';
-import style from './stepEditor.module.css'
+import styles from './stepEditor.module.css'
 
 function StepEditor(props) {
     return (
-        <div></div>
+        <div className={styles.editor}>
+
+        </div>
     );
 }
 
