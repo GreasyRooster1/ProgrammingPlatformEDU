@@ -4,13 +4,15 @@ import StepComponent from "../../panels/lesson/StepComponent.jsx";
 import EditableText from "./EditableComponents/EditableText.jsx";
 
 function EditableComponent(props) {
+
     const components = {
-        "text":<EditableText component={props.component}/>
+        "text":<EditableText />,
+        "title":<EditableText />
     }
 
     return (
         <div className={styles.editableStep}>
-            <StepComponent />
+            <StepComponent component={props.component} components={components} />
         </div>
     );
 }
