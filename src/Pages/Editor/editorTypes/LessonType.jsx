@@ -1,4 +1,4 @@
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import P5Executor from "../Executors/P5Executor.jsx";
 import EditorType from "../editorType.jsx";
 import {net} from "../../../api/net/net.js";
@@ -16,6 +16,17 @@ function LessonType(props){
     let auth = useAuth();
     const [lessonData, setLessonData] = useState(null);
     const [selectedStep, setSelectedStep] = useState(null);
+    const [stepData, setStepData] = useState(null);
+
+    useEffect(() => {
+        setStepData(lessonData?.steps[selectedStep]);
+    },[props.steps])
+
+    useEffect(() => {
+        let newData = {...lessonData};
+        newData.steps[selectedStep] = stepData;
+        setLessonData(newData);
+    },[stepData])
 
     const loadProject = async ()=>{
         let blob = await net.proj.getFile(auth.user?.access_token,[props.projectMetadata.id,"main"])
@@ -47,7 +58,7 @@ function LessonType(props){
             <PanelResizeHandle />
 
             <Panel minSize={15}>
-                <StepPreview stepData={lessonData?.steps[selectedStep]} />
+                <StepPreview stepData={stepData} setStepData={setStepData} />
             </Panel>
         </EditorType>
     )
