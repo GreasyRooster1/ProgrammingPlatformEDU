@@ -15,13 +15,13 @@ function StepPreview(props) {
     }
 
     return (
-        <>
+        <div className={styles.preview}>
         {
             props.stepData.components.map((component, index) => (
                 <StepComponent key={index} component={component} />
             ))
         }
-        </>
+        </div>
     );
 }
 
