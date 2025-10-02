@@ -6,9 +6,8 @@ import Loading from "../../../../Loading.jsx";
 import PrimaryButton from "../../../../components/buttons/PrimaryButton.jsx";
 
 function StepsTab(props) {
-    const [selectedStep, setSelectedStep] = useState(null);
     let clickHandle = (index)=>{
-        setSelectedStep(index);
+        props.setSelectedStep(index);
     }
 
     if(props.lessonData===null){
@@ -21,7 +20,7 @@ function StepsTab(props) {
             <div className={styles.stepGrid}>
                 {
                     props.lessonData.steps.map((step,index) => (
-                        <Step key={index} step={step} stepIndex={index} selected={selectedStep===index} handle={clickHandle} />
+                        <Step key={index} step={step} stepIndex={index} selected={props.selectedStep===index} handle={clickHandle} />
                     ))
                 }
                 <div className={styles.addButton}>

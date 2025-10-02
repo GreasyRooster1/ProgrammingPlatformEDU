@@ -15,6 +15,7 @@ import StepPreview from "./LessonType/StepPreview.jsx";
 function LessonType(props){
     let auth = useAuth();
     const [lessonData, setLessonData] = useState(null);
+    const [selectedStep, setSelectedStep] = useState(null);
 
     const loadProject = async ()=>{
         let blob = await net.proj.getFile(auth.user?.access_token,[props.projectMetadata.id,"main"])
@@ -32,7 +33,7 @@ function LessonType(props){
             <Panel defaultSize={40} minSize={15} className={styles.tabsPanel}>
                 <TabGroup
                     tabs={[
-                        {name:"Steps",element:(<StepsTab lessonData={lessonData}/>)},
+                        {name:"Steps",element:(<StepsTab lessonData={lessonData} setSelectedStep={setSelectedStep} selectedStep={selectedStep}/>)},
                         {name:"Code",element:(<h1>Code</h1>)},
                         {name:"Data",element:(<h1>Data</h1>)}
                     ]}
@@ -46,7 +47,7 @@ function LessonType(props){
             <PanelResizeHandle />
 
             <Panel minSize={15}>
-                <StepPreview stepData={""} />
+                <StepPreview stepData={lessonData?.steps[selectedStep]} />
             </Panel>
         </EditorType>
     )

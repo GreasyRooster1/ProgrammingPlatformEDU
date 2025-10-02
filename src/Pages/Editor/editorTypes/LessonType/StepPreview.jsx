@@ -4,7 +4,7 @@ import style from './stepPreview.module.css'
 function StepPreview(props) {
     return (
         {
-            props.lessonData.s
+            // props.stepData.
         }
     );
 }
