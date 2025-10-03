@@ -19,14 +19,17 @@ function LessonType(props){
     const [stepData, setStepData] = useState(null);
 
     useEffect(() => {
-        setStepData(lessonData?.steps[selectedStep]);
-    },[props.steps])
-
-    useEffect(() => {
+        if(!stepData){
+            return;
+        }
         let newData = {...lessonData};
         newData.steps[selectedStep] = stepData;
         setLessonData(newData);
     },[stepData])
+
+    useEffect(() => {
+        setStepData(lessonData?.steps[selectedStep]);
+    },[selectedStep]);
 
     const loadProject = async ()=>{
         let blob = await net.proj.getFile(auth.user?.access_token,[props.projectMetadata.id,"main"])
