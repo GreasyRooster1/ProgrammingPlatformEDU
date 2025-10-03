@@ -16,10 +16,12 @@
     transition: border-color ease-out .2s;
 }
 
-.stepGrid{
+.stepsContainer{
     margin-top:4px;
     display:flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: 100%;
     gap:12px;
 }
 

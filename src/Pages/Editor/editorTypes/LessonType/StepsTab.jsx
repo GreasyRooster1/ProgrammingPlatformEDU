@@ -17,7 +17,7 @@ function StepsTab(props) {
     return (
         <div className={styles.body}>
             <MedTitle className={styles.title}>Steps ({props.lessonData.steps.length})</MedTitle>
-            <div className={styles.stepGrid}>
+            <div className={styles.stepsContainer}>
                 {
                     props.lessonData.steps.map((step,index) => (
                         <Step key={index} step={step} stepIndex={index} selected={props.selectedStep===index} handle={clickHandle} />
