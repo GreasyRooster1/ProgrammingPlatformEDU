@@ -9,10 +9,13 @@ function LimitText(props) {
             return;
         }
         let str = props.children.toString();
-        if(str.length<=props.maxLength){
-            return str.substring(0,props.maxLength-2)+"...";
+        if(str.length>=props.maxLength){
+            setText(
+                str.substring(0,props.maxLength-2)+"..."
+            );
+            return;
         }
-        return str;
+        setText(str);
     }, [props.children,props.maxLength]);
 
     return (
