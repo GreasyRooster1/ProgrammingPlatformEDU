@@ -9,7 +9,6 @@ function EditableComponent(props) {
     useEffect(() => {
         let newStepData = {...props.stepData};
 
-        console.log(componentData);
         newStepData.components[props.index] = componentData;
         props.setStepData(newStepData);
     },[componentData])

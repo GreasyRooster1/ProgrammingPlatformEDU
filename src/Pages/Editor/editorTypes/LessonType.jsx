@@ -25,8 +25,6 @@ function LessonType(props){
         let newData = {...lessonData};
         newData.steps[selectedStep] = stepData;
         setLessonData(newData);
-        console.log(lessonData);
-        console.log(stepData)
     },[stepData])
 
     useEffect(() => {
