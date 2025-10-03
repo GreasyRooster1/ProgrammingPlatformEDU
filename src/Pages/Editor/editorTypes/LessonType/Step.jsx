@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styles from "./stepsTab.module.css"
+import LimitText from "../../../../components/text/LimitText.jsx";
 
 function Step(props) {
     let click = ()=>{
@@ -12,7 +13,7 @@ function Step(props) {
                 <span className={styles.id}>{props.stepIndex}</span>
                 <span className={styles.stepType}>{props.step.type}</span>
             </div>
-            <span className={styles.stepPreview}>{props.step.components[0]?.text??"No preview"}</span>
+            <LimitText className={styles.stepPreview} maxLength={20}>{props.step.components[0]?.text??"No preview"}</LimitText>
         </div>
     );
 }
