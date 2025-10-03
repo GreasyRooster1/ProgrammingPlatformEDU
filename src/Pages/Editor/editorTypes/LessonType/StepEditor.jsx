@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './stepEditor.module.css'
 import MedTitle from "../../../../components/text/MedTitle.jsx";
 import StepComponent from "../../panels/lesson/StepComponent.jsx";
@@ -17,7 +17,7 @@ function StepEditor(props) {
         <div className={styles.editor}>
             {
                 props.stepData.components.map((component, index) => (
-                    <EditableComponent key={index} component={component} />
+                    <EditableComponent key={index} index={index} component={component} stepData={props.stepData} setStepData={props.setStepData}/>
                 ))
             }
         </div>

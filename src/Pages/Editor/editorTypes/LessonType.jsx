@@ -25,6 +25,8 @@ function LessonType(props){
         let newData = {...lessonData};
         newData.steps[selectedStep] = stepData;
         setLessonData(newData);
+        console.log(lessonData);
+        console.log(stepData)
     },[stepData])
 
     useEffect(() => {
@@ -56,12 +58,12 @@ function LessonType(props){
             <PanelResizeHandle />
 
             <Panel minSize={15} className={styles.editorPanel}>
-                <StepEditor stepData={lessonData?.steps[selectedStep]}/>
+                <StepEditor stepData={stepData} setStepData={setStepData}/>
             </Panel>
             <PanelResizeHandle />
 
             <Panel minSize={15}>
-                <StepPreview stepData={stepData} setStepData={setStepData} />
+                <StepPreview stepData={stepData} />
             </Panel>
         </EditorType>
     )
