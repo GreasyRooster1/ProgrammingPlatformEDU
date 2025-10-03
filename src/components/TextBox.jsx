@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styles from './textBox.module.css';
 
 function TextBox(props) {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState(props.value??'');
     const [valid, setValid] = useState(true);
 
     const handleChange = (event) => {
