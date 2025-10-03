@@ -6,7 +6,7 @@ import {useAuth} from "react-oidc-context";
 import {Panel, PanelResizeHandle} from "react-resizable-panels";
 import TypedLanguageType from "../typedLanguageType.jsx";
 import TabGroup from "../../../components/navigation/TabGroup.jsx";
-import StepsTab from "./LessonType/StepsTab.jsx";
+import StepsList from "./LessonType/StepsList.jsx";
 
 import styles from "./LessonType.module.css";
 import StepEditor from "./LessonType/StepEditor.jsx";
@@ -45,7 +45,7 @@ function LessonType(props){
             {...props}
         >
             <Panel defaultSize={10} minSize={10} maxSize={20} className={styles.tabsPanel}>
-                <StepsTab lessonData={lessonData} setSelectedStep={setSelectedStep} selectedStep={selectedStep}/>
+                <StepsList lessonData={lessonData} setSelectedStep={setSelectedStep} selectedStep={selectedStep}/>
             </Panel>
             <PanelResizeHandle />
 

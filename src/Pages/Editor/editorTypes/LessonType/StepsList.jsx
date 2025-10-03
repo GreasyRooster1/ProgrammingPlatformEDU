@@ -5,7 +5,7 @@ import MedTitle from "../../../../components/text/MedTitle.jsx";
 import Loading from "../../../../Loading.jsx";
 import PrimaryButton from "../../../../components/buttons/PrimaryButton.jsx";
 
-function StepsTab(props) {
+function StepsList(props) {
     let clickHandle = (index)=>{
         props.setSelectedStep(index);
     }
@@ -31,4 +31,4 @@ function StepsTab(props) {
     );
 }
 
-export default StepsTab;
+export default StepsList;
