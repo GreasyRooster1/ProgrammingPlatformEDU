@@ -2,15 +2,10 @@ import React, {useEffect, useState} from 'react';
 import TextBox from "../../../../../components/TextBox.jsx";
 
 function EditableText(props) {
-    const [text, setText] = useState("");
+    const [text, setText] = useState(props.component.text);
 
     useEffect(() => {
-        console.log(text)
         props.setComponentData({
-            ...props.component,
-            text: text,
-        })
-        console.log({
             ...props.component,
             text: text,
         })
@@ -19,7 +14,7 @@ function EditableText(props) {
     return (
         <>
             <span>Text</span>
-            <TextBox placeholder={"type some content..."} setValue={setText}></TextBox>
+            <TextBox placeholder={"type some content..."} value={text} setValue={setText}></TextBox>
         </>
     );
 }
