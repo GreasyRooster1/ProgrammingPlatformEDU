@@ -21,8 +21,8 @@
     display:flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    height: 100%;
     gap:12px;
+    overflow:auto;
 }
 
 .selected{
