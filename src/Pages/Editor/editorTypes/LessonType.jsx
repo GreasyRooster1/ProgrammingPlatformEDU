@@ -46,19 +46,19 @@ function LessonType(props){
             loadProject={loadProject}
             {...props}
         >
-            <Panel defaultSize={40} minSize={15} className={styles.tabsPanel}>
-                <TabGroup
-                    tabs={[
-                        {name:"Steps",element:(<StepsTab lessonData={lessonData} setSelectedStep={setSelectedStep} selectedStep={selectedStep}/>)},
-                        {name:"Code",element:(<h1>Code</h1>)},
-                        {name:"Data",element:(<h1>Data</h1>)}
-                    ]}
-                />
+            <Panel defaultSize={10} minSize={10} maxSize={20} className={styles.tabsPanel}>
+                <StepsTab lessonData={lessonData} setSelectedStep={setSelectedStep} selectedStep={selectedStep}/>
             </Panel>
             <PanelResizeHandle />
 
             <Panel minSize={15} className={styles.editorPanel}>
-                <StepEditor stepData={stepData} setStepData={setStepData} selectedStep={selectedStep}/>
+                <TabGroup
+                    tabs={[
+                        {name:"Step",element:(<StepEditor stepData={stepData} setStepData={setStepData} selectedStep={selectedStep}/>)},
+                        {name:"Code",element:(<h1>Code</h1>)},
+                        {name:"Data",element:(<h1>Data</h1>)}
+                    ]}
+                />
             </Panel>
             <PanelResizeHandle />
 
