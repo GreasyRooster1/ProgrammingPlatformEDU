@@ -20,7 +20,7 @@ function EditableComponent(props) {
 
     return (
         <div className={styles.editableStep}>
-            <StepComponent key={props.selectedStep} component={componentData} components={components} />
+            <StepComponent selectedStep={props.selectedStep} component={componentData} components={components} />
         </div>
     );
 }

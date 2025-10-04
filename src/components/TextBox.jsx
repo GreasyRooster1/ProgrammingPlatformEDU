@@ -16,6 +16,10 @@ function TextBox(props) {
         }
     },[value])
 
+    useEffect(() => {
+        setValid(props.value);
+    },[props.value])
+
     return (
         <input
             className={`${styles.textBox} ${props.className} ${valid?"":styles.invalid}`}
