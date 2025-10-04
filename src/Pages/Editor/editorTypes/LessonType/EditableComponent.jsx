@@ -22,8 +22,16 @@ function EditableComponent(props) {
         "title":<EditableText setComponentData={setComponentData}/>
     }
 
+    const typeNames={
+        "text":"Text",
+        "title":"Title",
+    }
+
     return (
         <div className={styles.editableStep}>
+            <span>{
+                typeNames[props.component.type]??"Component"
+            }</span>
             <StepComponent stepData={props.stepData} component={componentData} components={components} />
         </div>
     );
