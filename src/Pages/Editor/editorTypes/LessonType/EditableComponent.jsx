@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styles from "./editableComponent.module.css"
 import StepComponent from "../../panels/lesson/StepComponent.jsx";
 import EditableText from "./EditableComponents/EditableText.jsx";
+import Dropdown from "../../../../components/Form/Dropdown.jsx";
 
 function EditableComponent(props) {
     const [componentData,setComponentData] = useState(props.component);
@@ -22,16 +23,14 @@ function EditableComponent(props) {
         "title":<EditableText setComponentData={setComponentData}/>
     }
 
-    const typeNames={
-        "text":"Text",
-        "title":"Title",
-    }
+    const types=[
+        "Text",
+        "Title",
+    ]
 
     return (
         <div className={styles.editableStep}>
-            <span>{
-                typeNames[props.component.type]??"Component"
-            }</span>
+            <Dropdown options={types}/>
             <StepComponent stepData={props.stepData} component={componentData} components={components} />
         </div>
     );
