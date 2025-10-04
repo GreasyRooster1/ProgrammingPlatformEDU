@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import MedTitle from "../../../components/text/MedTitle.jsx";
 import PrimaryButton from "../../../components/buttons/PrimaryButton.jsx";
-import TextBox from "../../../components/TextBox.jsx";
+import TextBox from "../../../components/form/TextBox.jsx";
 import LanguageSelector from "./LanguageSelector.jsx";
 
 import styles from "./newProjectModal.module.css";
