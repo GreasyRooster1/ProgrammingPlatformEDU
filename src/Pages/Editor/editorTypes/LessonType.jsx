@@ -29,7 +29,6 @@ function LessonType(props){
 
     useEffect(() => {
         setStepData(lessonData?.steps[selectedStep]);
-        console.log("loaded step data for ",selectedStep);
     },[selectedStep]);
 
     const loadProject = async ()=>{

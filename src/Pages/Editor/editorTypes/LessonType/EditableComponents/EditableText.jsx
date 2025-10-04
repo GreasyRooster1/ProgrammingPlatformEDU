@@ -13,7 +13,6 @@ function EditableText(props) {
 
     useEffect(() => {
         setText(props.component.text);
-        console.log(props.selectedStep)
     },[props.stepData]);
 
 
