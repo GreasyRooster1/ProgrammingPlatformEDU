@@ -26,6 +26,9 @@ function EditableComponent(props) {
     const types=[
         "Text",
         "Title",
+        "Code",
+        "Image",
+        "Hint",
     ]
 
     return (
