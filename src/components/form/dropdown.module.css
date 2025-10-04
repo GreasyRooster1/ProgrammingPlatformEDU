@@ -67,6 +67,7 @@
 .dropdown option:hover,
 .dropdown option:focus {
     background: var(--primary);
+    outline: none;
 }
 
 .dropdown option:checked {
