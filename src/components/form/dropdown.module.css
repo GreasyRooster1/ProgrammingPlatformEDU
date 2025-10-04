@@ -5,6 +5,7 @@
 .dropdown,
 ::picker(select) {
     appearance: base-select;
+
 }
 
 .dropdown {
@@ -46,11 +47,11 @@
 }
 
 .dropdown option:first-of-type {
-    border-radius: 8px 8px 0 0;
+    /*border-radius: 8px 8px 0 0;*/
 }
 
 .dropdown option:last-of-type {
-    border-radius: 0 0 8px 8px;
+    /*border-radius: 0 0 8px 8px;*/
 }
 
 .dropdown option:not(option:last-of-type) {
