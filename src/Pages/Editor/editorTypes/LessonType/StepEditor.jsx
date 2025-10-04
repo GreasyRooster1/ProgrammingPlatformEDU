@@ -27,6 +27,9 @@ function StepEditor(props) {
                     />
                 ))
             }
+            <div className={styles.addButton}>
+                +
+            </div>
         </div>
     );
 }
