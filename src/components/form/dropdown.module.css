@@ -9,8 +9,9 @@
 }
 
 .dropdown {
-    flex:1;
+    width:fit-content;
     border: 1px solid var(--neutral-light);
+    border-radius: 10px;
     background: var(--neutral-med);
     padding: 4px;
     transition: 0.4s;
@@ -24,6 +25,7 @@
 .dropdown::picker-icon {
     color: var(--sub-text);
     transition: 0.4s rotate;
+    padding-left:6px;
 }
 
 .dropdown:open::picker-icon {
