@@ -6,6 +6,7 @@ import Dropdown from "../../../../components/Form/Dropdown.jsx";
 
 function EditableComponent(props) {
     const [componentData,setComponentData] = useState(props.component);
+    const [selectedType, setSelectedType] = useState(props.component.type);
 
     useEffect(() => {
         let newStepData = {...props.stepData};
@@ -16,7 +17,21 @@ function EditableComponent(props) {
 
     useEffect(() => {
         setComponentData(props.component);
+        setSelectedType(props.component.type);
     },[props.component])
+
+    useEffect(() => {
+        setComponentData({
+            ...props.component,
+            type: selectedType,
+        });
+        console.log(componentData);
+    },[selectedType])
+
+    const onDropdownChange = (e) => {
+        setSelectedType(e.target.value.toLowerCase());
+        console.log(selectedType);
+    }
 
     const components = {
         "text":<EditableText setComponentData={setComponentData} />,
@@ -33,7 +48,7 @@ function EditableComponent(props) {
 
     return (
         <div className={styles.editableStep}>
-            <Dropdown options={types}/>
+            <Dropdown options={types} onChange={onDropdownChange} value={selectedType}/>
             <StepComponent stepData={props.stepData} component={componentData} components={components} />
         </div>
     );
