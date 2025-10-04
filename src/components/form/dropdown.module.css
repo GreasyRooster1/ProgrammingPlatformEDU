@@ -1,0 +1,21 @@
+.dropdown {
+    display: inline;
+}
+
+.dropdown,
+::picker(select) {
+    appearance: base-select;
+}
+
+.dropdown {
+    flex:1;
+    border: 2px solid var(--neutral-light);
+    background: var(--neutral-med);
+    padding: 4px;
+    transition: 0.4s;
+}
+
+.dropdown:hover,
+.dropdown:open {
+    border-color:var(--primary);
+}
