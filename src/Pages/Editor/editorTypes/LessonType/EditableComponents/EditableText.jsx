@@ -18,7 +18,9 @@ function EditableText(props) {
 
     return (
         <>
-            <span>Text</span>
+            <span>{
+                props.component.type==="text"?"Text":"Title"
+            }</span>
             <TextBox placeholder={"type some content..."} value={text} setValue={setText}></TextBox>
         </>
     );
