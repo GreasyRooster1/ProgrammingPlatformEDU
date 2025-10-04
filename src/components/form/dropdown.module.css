@@ -19,3 +19,8 @@
 .dropdown:open {
     border-color:var(--primary);
 }
+
+select::picker-icon {
+    color: var(--neutral-light);
+    transition: 0.4s rotate;
+}
