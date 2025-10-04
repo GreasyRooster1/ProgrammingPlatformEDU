@@ -1,5 +1,6 @@
 .tabsPanel {
     border-right: 2px solid var(--neutral-light);
+    overflow-y: auto !important;
 }
 
 .editorPanel{
