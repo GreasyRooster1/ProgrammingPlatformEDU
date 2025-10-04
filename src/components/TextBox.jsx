@@ -17,7 +17,7 @@ function TextBox(props) {
     },[value])
 
     useEffect(() => {
-        setValid(props.value);
+        setValue(props.value);
     },[props.value])
 
     return (

@@ -11,7 +11,10 @@ function StepComponent(props) {
     }
 
     return (
-        React.cloneElement(components[props.component.type],{component:props.component})
+        React.cloneElement(components[props.component.type],{
+            ...props,
+            component:props.component
+        })
     );
 }
 

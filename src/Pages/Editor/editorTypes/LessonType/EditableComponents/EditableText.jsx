@@ -4,19 +4,18 @@ import TextBox from "../../../../../components/TextBox.jsx";
 function EditableText(props) {
     const [text, setText] = useState(props.component.text);
 
-
-
-    useEffect(() => {
-        console.log("text change",props.component)
-        setText(props.component.text);
-    },[props.selectedStep]);
-
     useEffect(() => {
         props.setComponentData({
             ...props.component,
             text: text,
         })
     },[text])
+
+    useEffect(() => {
+        setText(props.component.text);
+        console.log(props.selectedStep)
+    },[props.stepData]);
+
 
     return (
         <>

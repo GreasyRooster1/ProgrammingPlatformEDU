@@ -13,6 +13,10 @@ function EditableComponent(props) {
         props.setStepData(newStepData);
     },[componentData])
 
+    useEffect(() => {
+        setComponentData(props.component);
+    },[props.component])
+
     const components = {
         "text":<EditableText setComponentData={setComponentData} />,
         "title":<EditableText setComponentData={setComponentData}/>
@@ -20,7 +24,7 @@ function EditableComponent(props) {
 
     return (
         <div className={styles.editableStep}>
-            <StepComponent selectedStep={props.selectedStep} component={componentData} components={components} />
+            <StepComponent stepData={props.stepData} component={componentData} components={components} />
         </div>
     );
 }
