@@ -37,6 +37,10 @@
     color: var(--default-text-color)
 }
 
+*{
+    scrollbar-color: var(--neutral-light) transparent   ;
+}
+
 html{
     font-size: 14pt;
 }
