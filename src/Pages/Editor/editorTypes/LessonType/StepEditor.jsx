@@ -27,27 +27,25 @@ function StepEditor(props) {
 
     return (
         <div className={styles.editor} onClick={deselectClickHandle}>
-            {
-                <div className={styles.preview}>
-                    {
-                        props.stepData.components.map((component, index) => (
-                            <div className={`${styles.component} ${selectedComponent===index?styles.selected:styles.unselected}`} onClick={()=>{clickHandle(index)}}>
-                                {selectedComponent===index?
-                                    <EditableComponent
-                                        key={index}
-                                        index={index}
-                                        component={component}
-                                        stepData={props.stepData}
-                                        setStepData={props.setStepData}
-                                        selectedStep={props.selectedStep}
-                                    />:
-                                    <StepComponent key={index} component={component}/>
-                                }
-                            </div>
-                        ))
-                    }
-                </div>
-            }
+            <div className={styles.preview}>
+                {
+                    props.stepData.components.map((component, index) => (
+                        <div className={`${styles.component} ${selectedComponent===index?styles.selected:styles.unselected}`} onClick={()=>{clickHandle(index)}}>
+                            {selectedComponent===index?
+                                <EditableComponent
+                                    key={index}
+                                    index={index}
+                                    component={component}
+                                    stepData={props.stepData}
+                                    setStepData={props.setStepData}
+                                    selectedStep={props.selectedStep}
+                                />:
+                                <StepComponent key={index} component={component}/>
+                            }
+                        </div>
+                    ))
+                }
+            </div>
             <div className={styles.addButton}>
                 +
             </div>
