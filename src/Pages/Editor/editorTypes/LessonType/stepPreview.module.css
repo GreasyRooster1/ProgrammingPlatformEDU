@@ -10,5 +10,15 @@
 .preview{
     display: flex;
     flex-direction: column;
-    padding-left:6px;
+}
+
+.component{
+    border: 2px dashed transparent;
+    border-radius: 10px;
+    transition: border-color ease-in-out .25s;
+    padding:4px;
+}
+
+.component:hover{
+    border-color:var(--neutral-light);
 }
