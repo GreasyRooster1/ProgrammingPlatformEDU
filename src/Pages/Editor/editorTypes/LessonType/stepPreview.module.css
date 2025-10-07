@@ -12,14 +12,3 @@
     flex-direction: column;
     padding:2px;
 }
-
-.component{
-    border: 2px dashed transparent;
-    border-radius: 10px;
-    transition: border-color ease-in-out .25s;
-    padding:4px;
-}
-
-.component:hover{
-    border-color:var(--neutral-light);
-}
