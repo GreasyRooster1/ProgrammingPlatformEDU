@@ -3,6 +3,7 @@ import styles from './stepPreview.module.css'
 import StepComponent from "../../panels/lesson/StepComponent.jsx";
 import Loading from "../../../../Loading.jsx";
 import MedTitle from "../../../../components/text/MedTitle.jsx";
+import EditableComponent from "./EditableComponent.jsx";
 
 function StepPreview(props) {
     const [selectedComponent, setSelectedComponent] = useState(null);
@@ -24,7 +25,10 @@ function StepPreview(props) {
         {
             props.stepData.components.map((component, index) => (
                 <div className={styles.component} onClick={()=>{clickHandle(index)}}>
-                    <StepComponent key={index} component={component}/>
+                    {selectedComponent===index?
+                        <StepComponent key={index} component={component}/>:
+                        <EditableComponent key={index} component={component}/>
+                    }
                 </div>
             ))
         }
