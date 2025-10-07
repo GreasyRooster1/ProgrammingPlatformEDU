@@ -36,6 +36,11 @@
     padding:4px;
 }
 
-.component:hover{
+.component:hover,
+.component.selected{
     border-color:var(--neutral-light);
 }
+
+
+.selected{}
+.unselected{}

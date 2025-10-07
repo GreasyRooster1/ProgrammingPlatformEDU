@@ -25,7 +25,7 @@ function StepEditor(props) {
                 <div className={styles.preview}>
                     {
                         props.stepData.components.map((component, index) => (
-                            <div className={styles.component} onClick={()=>{clickHandle(index)}}>
+                            <div className={`${styles.component} ${selectedComponent===index?styles.selected:styles.unselected}`} onClick={()=>{clickHandle(index)}}>
                                 {selectedComponent===index?
                                     <EditableComponent
                                         key={index}

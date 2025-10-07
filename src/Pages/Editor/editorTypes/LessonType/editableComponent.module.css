@@ -1,7 +1,4 @@
 .editableStep {
-
-    border: 2px dashed transparent;
-    border-radius: 10px;
     padding:6px;
 
     gap:4px;
@@ -10,8 +7,4 @@
     flex-direction: column;
 
     transition: border-color .25s;
-}
-
-.editableStep:hover {
-    border-color:var(--neutral-light);
 }
