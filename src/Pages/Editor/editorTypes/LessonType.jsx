@@ -52,7 +52,7 @@ function LessonType(props){
             <Panel minSize={15} className={styles.editorPanel}>
                 <TabGroup
                     tabs={[
-                        {name:"Step",element:(<StepEditor stepData={stepData} setStepData={setStepData} selectedStep={selectedStep}/>)},
+                        // {name:"Step",element:(<StepEditor stepData={stepData} setStepData={setStepData} selectedStep={selectedStep}/>)},
                         {name:"Code",element:(<h1>Code</h1>)},
                         {name:"Data",element:(<h1>Data</h1>)}
                     ]}

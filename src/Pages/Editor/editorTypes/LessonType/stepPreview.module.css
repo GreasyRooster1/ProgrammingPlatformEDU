@@ -10,6 +10,7 @@
 .preview{
     display: flex;
     flex-direction: column;
+    padding:2px;
 }
 
 .component{
