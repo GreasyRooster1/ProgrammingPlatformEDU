@@ -19,8 +19,14 @@ function StepEditor(props) {
         )
     }
 
+    const deselectClickHandle = (event)=>{
+        if(event.target===event.currentTarget && props.hideCallback!==undefined){
+            setSelectedComponent(null);
+        }
+    }
+
     return (
-        <div className={styles.editor}>
+        <div className={styles.editor} onClick={deselectClickHandle}>
             {
                 <div className={styles.preview}>
                     {
