@@ -15,15 +15,15 @@ function StepPreview(props) {
         )
     }
 
-    const clickHandle = ()=>{
-
+    const clickHandle = (index)=>{
+        setSelectedComponent(index);
     }
 
     return (
         <div className={styles.preview}>
         {
             props.stepData.components.map((component, index) => (
-                <div className={styles.component} onClick={props.onClick}>
+                <div className={styles.component} onClick={()=>{clickHandle(index)}}>
                     <StepComponent key={index} component={component}/>
                 </div>
             ))
