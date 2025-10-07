@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './stepPreview.module.css'
 import StepComponent from "../../panels/lesson/StepComponent.jsx";
 import Loading from "../../../../Loading.jsx";
 import MedTitle from "../../../../components/text/MedTitle.jsx";
 
 function StepPreview(props) {
+    const [selectedComponent, setSelectedComponent] = useState(null);
 
     if(!props.stepData){
         return (
@@ -12,6 +13,10 @@ function StepPreview(props) {
                 <MedTitle>Select A Step...</MedTitle>
             </div>
         )
+    }
+
+    const clickHandle = ()=>{
+
     }
 
     return (
