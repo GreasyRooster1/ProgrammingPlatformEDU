@@ -20,7 +20,7 @@ function StepEditor(props) {
     }
 
     const deselectClickHandle = (event)=>{
-        if(event.target===event.currentTarget && props.hideCallback!==undefined){
+        if(event.target===event.currentTarget){
             setSelectedComponent(null);
         }
     }
