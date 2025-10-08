@@ -9,4 +9,6 @@
 
 .previewPanel{
     overflow-y: auto !important;
+    display: flex;
+    flex-direction: column;
 }
