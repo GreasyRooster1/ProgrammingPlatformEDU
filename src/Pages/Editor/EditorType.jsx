@@ -59,7 +59,10 @@ function EditorType(props){
                     <IconButton icon={(<HomeIcon />)} onClick={homeRedirect}/>
                 </div>
                 <div className={styles.iconGroup}>
-                    <PrimaryButton className={styles.runButton} icon={play} onClick={runHandle}>Run</PrimaryButton>
+                    {
+                        !props.noRun &&
+                        <PrimaryButton className={styles.runButton} icon={play} onClick={runHandle}>Run</PrimaryButton>
+                    }
                     <IconButton icon={(<SaveIcon />)} isHighlighted={props.saveHighlight} onClick={onSave} />
                     <IconButton icon={(<ShareIcon />)}/>
                 </div>

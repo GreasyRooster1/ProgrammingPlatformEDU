@@ -42,6 +42,7 @@ function LessonType(props){
         <EditorType
             noOutput
             noCode
+            noRun
             loadProject={loadProject}
             {...props}
         >
