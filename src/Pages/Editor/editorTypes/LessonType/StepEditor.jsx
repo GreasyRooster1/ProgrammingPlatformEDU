@@ -25,6 +25,16 @@ function StepEditor(props) {
         }
     }
 
+    const addComponent = ()=>{
+        setSelectedComponent(null);
+        let newStepData = {...props.stepData};
+        newStepData.components.push({
+            type:"text",
+            text:"type some text content..."
+        });
+        props.setStepData(newStepData);
+    }
+
     return (
         <div className={styles.editor} onClick={deselectClickHandle}>
             <div className={styles.preview}>
@@ -46,7 +56,7 @@ function StepEditor(props) {
                     ))
                 }
             </div>
-            <div className={styles.addButton}>
+            <div className={styles.addButton} onClick={addComponent}>
                 +
             </div>
         </div>
