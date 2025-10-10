@@ -14,6 +14,21 @@ function StepsList(props) {
         return <Loading />
     }
 
+    const addSteo = ()=>{
+        props.setSelectedStep(props.lessonData.steps.length);
+        let newLessonData = {...props.lessonData};
+        newLessonData.steps.push({
+            type:"info",
+            components:[
+                {
+                    type:"title",
+                    text:"Title",
+                }
+            ]
+        });
+        props.setLessonData(newLessonData);
+    }
+
     return (
         <div className={styles.body}>
             <MedTitle className={styles.title}>Steps ({props.lessonData.steps.length})</MedTitle>
@@ -23,7 +38,7 @@ function StepsList(props) {
                         <Step key={index} step={step} stepIndex={index} selected={props.selectedStep===index} handle={clickHandle} />
                     ))
                 }
-                <div className={styles.addButton}>
+                <div className={styles.addButton} onClick={addSteo}>
                     +
                 </div>
             </div>

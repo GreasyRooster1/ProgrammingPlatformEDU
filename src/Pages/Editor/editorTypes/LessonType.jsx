@@ -46,7 +46,7 @@ function LessonType(props){
             {...props}
         >
             <Panel defaultSize={10} minSize={10} maxSize={20} className={styles.tabsPanel}>
-                <StepsList lessonData={lessonData} setSelectedStep={setSelectedStep} selectedStep={selectedStep}/>
+                <StepsList lessonData={lessonData} setLessonData={setLessonData} setSelectedStep={setSelectedStep} selectedStep={selectedStep}/>
             </Panel>
             <PanelResizeHandle />
 
