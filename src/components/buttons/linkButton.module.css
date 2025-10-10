@@ -6,3 +6,7 @@
 .linkButton:hover {
     text-decoration: underline;
 }
+
+.icon{
+    width: 1.1em;
+}
