@@ -3,6 +3,8 @@ import styles from "./editableComponent.module.css"
 import StepComponent from "../../panels/lesson/StepComponent.jsx";
 import EditableText from "./EditableComponents/EditableText.jsx";
 import Dropdown from "../../../../components/Form/Dropdown.jsx";
+import LinkButton from "../../../../components/buttons/LinkButton.jsx";
+import trashIcon from "../../../../icons/TrashIcon.svg";
 
 function EditableComponent(props) {
     const [componentData,setComponentData] = useState(props.component);
@@ -40,7 +42,10 @@ function EditableComponent(props) {
 
     return (
         <div className={styles.editableStep}>
-            <Dropdown options={types} onChange={onDropdownChange} value={componentData.type}/>
+            <div className={styles.topBar}>
+                <Dropdown options={types} onChange={onDropdownChange} value={componentData.type}/>
+                <LinkButton icon={trashIcon}>Delete</LinkButton>
+            </div>
             <StepComponent stepData={props.stepData} component={componentData} components={components} />
         </div>
     );
