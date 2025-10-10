@@ -8,3 +8,9 @@
 
     transition: border-color .25s;
 }
+
+.topBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
