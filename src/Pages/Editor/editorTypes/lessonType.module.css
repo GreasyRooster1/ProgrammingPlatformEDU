@@ -3,8 +3,8 @@
     overflow-y: auto !important;
 }
 
-.editorPanel{
-    border-right:2px solid var(--neutral-light)
+.previewPanel{
+    border-right:2px solid var(--neutral-light);
 }
 
 .previewPanel{

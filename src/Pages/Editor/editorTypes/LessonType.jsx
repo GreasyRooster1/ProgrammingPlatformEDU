@@ -11,6 +11,7 @@ import StepsList from "./LessonType/StepsList.jsx";
 import styles from "./LessonType.module.css";
 import StepEditor from "./LessonType/StepEditor.jsx";
 import StepPreview from "./LessonType/StepPreview.jsx";
+import P5jsType from "./p5jsType.jsx";
 
 function LessonType(props){
     let auth = useAuth();
@@ -49,19 +50,12 @@ function LessonType(props){
             </Panel>
             <PanelResizeHandle />
 
-            <Panel minSize={15} className={styles.editorPanel}>
-                <TabGroup
-                    tabs={[
-                        // {name:"Step",element:(<StepEditor stepData={stepData} setStepData={setStepData} selectedStep={selectedStep}/>)},
-                        {name:"Code",element:(<h1>Code</h1>)},
-                        {name:"Data",element:(<h1>Data</h1>)}
-                    ]}
-                />
+            <Panel minSize={15} className={styles.previewPanel} >
+                <StepEditor stepData={stepData} setStepData={setStepData} selectedStep={selectedStep}/>
             </Panel>
             <PanelResizeHandle />
 
-            <Panel minSize={15} className={styles.previewPanel} >
-                <StepEditor stepData={stepData} setStepData={setStepData} selectedStep={selectedStep}/>
+            <Panel minSize={15} className={styles.editorPanel}>
             </Panel>
         </EditorType>
     )
