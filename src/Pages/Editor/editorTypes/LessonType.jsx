@@ -12,6 +12,7 @@ import styles from "./LessonType.module.css";
 import StepEditor from "./LessonType/StepEditor.jsx";
 import StepPreview from "./LessonType/StepPreview.jsx";
 import P5jsType from "./p5jsType.jsx";
+import DataPanel from "./LessonType/DataPanel.jsx";
 
 function LessonType(props){
     let auth = useAuth();
@@ -51,12 +52,13 @@ function LessonType(props){
             </Panel>
             <PanelResizeHandle />
 
-            <Panel minSize={15} className={styles.previewPanel} >
+            <Panel minSize={15} className={styles.editorPanel} >
                 <StepEditor stepData={stepData} setStepData={setStepData} selectedStep={selectedStep}/>
             </Panel>
             <PanelResizeHandle />
 
-            <Panel minSize={15} className={styles.editorPanel}>
+            <Panel minSize={15} className={styles.dataPanel}>
+                <DataPanel />
             </Panel>
         </EditorType>
     )
