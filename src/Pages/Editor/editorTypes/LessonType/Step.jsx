@@ -10,7 +10,7 @@ function Step(props) {
     return (
         <div className={`${styles.step} ${props.selected?styles.selected:""}`} onClick={click}>
             <div className={styles.stepHead}>
-                <span className={styles.id}>{props.stepIndex}</span>
+                <span className={styles.id}>{props.stepIndex+1}</span>
                 <span className={styles.stepType}>{props.step.type}</span>
             </div>
             <LimitText className={styles.stepPreview} maxLength={20}>{props.step.components[0]?.text??"No preview"}</LimitText>
