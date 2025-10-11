@@ -9,8 +9,8 @@ function CodeInput(props) {
     return (
         <Editor
             language={props.language}
-            defaultValue={props.defaultValue}
             onChange={handleEditorChange}
+            value={props.value}
         />
     );
 }
