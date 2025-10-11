@@ -5,7 +5,7 @@ import TitleDesc from "../../../../components/text/TitleDesc.jsx";
 import styles from "./dataPanel.module.css"
 
 function DataPanel(props) {
-    const [starterCode,setStarterCode] = useState();
+    const [starterCode,setStarterCode] = useState("");
 
     return (
         <div className={styles.dataPanel}>
