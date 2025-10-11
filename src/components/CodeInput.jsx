@@ -2,15 +2,14 @@ import React from 'react';
 import {Editor} from "@monaco-editor/react";
 
 function CodeInput(props) {
-    function handleEditorChange(value, event) {
-        console.log('here is the current model value:', value);
+    const  handleEditorChange = (value, event) => {
+        props.setValue(value);
     }
 
     return (
         <Editor
-            height="90vh"
-            defaultLanguage="javascript"
-            defaultValue="// some comment"
+            language={props.language}
+            defaultValue={props.defaultValue}
             onChange={handleEditorChange}
         />
     );
