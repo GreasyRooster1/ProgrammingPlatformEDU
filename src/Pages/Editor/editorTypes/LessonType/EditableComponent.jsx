@@ -5,6 +5,7 @@ import EditableText from "./EditableComponents/EditableText.jsx";
 import Dropdown from "../../../../components/Form/Dropdown.jsx";
 import LinkButton from "../../../../components/buttons/LinkButton.jsx";
 import trashIcon from "../../../../icons/TrashIcon.svg";
+import EditableCode from "./EditableComponents/EditableCode.jsx";
 
 function EditableComponent(props) {
     const [componentData,setComponentData] = useState(props.component);
@@ -35,8 +36,9 @@ function EditableComponent(props) {
     }
 
     const components = {
-        "text":<EditableText setComponentData={setComponentData} />,
-        "title":<EditableText setComponentData={setComponentData}/>
+        "text":<EditableText/>,
+        "title":<EditableText/>,
+        "code":<EditableCode/>
     }
 
     const types=[
@@ -53,7 +55,7 @@ function EditableComponent(props) {
                 <Dropdown options={types} onChange={onDropdownChange} value={componentData.type}/>
                 <LinkButton icon={trashIcon} onClick={deleteComponent}>Delete</LinkButton>
             </div>
-            <StepComponent stepData={props.stepData} component={componentData} components={components} />
+            <StepComponent stepData={props.stepData} component={componentData} components={components} setComponentData={setComponentData}/>
         </div>
     );
 }
