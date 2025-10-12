@@ -8,6 +8,9 @@ function CodeBlock(props) {
         let style = {
             display: 'block',
         };
+        if(props.added.length<1){
+            return {style};
+        }
         if (props.removed?.includes(lineNumber)) {
             style.backgroundColor = 'rgba(232,25,25,0.35)';
             style["text-decoration"]= "line-through 3px";
