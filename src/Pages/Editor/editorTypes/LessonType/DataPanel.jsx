@@ -8,6 +8,7 @@ import TextBox from "../../../../components/Form/TextBox.jsx";
 
 function DataPanel(props) {
     const [name,setName] = useState("");
+    const [description,setDescription] = useState("");
     const [starterCode,setStarterCode] = useState("");
 
     const validateName = (name) => {
@@ -19,6 +20,11 @@ function DataPanel(props) {
             <div>
                 <SmallTitle>Name</SmallTitle>
                 <TextBox placeholder={"Lesson name"} value={name} validate={validateName} setValue={setName}></TextBox>
+            </div>
+
+            <div>
+                <SmallTitle>Description</SmallTitle>
+                <TextBox placeholder={"Lesson description"} value={description} validate={validateName} setValue={setDescription}></TextBox>
             </div>
 
             <div>
