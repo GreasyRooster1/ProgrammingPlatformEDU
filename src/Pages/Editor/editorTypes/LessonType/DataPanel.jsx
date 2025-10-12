@@ -16,12 +16,15 @@ function DataPanel(props) {
 
     return (
         <div className={styles.dataPanel}>
-            <TextBox placeholder={"Lesson name"} value={name} validate={validateName} setValue={setName}></TextBox>
-            <br/>
+            <div>
+                <SmallTitle>Name</SmallTitle>
+                <TextBox placeholder={"Lesson name"} value={name} validate={validateName} setValue={setName}></TextBox>
+            </div>
 
-            <TitleDesc title={"Boilerplate Code"}>Add some code that will run with this project</TitleDesc>
-            <CodeInput value={starterCode} setValue={setStarterCode} language={"javascript"} />
-            <br/>
+            <div>
+                <TitleDesc title={"Boilerplate Code"}>Add some code that will run with this project</TitleDesc>
+                <CodeInput value={starterCode} setValue={setStarterCode} language={"javascript"} />
+            </div>
         </div>
     );
 }

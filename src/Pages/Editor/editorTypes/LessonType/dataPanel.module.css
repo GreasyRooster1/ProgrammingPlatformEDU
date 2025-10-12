@@ -1,3 +1,9 @@
 .dataPanel{
     padding-left:6px;
 }
+
+.dataPanel > div{
+    margin-bottom:16px;
+    display:flex;
+    flex-direction:column;
+}
