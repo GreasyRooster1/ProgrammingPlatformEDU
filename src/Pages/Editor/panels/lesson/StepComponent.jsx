@@ -3,6 +3,7 @@ import styles from "./stepComponent.module.css"
 import TitleComponent from "./TitleComponent.jsx";
 import TextComponent from "./TextComponent.jsx";
 import CodeComponent from "./CodeComponent.jsx";
+import HintComponent from "./HintComponent.jsx";
 
 function StepComponent(props) {
 
@@ -10,6 +11,7 @@ function StepComponent(props) {
         "title":(<TitleComponent />),
         "text":(<TextComponent />),
         "code":(<CodeComponent />),
+        "hint":(<HintComponent />),
     }
 
     return (
