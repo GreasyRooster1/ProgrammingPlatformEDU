@@ -71,7 +71,9 @@
 ```json
 {
   "type": "hint",
-  "components": [...]
+  "delay":1000,
+  "title": "Need Help?",
+  "text": "you need to use the variable we just created"
 }
 ```
 
