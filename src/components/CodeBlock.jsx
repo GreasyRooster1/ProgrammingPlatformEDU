@@ -26,7 +26,7 @@ function CodeBlock(props) {
                 }`}
             </style>
             <SyntaxHighlighter
-                language="javascript"
+                language={props.language??"javascript"}
                 style={vs2015}
                 className={styles.editor}
                 wrapLines={true}
