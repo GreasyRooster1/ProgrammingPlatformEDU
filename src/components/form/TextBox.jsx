@@ -5,11 +5,14 @@ function TextBox(props) {
     const [value, setValue] = useState(props.value??'');
     const [valid, setValid] = useState(true);
 
+
+
     const handleChange = (event) => {
         setValue(event.target.value);
     };
 
     useEffect(() => {
+        console.log(value,props.value??'',props.placeholder);
         props.setValue(value);
         if(value.length&&props.validate) {
             setValid(props.validate?.(value));
@@ -20,11 +23,12 @@ function TextBox(props) {
         setValue(props.value);
     },[props.value])
 
+
     return (
         <input
             className={`${styles.textBox} ${props.className} ${valid?"":styles.invalid}`}
             type={'text'}
-            value={value}
+            value={value??''}
             onChange={handleChange}
             placeholder={props.placeholder}
         >

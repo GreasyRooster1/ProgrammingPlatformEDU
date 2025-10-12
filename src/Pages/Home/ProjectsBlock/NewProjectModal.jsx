@@ -14,7 +14,7 @@ function NewProjectModal(props) {
     let auth = useAuth();
     const [selectedLanguage, setSelectedLanguage] = useState(null);
     const [requestState, setRequestState] = useReqState();
-    let [name, setName] = useState(null);
+    let [name, setName] = useState("");
 
     const validateText = (text)=>{
         return text.length > 0 && text.length <= 100;
@@ -32,7 +32,7 @@ function NewProjectModal(props) {
         <>
             <div className={styles.head}>
                 <MedTitle>New Project</MedTitle>
-                <TextBox placeholder={"Enter a name..."} setValue={setName} validate={validateText}></TextBox>
+                <TextBox placeholder={"Enter a name..."} value={name} setValue={setName} validate={validateText}></TextBox>
             </div>
             <LanguageSelector languages={projectTypes} selectedLanguage={selectedLanguage} setSelectedLanguage={setSelectedLanguage}/>
             <PrimaryButton className={styles.create} inactive={selectedLanguage===null||name===null} onClick={createProject}>Create</PrimaryButton>
