@@ -44,7 +44,7 @@
 ```json
 {
   "type": "code",
-  "content": "lines\nof\ncode",
+  "code": "lines\nof\ncode",
   "added": [
     1,
     2
