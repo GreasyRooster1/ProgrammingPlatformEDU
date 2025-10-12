@@ -3,7 +3,7 @@ import CodeInput from "../../../../../components/CodeInput.jsx";
 
 function EditableCode(props) {
     const [code, setCode] = useState(props.component.code);
-    const [language, setLanguage] = useState(props.component.code);
+    const [language, setLanguage] = useState(props.component.language);
 
     const updateComponent = (key,value) => {
         let component = {...props.component};
@@ -13,6 +13,7 @@ function EditableCode(props) {
 
     useEffect(() => {
         updateComponent("code",code)
+        console.log(props.stepData)
     },[code])
 
     useEffect(() => {
@@ -20,12 +21,16 @@ function EditableCode(props) {
     },[language])
 
     useEffect(() => {
-        setCode(props.component.code);
-        setLanguage(props.component.language);
+        //setCode(props.component.code);
+        //setLanguage(props.component.language);
     },[props.stepData]);
 
     return (
-        <CodeInput></CodeInput>
+        <CodeInput
+            setValue={setCode}
+            language={language}
+            value={code}
+        ></CodeInput>
     );
 }
 
