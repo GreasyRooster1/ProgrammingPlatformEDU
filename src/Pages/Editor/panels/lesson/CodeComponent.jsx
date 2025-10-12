@@ -8,7 +8,7 @@ function CodeComponent(props) {
             removed={props.component.removed??[]}
             language={props.component.language}
         >
-            {props.code}
+            {props.component.code}
         </CodeBlock>
     );
 }
