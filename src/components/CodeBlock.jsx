@@ -8,11 +8,11 @@ function CodeBlock(props) {
         let style = {
             display: 'block',
         };
-        if (props.removed.includes(lineNumber)) {
+        if (props.removed?.includes(lineNumber)) {
             style.backgroundColor = 'rgba(232,25,25,0.35)';
             style["text-decoration"]= "line-through 3px";
             style["text-decoration-color"]= "rgba(255,255,255,0.69)";
-        }else if (!props.added.includes(lineNumber)) {
+        }else if (!props.added?.includes(lineNumber)) {
             style.opacity = '0.4';
         }
         return { style };
