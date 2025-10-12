@@ -6,6 +6,7 @@ import Dropdown from "../../../../components/Form/Dropdown.jsx";
 import LinkButton from "../../../../components/buttons/LinkButton.jsx";
 import trashIcon from "../../../../icons/TrashIcon.svg";
 import EditableCode from "./EditableComponents/EditableCode.jsx";
+import EditableHint from "./EditableComponents/EditableHint.jsx";
 
 function EditableComponent(props) {
     const [componentData,setComponentData] = useState(props.component);
@@ -38,7 +39,8 @@ function EditableComponent(props) {
     const components = {
         "text":<EditableText/>,
         "title":<EditableText/>,
-        "code":<EditableCode/>
+        "code":<EditableCode/>,
+        "hint":<EditableHint/>
     }
 
     const types=[
