@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import TextBox from "../../../../../components/form/TextBox.jsx";
 
-function EditableText(props) {
+function EditableHint(props) {
     const [text, setText] = useState(props.component.text??"");
     const [title, setTitle] = useState(props.component.title??"");
 
@@ -32,4 +32,4 @@ function EditableText(props) {
     );
 }
 
-export default EditableText;
+export default EditableHint;
