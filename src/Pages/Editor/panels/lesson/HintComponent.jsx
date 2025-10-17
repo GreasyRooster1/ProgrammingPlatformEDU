@@ -4,14 +4,16 @@ import BlockQuote from "../../../../components/text/BlockQuote.jsx";
 import SmallTitle from "../../../../components/text/SmallTitle.jsx";
 import DropdownIcon from "../../../../icons/DropdownIcon.svg?react"
 
+import styles from "./stepComponent.module.css";
+
 function HintComponent(props) {
     const [open, setOpen] = useState();
 
     return (
         <BlockQuote>
-            <div onClick={()=>{setOpen(!open)}}>
+            <div className={styles.hintHead} onClick={()=>{setOpen(!open)}}>
                 {props.component.title}
-                <DropdownIcon />
+                <DropdownIcon className={styles.hintArrow}/>
             </div>
             {open && <span>{props.component.text}</span>}
         </BlockQuote>
