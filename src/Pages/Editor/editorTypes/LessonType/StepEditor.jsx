@@ -50,7 +50,7 @@ function StepEditor(props) {
                                     setStepData={props.setStepData}
                                     selectedStep={props.selectedStep}
                                 />:
-                                <StepComponent key={index} component={component}/>
+                                <StepComponent key={index} component={component} isEditor={true}/>
                             }
                         </div>
                     ))
