@@ -7,7 +7,7 @@ import DropdownIcon from "../../../../icons/DropdownIcon.svg?react"
 import styles from "./stepComponent.module.css";
 
 function HintComponent(props) {
-    const [open, setOpen] = useState();
+    const [open, setOpen] = useState(props.open??false);
 
     return (
         <BlockQuote>
