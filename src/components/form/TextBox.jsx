@@ -8,19 +8,13 @@ function TextBox(props) {
 
 
     const handleChange = (event) => {
-        setValue(event.target.value);
+        props.setValue(event.target.value);
     };
 
     useEffect(() => {
-        console.log(value,props.value??'',props.placeholder);
-        props.setValue(value);
-        if(value.length&&props.validate) {
+        if(props.value.length&&props.value.validate) {
             setValid(props.validate?.(value));
         }
-    },[value])
-
-    useEffect(() => {
-        setValue(props.value);
     },[props.value])
 
 
@@ -28,7 +22,7 @@ function TextBox(props) {
         <input
             className={`${styles.textBox} ${props.className} ${valid?"":styles.invalid}`}
             type={'text'}
-            value={value??''}
+            value={props.value??''}
             onChange={handleChange}
             placeholder={props.placeholder}
         >
