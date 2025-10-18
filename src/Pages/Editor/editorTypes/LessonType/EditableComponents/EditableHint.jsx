@@ -18,10 +18,6 @@ function EditableHint(props) {
         })
     },[title])
 
-    useEffect(() => {
-        setText(props.component.text??"");
-        setTitle(props.component.title??"");
-    },[props.stepData]);
 
 
     return (

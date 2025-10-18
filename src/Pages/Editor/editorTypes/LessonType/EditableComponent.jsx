@@ -11,14 +11,6 @@ import EditableHint from "./EditableComponents/EditableHint.jsx";
 function EditableComponent(props) {
     const [componentData,setComponentData] = useState(props.component);
 
-    useEffect(() => {
-        props.setComponent(componentData);
-    },[componentData])
-
-    useEffect(() => {
-        setComponentData(props.component);
-    },[props.component])
-
     const onDropdownChange = (e) => {
         setComponentData({
             ...componentData,
@@ -54,7 +46,7 @@ function EditableComponent(props) {
                 <Dropdown options={types} onChange={onDropdownChange} value={componentData.type}/>
                 <LinkButton icon={trashIcon} onClick={deleteComponent}>Delete</LinkButton>
             </div>
-            <StepComponent stepData={props.stepData} component={componentData} components={componentsList} setComponentData={setComponentData}/>
+            <StepComponent component={componentData} components={componentsList} setComponentData={setComponentData}/>
         </div>
     );
 }

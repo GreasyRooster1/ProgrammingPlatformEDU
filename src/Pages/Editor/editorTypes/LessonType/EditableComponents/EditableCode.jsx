@@ -20,11 +20,6 @@ function EditableCode(props) {
         updateComponent("lang",language)
     },[language])
 
-    useEffect(() => {
-        //setCode(props.component.code);
-        //setLanguage(props.component.language);
-    },[props.stepData]);
-
     return (
         <CodeInput
             setValue={setCode}

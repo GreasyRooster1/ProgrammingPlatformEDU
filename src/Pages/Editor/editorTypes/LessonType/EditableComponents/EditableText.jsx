@@ -11,10 +11,6 @@ function EditableText(props) {
         })
     },[text])
 
-    useEffect(() => {
-        setText(props.component.text);
-    },[props.stepData]);
-
 
     return (
         <>

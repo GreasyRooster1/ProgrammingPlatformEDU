@@ -15,7 +15,7 @@ function StepEditor(props) {
     useEffect(() => {
         if(!props.stepData){return;}
         setComponents(props.stepData.components);
-    },[props.stepData]);
+    },[props.stepData?.components])
 
     if(!components){
         return (
