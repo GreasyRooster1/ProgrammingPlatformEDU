@@ -8,7 +8,7 @@ function EditableCode(props) {
     const updateComponent = (key,value) => {
         let component = {...props.component};
         component[key] = value;
-        props.setComponentData(component)
+        props.setComponent(component)
     }
 
     useEffect(() => {

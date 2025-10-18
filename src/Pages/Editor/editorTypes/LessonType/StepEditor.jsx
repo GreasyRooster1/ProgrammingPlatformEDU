@@ -6,53 +6,40 @@ import EditableComponent from "./EditableComponent.jsx";
 
 function StepEditor(props) {
     const [selectedComponent, setSelectedComponent] = useState(null);
-    const [components, setComponents] = useState(null);
 
     const clickHandle = (index)=>{
         setSelectedComponent(index);
     }
-
-    useEffect(() => {
-        if(!props.stepData){return;}
-        setComponents(props.stepData.components);
-    },[props.stepData?.components])
 
     const deselectClickHandle = (event)=>{
         if(event.target===event.currentTarget){
             setSelectedComponent(null);
             props.setStepData({
                 ...props.stepData,
-                components: components,
+                components: props.components,
             });
         }
     }
 
     const addComponent = ()=>{
         setSelectedComponent(null);
-        setComponents([
-            ...components,
+        props.setComponents([
+            ...props.components,
             {
                 type:"text",
                 text:"type some text content..."
             }
         ]);
-        updateStepData();
     }
 
     const updateComponent = (index,data)=>{
-        let newComponents = components;
-        newComponents[index].components = data;
-        setComponents(newComponents);
+        let newComponents = props.components;
+        newComponents[index] = data;
+        props.setComponents(newComponents);
+        console.log("component update",index,props.components,newComponents);
     }
 
-    const updateStepData = ()=>{
-        props.setStepData({
-            ...props.stepData,
-            components
-        })
-    }
-
-    if(!components){
+    if(!props.components){
         return (
             <div className={styles.selectPrompt}>
                 <MedTitle>Select A Step...</MedTitle>
@@ -64,7 +51,7 @@ function StepEditor(props) {
         <div className={styles.editor} onClick={deselectClickHandle}>
             <div className={styles.preview}>
                 {
-                    props.stepData.components.map((component, index) => (
+                    props.components.map((component, index) => (
                         <div className={`${styles.component} ${selectedComponent===index?styles.selected:styles.unselected}`} onClick={()=>{clickHandle(index)}}>
                             {selectedComponent===index?
                                 <EditableComponent

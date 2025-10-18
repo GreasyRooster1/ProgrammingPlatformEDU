@@ -9,11 +9,10 @@ import EditableCode from "./EditableComponents/EditableCode.jsx";
 import EditableHint from "./EditableComponents/EditableHint.jsx";
 
 function EditableComponent(props) {
-    const [componentData,setComponentData] = useState(props.component);
 
     const onDropdownChange = (e) => {
-        setComponentData({
-            ...componentData,
+        props.setComponent({
+            ...props.component,
             type: e.target.value.toLowerCase(),
         });
     }
@@ -43,10 +42,10 @@ function EditableComponent(props) {
     return (
         <div className={styles.editableStep}>
             <div className={styles.topBar}>
-                <Dropdown options={types} onChange={onDropdownChange} value={componentData.type}/>
+                <Dropdown options={types} onChange={onDropdownChange} value={props.component.type}/>
                 <LinkButton icon={trashIcon} onClick={deleteComponent}>Delete</LinkButton>
             </div>
-            <StepComponent component={componentData} components={componentsList} setComponentData={setComponentData}/>
+            <StepComponent component={props.component} components={componentsList} setComponent={props.setComponent}/>
         </div>
     );
 }

@@ -19,6 +19,7 @@ function LessonType(props){
     const [lessonData, setLessonData] = useState(null);
     const [selectedStep, setSelectedStep] = useState(null);
     const [stepData, setStepData] = useState(null);
+    const [currentComponents, setCurrentComponents] = useState(null);
 
     useEffect(() => {
         if(!stepData){
@@ -27,6 +28,7 @@ function LessonType(props){
         let newData = {...lessonData};
         newData.steps[selectedStep] = stepData;
         setLessonData(newData);
+        setCurrentComponents(stepData.components);
     },[stepData])
 
     useEffect(() => {
@@ -53,7 +55,7 @@ function LessonType(props){
             <PanelResizeHandle />
 
             <Panel minSize={15} className={styles.editorPanel} >
-                <StepEditor stepData={stepData} setStepData={setStepData} selectedStep={selectedStep}/>
+                <StepEditor stepData={stepData} setStepData={setStepData} components={currentComponents} setComponents={setCurrentComponents} selectedStep={selectedStep}/>
             </Panel>
             <PanelResizeHandle />
 
