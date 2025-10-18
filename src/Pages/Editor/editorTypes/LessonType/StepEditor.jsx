@@ -6,12 +6,18 @@ import EditableComponent from "./EditableComponent.jsx";
 
 function StepEditor(props) {
     const [selectedComponent, setSelectedComponent] = useState(null);
+    const [components, setComponents] = useState(null);
 
     const clickHandle = (index)=>{
         setSelectedComponent(index);
     }
 
-    if(!props.stepData){
+    useEffect(() => {
+        if(!props.stepData){return;}
+        setComponents(props.stepData.components);
+    },[props.stepData]);
+
+    if(!components){
         return (
             <div className={styles.selectPrompt}>
                 <MedTitle>Select A Step...</MedTitle>
@@ -22,17 +28,31 @@ function StepEditor(props) {
     const deselectClickHandle = (event)=>{
         if(event.target===event.currentTarget){
             setSelectedComponent(null);
+            props.setStepData({
+                ...props.stepData,
+                components: components,
+            });
         }
     }
 
     const addComponent = ()=>{
         setSelectedComponent(null);
-        let newStepData = {...props.stepData};
-        newStepData.components.push({
+        let newComponents = components;
+        newComponents.push({
             type:"text",
             text:"type some text content..."
         });
-        props.setStepData(newStepData);
+        setComponents(newComponents);
+        props.setStepData({
+            ...props.stepData,
+            components
+        })
+    }
+
+    const updateComponent = (index,data)=>{
+        let newComponents = components;
+        newComponents[index].components = data;
+        setComponents(newComponents);
     }
 
     return (
@@ -48,6 +68,7 @@ function StepEditor(props) {
                                     component={component}
                                     stepData={props.stepData}
                                     setStepData={props.setStepData}
+                                    setComponent={(data)=>updateComponent(index,data)}
                                     selectedStep={props.selectedStep}
                                 />:
                                 <StepComponent key={index} component={component} isEditor={true}/>

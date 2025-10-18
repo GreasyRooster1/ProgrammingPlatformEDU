@@ -12,10 +12,7 @@ function EditableComponent(props) {
     const [componentData,setComponentData] = useState(props.component);
 
     useEffect(() => {
-        let newStepData = {...props.stepData};
-
-        newStepData.components[props.index] = componentData;
-        props.setStepData(newStepData);
+        props.setComponent(componentData);
     },[componentData])
 
     useEffect(() => {
@@ -36,7 +33,7 @@ function EditableComponent(props) {
         props.setStepData(newStepData);
     }
 
-    const components = {
+    const componentsList = {
         "text":<EditableText/>,
         "title":<EditableText/>,
         "code":<EditableCode/>,
@@ -57,7 +54,7 @@ function EditableComponent(props) {
                 <Dropdown options={types} onChange={onDropdownChange} value={componentData.type}/>
                 <LinkButton icon={trashIcon} onClick={deleteComponent}>Delete</LinkButton>
             </div>
-            <StepComponent stepData={props.stepData} component={componentData} components={components} setComponentData={setComponentData}/>
+            <StepComponent stepData={props.stepData} component={componentData} components={componentsList} setComponentData={setComponentData}/>
         </div>
     );
 }
