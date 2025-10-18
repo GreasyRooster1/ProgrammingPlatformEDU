@@ -17,14 +17,6 @@ function StepEditor(props) {
         setComponents(props.stepData.components);
     },[props.stepData?.components])
 
-    if(!components){
-        return (
-            <div className={styles.selectPrompt}>
-                <MedTitle>Select A Step...</MedTitle>
-            </div>
-        )
-    }
-
     const deselectClickHandle = (event)=>{
         if(event.target===event.currentTarget){
             setSelectedComponent(null);
@@ -37,22 +29,35 @@ function StepEditor(props) {
 
     const addComponent = ()=>{
         setSelectedComponent(null);
-        let newComponents = components;
-        newComponents.push({
-            type:"text",
-            text:"type some text content..."
-        });
-        setComponents(newComponents);
-        props.setStepData({
-            ...props.stepData,
-            components
-        })
+        setComponents([
+            ...components,
+            {
+                type:"text",
+                text:"type some text content..."
+            }
+        ]);
+        updateStepData();
     }
 
     const updateComponent = (index,data)=>{
         let newComponents = components;
         newComponents[index].components = data;
         setComponents(newComponents);
+    }
+
+    const updateStepData = ()=>{
+        props.setStepData({
+            ...props.stepData,
+            components
+        })
+    }
+
+    if(!components){
+        return (
+            <div className={styles.selectPrompt}>
+                <MedTitle>Select A Step...</MedTitle>
+            </div>
+        )
     }
 
     return (
@@ -66,8 +71,6 @@ function StepEditor(props) {
                                     key={index}
                                     index={index}
                                     component={component}
-                                    stepData={props.stepData}
-                                    setStepData={props.setStepData}
                                     setComponent={(data)=>updateComponent(index,data)}
                                     selectedStep={props.selectedStep}
                                 />:
