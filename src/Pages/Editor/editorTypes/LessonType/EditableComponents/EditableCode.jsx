@@ -5,19 +5,18 @@ function EditableCode(props) {
     const [code, setCode] = useState(props.component.code??"");
     const [language, setLanguage] = useState(props.component.language??"javascript");
 
-    const updateComponent = (key,value) => {
-        let component = {...props.component};
-        component[key] = value;
-        props.setComponent(component)
-    }
-
     useEffect(() => {
-        updateComponent("code",code)
-        console.log(props.stepData)
+        props.setComponent({
+            ...props.component,
+            code: code,
+        })
     },[code])
 
     useEffect(() => {
-        updateComponent("lang",language)
+        props.setComponent({
+            ...props.component,
+            lang: language,
+        })
     },[language])
 
     return (
