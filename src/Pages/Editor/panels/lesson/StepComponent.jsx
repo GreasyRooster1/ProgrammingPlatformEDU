@@ -14,8 +14,10 @@ function StepComponent(props) {
         "hint":(<HintComponent />),
     }
 
+    let type = props.type?props.type:props.component.type
+
     return (
-        components[props.component.type] && React.cloneElement(components[props.component.type],{
+        components[type] && React.cloneElement(components[type],{
             ...props,
             component:props.component
         })

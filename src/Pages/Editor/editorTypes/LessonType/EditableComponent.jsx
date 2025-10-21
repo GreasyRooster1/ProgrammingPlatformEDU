@@ -16,7 +16,7 @@ function EditableComponent(props) {
             ...props.component,
             type: type,
         });
-        console.log("type", props.component.type,type);
+        console.log("type", props.component.type,type,);
     },[type])
 
     const onDropdownChange = (e) => {
@@ -54,7 +54,7 @@ function EditableComponent(props) {
                 <Dropdown options={types} onChange={onDropdownChange} value={type}/>
                 <LinkButton icon={trashIcon} onClick={deleteComponent}>Delete</LinkButton>
             </div>
-            <StepComponent component={props.component} components={componentsList} setComponent={props.setComponent}/>
+            <StepComponent type={type} component={props.component} components={componentsList} setComponent={props.setComponent}/>
         </div>
     );
 }
