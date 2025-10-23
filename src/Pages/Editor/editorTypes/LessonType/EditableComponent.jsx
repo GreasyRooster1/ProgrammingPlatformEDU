@@ -24,15 +24,6 @@ function EditableComponent(props) {
         setType(e.target.value.toLowerCase());
     }
 
-    const deleteComponent = () => {
-        let newStepData = {...props.stepData};
-
-        newStepData.components.splice(props.index,1);
-        props.setStepData(newStepData);
-    }
-
-
-
     const componentsList = {
         "text":<EditableText/>,
         "title":<EditableText/>,
@@ -52,7 +43,7 @@ function EditableComponent(props) {
         <div className={styles.editableStep}>
             <div className={styles.topBar}>
                 <Dropdown options={types} onChange={onDropdownChange} value={type}/>
-                <LinkButton icon={trashIcon} onClick={deleteComponent}>Delete</LinkButton>
+                <LinkButton icon={trashIcon} onClick={props.delete}>Delete</LinkButton>
             </div>
             <StepComponent type={type} component={props.component} components={componentsList} setComponent={props.setComponent}/>
         </div>

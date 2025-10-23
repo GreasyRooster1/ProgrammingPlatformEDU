@@ -3,6 +3,9 @@ import styles from './stepEditor.module.css'
 import MedTitle from "../../../../components/text/MedTitle.jsx";
 import StepComponent from "../../panels/lesson/StepComponent.jsx";
 import EditableComponent from "./EditableComponent.jsx";
+import EditableText from "./EditableComponents/EditableText.jsx";
+import EditableCode from "./EditableComponents/EditableCode.jsx";
+import EditableHint from "./EditableComponents/EditableHint.jsx";
 
 function StepEditor(props) {
     const [selectedComponent, setSelectedComponent] = useState(null);
@@ -39,6 +42,13 @@ function StepEditor(props) {
         console.log("component update",index,props.components,newComponents,data);
     }
 
+    const deleteComponent = (index) => {
+        let components = [...props.components];
+
+        components.splice(index,1);
+        props.setComponents(components);
+    }
+
     if(!props.components){
         return (
             <div className={styles.selectPrompt}>
@@ -60,6 +70,7 @@ function StepEditor(props) {
                                     component={component}
                                     setComponent={(data)=>updateComponent(index,data)}
                                     selectedStep={props.selectedStep}
+                                    delete={()=>deleteComponent(index)}
                                 />:
                                 <StepComponent key={index} component={component} isEditor={true}/>
                             }
