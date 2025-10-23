@@ -11,7 +11,9 @@ function StepEditor(props) {
     const [selectedComponent, setSelectedComponent] = useState(null);
 
     const clickHandle = (index)=>{
-        setSelectedComponent(index);
+        if(selectedComponent!==index) {
+            setSelectedComponent(index);
+        }
     }
 
     const deselectClickHandle = (event)=>{
@@ -64,7 +66,7 @@ function StepEditor(props) {
             <div className={styles.preview}>
                 {
                     props.components.map((component, index) => (
-                        <div className={`${styles.component} ${selectedComponent===index?styles.selected:styles.unselected}`}>
+                        <div className={`${styles.component} ${selectedComponent===index?styles.selected:styles.unselected}`} onClick={()=>{clickHandle(index)}}>
                             {selectedComponent===index?
                                 <EditableComponent
                                     key={index}
@@ -74,7 +76,7 @@ function StepEditor(props) {
                                     selectedStep={props.selectedStep}
                                     delete={()=>deleteComponent(index)}
                                 />:
-                                <StepComponent key={index} component={component} isEditor={true}  onClick={()=>{clickHandle(index)}}/>
+                                <StepComponent key={index} component={component} isEditor={true} />
                             }
                         </div>
                     ))
