@@ -5,6 +5,7 @@ function EditableText(props) {
     const [text, setText] = useState(props.component.text??"");
 
     useEffect(() => {
+        console.log("sdfsdfsfd")
         props.setComponent({
             ...props.component,
             text: text,

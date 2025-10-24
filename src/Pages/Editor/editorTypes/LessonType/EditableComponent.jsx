@@ -14,9 +14,12 @@ function EditableComponent(props) {
     useEffect(() => {
         props.setComponent({
             ...props.component,
+            type: type
+        });
+        console.log("type", props.component.type,type,{
+            ...props.component,
             type: type,
         });
-        console.log("type", props.component.type,type,);
     },[type])
 
     const onDropdownChange = (e) => {
