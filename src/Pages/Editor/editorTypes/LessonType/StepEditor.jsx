@@ -39,9 +39,9 @@ function StepEditor(props) {
 
     const updateComponent = (index,data)=>{
         let newComponents = [...props.components];
-        newComponents[index] = data;
-        props.setComponents(newComponents);
-        console.log("component update",index,props.components,newComponents,newComponents===props.components,data);
+        newComponents[index] = {...data};
+        props.setComponents([...newComponents]);
+        console.log("component update",index,props.components[index],newComponents[index],data);
     }
 
     const deleteComponent = (index) => {
