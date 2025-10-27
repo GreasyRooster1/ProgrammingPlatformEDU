@@ -37,11 +37,23 @@ function StepEditor(props) {
         ]);
     }
 
-    const updateComponent = (index,data)=>{
+    const setComponent = (index,data)=>{
         let newComponents = [...props.components];
         newComponents[index] = {...data};
         props.setComponents([...newComponents]);
         console.log("component update",index,props.components[index],newComponents[index],data);
+    }
+
+    const updateComponent = (index,data)=>{
+        props.setComponents((components) => {
+            let newComponents = [...components];
+            newComponents[index] = {
+                ...components[index],
+                ...data,
+            }
+            console.log("component update",index,props.components[index],newComponents[index],data);
+            return newComponents;
+        });
     }
 
     const deleteComponent = (index) => {
@@ -72,7 +84,8 @@ function StepEditor(props) {
                                     key={index}
                                     index={index}
                                     component={component}
-                                    setComponent={(data)=>updateComponent(index,data)}
+                                    updateComponent={(data)=>updateComponent(index,data)}
+                                    setComponent={(data)=>setComponent(index,data)}
                                     selectedStep={props.selectedStep}
                                     delete={()=>deleteComponent(index)}
                                 />:
