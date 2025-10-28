@@ -41,11 +41,20 @@ function LessonType(props){
         setLessonData(JSON.parse(text));
     }
 
+    const saveProject = async ()=> {
+        net.proj.saveFile(
+            auth.user?.access_token,
+            [props.projectMetadata.id,"main"],
+            lessonData,
+            undefined)
+    }
+
     return (
         <EditorType
             noOutput
             noCode
             noRun
+            onSave={saveProject}
             loadProject={loadProject}
             {...props}
         >
