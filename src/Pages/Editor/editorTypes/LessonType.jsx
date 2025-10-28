@@ -29,7 +29,6 @@ function LessonType(props){
         newData.steps[selectedStep] = stepData;
         setLessonData(newData);
         setCurrentComponents(stepData.components);
-        console.log("step data update load")
     },[stepData])
 
     useEffect(() => {
