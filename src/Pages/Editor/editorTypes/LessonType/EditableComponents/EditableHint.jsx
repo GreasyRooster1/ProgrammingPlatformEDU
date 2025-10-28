@@ -6,14 +6,12 @@ function EditableHint(props) {
     const [title, setTitle] = useState(props.component.title??"");
 
     useEffect(() => {
-        props.setComponent({
-            ...props.component,
+        props.updateComponent({
             text: text,
         })
     },[text])
     useEffect(() => {
-        props.setComponent({
-            ...props.component,
+        props.updateComponent({
             title: title,
         })
     },[title])
