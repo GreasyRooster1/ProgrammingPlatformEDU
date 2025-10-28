@@ -20,6 +20,7 @@ function LessonType(props){
     const [selectedStep, setSelectedStep] = useState(null);
     const [stepData, setStepData] = useState(null);
     const [currentComponents, setCurrentComponents] = useState(null);
+    const [editorChanged, setEditorChanged] = useState(false);
 
     useEffect(() => {
         if(!stepData){
@@ -45,7 +46,7 @@ function LessonType(props){
         net.proj.saveFile(
             auth.user?.access_token,
             [props.projectMetadata.id,"main"],
-            lessonData,
+            JSON.stringify(lessonData),
             undefined)
     }
 
@@ -56,6 +57,7 @@ function LessonType(props){
             noRun
             onSave={saveProject}
             loadProject={loadProject}
+            saveHighlight={editorChanged}
             {...props}
         >
             <Panel defaultSize={10} minSize={10} maxSize={20} className={styles.tabsPanel}>
