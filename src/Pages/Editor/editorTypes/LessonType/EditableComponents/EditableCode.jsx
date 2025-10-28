@@ -6,7 +6,6 @@ function EditableCode(props) {
     const [language, setLanguage] = useState(props.component.language??"javascript");
 
     useEffect(() => {
-        console.log(props.component)
         props.updateComponent({
             code: code,
         })

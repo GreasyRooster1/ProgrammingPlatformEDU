@@ -41,7 +41,6 @@ function StepEditor(props) {
         let newComponents = [...props.components];
         newComponents[index] = {...data};
         props.setComponents([...newComponents]);
-        console.log("component update",index,props.components[index],newComponents[index],data);
     }
 
     const updateComponent = (index,data)=>{
@@ -51,7 +50,6 @@ function StepEditor(props) {
                 ...components[index],
                 ...data,
             }
-            console.log("component update",index,props.components[index],newComponents[index],data);
             return newComponents;
         });
     }
@@ -62,7 +60,6 @@ function StepEditor(props) {
         components.splice(index,1);
         props.setComponents(components);
         setSelectedComponent(null);
-        console.log(selectedComponent)
     }
 
     if(!props.components){

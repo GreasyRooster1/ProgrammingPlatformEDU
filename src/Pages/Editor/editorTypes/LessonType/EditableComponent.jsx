@@ -12,15 +12,12 @@ function EditableComponent(props) {
     const [type, setType] = useState(props.component.type??"text");
 
     useEffect(() => {
-        console.log("type 1 ", props.component.type,type);
         props.updateComponent({
             type: type
         });
-        console.log("type 2 ", props.component.type,type);
     },[type])
 
     const onDropdownChange = (e) => {
-        console.log("onDropdownChange", e.target.value.toLowerCase());
         setType(e.target.value.toLowerCase());
     }
 
