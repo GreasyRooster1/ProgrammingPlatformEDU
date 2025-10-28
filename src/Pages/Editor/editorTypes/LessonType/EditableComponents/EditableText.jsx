@@ -6,8 +6,7 @@ function EditableText(props) {
 
     useEffect(() => {
         console.log("sdfsdfsfd")
-        props.setComponent({
-            ...props.component,
+        props.updateComponent({
             text: text,
         })
     },[text])

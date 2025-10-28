@@ -13,8 +13,7 @@ function EditableComponent(props) {
 
     useEffect(() => {
         console.log("type 1 ", props.component.type,type);
-        props.setComponent({
-            ...props.component,
+        props.updateComponent({
             type: type
         });
         console.log("type 2 ", props.component.type,type);
@@ -46,7 +45,7 @@ function EditableComponent(props) {
                 <Dropdown options={types} onChange={onDropdownChange} value={type}/>
                 <LinkButton icon={trashIcon} onClick={props.delete}>Delete</LinkButton>
             </div>
-            <StepComponent type={type} component={props.component} components={componentsList} setComponent={props.setComponent}/>
+            <StepComponent type={type} component={props.component} components={componentsList} setComponent={props.setComponent} updateComponent={props.updateComponent}/>
         </div>
     );
 }
