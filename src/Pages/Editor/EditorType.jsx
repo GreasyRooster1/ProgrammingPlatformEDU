@@ -33,6 +33,7 @@ function EditorType(props){
 
     let [loadedProject,setLoadedProject] = useState(false);
     let hasLesson = props.projectMetadata.lessonid!==null;
+    let [lessonData, setLessonData] = useState(null);
 
     useEffect(() => {
         loadProject().then(()=>{
@@ -71,7 +72,7 @@ function EditorType(props){
             <PanelGroup direction="horizontal">
                 {hasLesson &&
                     (<><Panel defaultSize={25} minSize={15} className={styles.stepsPanel}>
-                            <LessonPanel lessonData={{components:[{type:"text",text:"hello"}]}}/>
+                            <LessonPanel lessonData={lessonData} />
                         </Panel>
                         <PanelResizeHandle /></>
                 )}
