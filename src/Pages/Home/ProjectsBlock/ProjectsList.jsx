@@ -8,6 +8,7 @@ import {useAuth} from "react-oidc-context";
 import Error from "../../../Error.jsx";
 import SubText from "../../../components/text/SubText.jsx";
 import styles from "./projectsList.module.css";
+import Pending from "../../../Pending.jsx";
 
 function ProjectsList(props) {
     const auth = useAuth();
@@ -21,23 +22,19 @@ function ProjectsList(props) {
         })
     }, []);
 
-    if(requestState.isLoading){
-        return <Loading />;
-    }
-    if(requestState.isError){
-        return <Error />;
-    }
 
     return (
-        <div className={props.className}>
-            {
-                projects.length > 0 ?
-                projects.map(projData => <Project key={projData.id} data={projData} clickHandle={props.clickHandle}/>) :
-                (<div className={styles.noProjContainer}>
-                    <SubText>No projects yet...</SubText>
-                </div>)
-            }
-        </div>
+        <Pending requestState={requestState}>
+            <div className={props.className}>
+                {
+                    projects.length > 0 ?
+                    projects.map(projData => <Project key={projData.id} data={projData} clickHandle={props.clickHandle}/>) :
+                    (<div className={styles.noProjContainer}>
+                        <SubText>No projects yet...</SubText>
+                    </div>)
+                }
+            </div>
+        </Pending>
     );
 }
 
