@@ -11,6 +11,7 @@ function Pending(props) {
     if(props.requestState.isLoading) {
         return <Error message={props.showError?props.requestState.error:undefined} />;
     }
+    return props.children;
 }
 
 export default Pending;
