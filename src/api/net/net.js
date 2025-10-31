@@ -26,6 +26,9 @@ const netProj = {
 
     //check_ref_exists/<named_ref>/
     checkRefExists: jsonReq("/project/check_ref_exists"),
+
+    //get_lesson/<proj_id>
+    getLesson: jsonReq("project/get_lesson"),
 }
 
 const netAuth = {
