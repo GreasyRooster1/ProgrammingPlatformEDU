@@ -19,6 +19,7 @@ import {useNavigate, useNavigation} from "react-router-dom";
 import {net} from "../../api/net/net.js";
 import {useAuth} from "react-oidc-context";
 import {useReqState} from "../../api/net/netutils.js";
+import Pending from "../../Pending.jsx";
 
 /*
 * onMount
@@ -83,7 +84,9 @@ function EditorType(props){
             <PanelGroup direction="horizontal">
                 {hasLesson &&
                     (<><Panel defaultSize={25} minSize={15} className={styles.stepsPanel}>
-                            <LessonPanel lessonData={lessonData} />
+                            <Pending requestState={lessonDataRequestState}>
+                                <LessonPanel lessonData={lessonData} />
+                            </Pending>
                         </Panel>
                         <PanelResizeHandle /></>
                 )}
