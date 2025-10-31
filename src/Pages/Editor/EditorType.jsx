@@ -16,6 +16,9 @@ import HomeIcon from "../../icons/Home.svg?react"
 import PrimaryButton from "../../components/buttons/PrimaryButton.jsx";
 import IconButton from "../../components/buttons/IconButton.jsx";
 import {useNavigate, useNavigation} from "react-router-dom";
+import {net} from "../../api/net/net.js";
+import {useAuth} from "react-oidc-context";
+import {useReqState} from "../../api/net/netutils.js";
 
 /*
 * onMount
@@ -24,6 +27,7 @@ import {useNavigate, useNavigation} from "react-router-dom";
 * onRun
 */
 function EditorType(props){
+    let auth = useAuth();
     let navigate = useNavigate();
 
     let onMount = props.onMount||EMPTY_FUNC;
@@ -34,12 +38,19 @@ function EditorType(props){
     let [loadedProject,setLoadedProject] = useState(false);
     let hasLesson = props.projectMetadata.lessonid!==null;
     let [lessonData, setLessonData] = useState(null);
+    const [lessonDataRequestState,setLessonDataRequestState] = useReqState(true);
 
     useEffect(() => {
         loadProject().then(()=>{
             setLoadedProject(true)
         });
         onMount();
+    }, []);
+
+    useEffect(() => {
+        net.proj.getLesson(auth.user?.access_token,[props.projectMetadata.id],setLessonDataRequestState).then((data)=>{
+            setLessonData(data);
+        })
     }, []);
 
     const runHandle = ()=>{
