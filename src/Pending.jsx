@@ -6,11 +6,12 @@ import Error from "./Error.jsx";
 
 function Pending(props) {
     if(props.requestState.isError) {
-        return <Loading />;
-    }
-    if(props.requestState.isLoading) {
         return <Error message={props.showError?props.requestState.error:undefined} />;
     }
+    if(props.requestState.isLoading) {
+        return <Loading />;
+    }
+
     return props.children;
 }
 
