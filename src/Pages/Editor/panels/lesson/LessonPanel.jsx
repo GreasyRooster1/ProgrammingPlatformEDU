@@ -5,6 +5,8 @@ import CodePanel from "../code/CodePanel.jsx";
 import CodeBlock from "../../../../components/CodeBlock.jsx";
 import Markdown from "../../../../components/Markdown.jsx";
 import StepComponent from "./StepComponent.jsx";
+import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
+import {Flex} from "@radix-ui/themes";
 
 function LessonPanel(props) {
     const [currentStep, setCurrentStep] = useState(props.savedStep);
@@ -16,6 +18,10 @@ function LessonPanel(props) {
                     <StepComponent key={index} component={component}/>
                 ))
             }
+            <Flex justify="between">
+                <ChevronLeftIcon />
+                <ChevronRightIcon />
+            </Flex>
         </div>
     );
 }
