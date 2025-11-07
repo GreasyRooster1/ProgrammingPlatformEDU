@@ -1,8 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import "@radix-ui/themes/styles.css";
 import App from './App.jsx'
 import {BrowserRouter} from "react-router-dom";
+import { Theme } from "@radix-ui/themes";
 import { AuthProvider } from "react-oidc-context";
 
 const cognitoAuthConfig = {
@@ -15,10 +17,13 @@ const cognitoAuthConfig = {
 
 
 createRoot(document.getElementById('root')).render(
+
   <StrictMode>
       <AuthProvider {...cognitoAuthConfig}>
           <BrowserRouter>
-            <App />
+            <Theme radius="large" accentColor="purple" grayColor="gray">
+                <App />
+            </Theme>
           </BrowserRouter>
       </AuthProvider>
   </StrictMode>,
