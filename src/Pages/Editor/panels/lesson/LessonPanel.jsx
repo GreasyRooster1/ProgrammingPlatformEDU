@@ -5,22 +5,31 @@ import CodePanel from "../code/CodePanel.jsx";
 import CodeBlock from "../../../../components/CodeBlock.jsx";
 import Markdown from "../../../../components/Markdown.jsx";
 import StepComponent from "./StepComponent.jsx";
-import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
-import {Flex} from "@radix-ui/themes";
+import {ArrowLeftIcon, ArrowRightIcon} from "@radix-ui/react-icons"
+import {Button, Flex} from "@radix-ui/themes";
 
 function LessonPanel(props) {
     const [currentStep, setCurrentStep] = useState(props.savedStep);
 
     return (
         <div className={styles.lesson}>
-            {
-                props.lessonData.steps[currentStep-1].components.map((component, index) => (
-                    <StepComponent key={index} component={component}/>
-                ))
-            }
-            <Flex justify="between">
-                <ChevronLeftIcon />
-                <ChevronRightIcon />
+            <Flex direction="column">
+                {
+                    props.lessonData.steps[currentStep-1].components.map((component, index) => (
+                        <StepComponent key={index} component={component}/>
+                    ))
+                }
+            </Flex>
+            <Flex justify="between" className={styles.bottomBar}>
+                <Button variant="outline">
+                    <ArrowLeftIcon />
+                    Prev
+                </Button>
+
+                <Button variant="outline">
+                    Next
+                    <ArrowRightIcon />
+                </Button>
             </Flex>
         </div>
     );
