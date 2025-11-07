@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./pending.module.css"
-import ScreenPage from "./components/screenPage/ScreenPage.jsx";
+import ScreenPage from "./screenPage/ScreenPage.jsx";
 
 function Loading() {
     return (

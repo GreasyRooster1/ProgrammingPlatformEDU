@@ -4,7 +4,7 @@ import {EXEC_URL, IS_EXEC_DEV} from "../../../api/constants.js";
 import {useAuth} from "react-oidc-context";
 import {net} from "../../../api/net/net.js";
 import {useReqState} from "../../../api/net/netutils.js";
-import Loading from "../../../Loading.jsx";
+import Loading from "../../../components/Loading.jsx";
 
 
 const P5Executor = React.forwardRef((props, ref) =>  {

@@ -7,7 +7,7 @@ import OutputPanel from "./panels/output/OutputPanel.jsx";
 import ConsolePanel from "./panels/console/ConsolePanel.jsx";
 import {EMPTY_FUNC, handle} from "../../api/func.js"
 import EditorPage from "./EditorPage.jsx";
-import Loading from "../../Loading.jsx";
+import Loading from "../../components/Loading.jsx";
 import HeaderFlex from "../../components/headerFlex/HeaderFlex.jsx";
 import play from "../../icons/Play.svg";
 import SaveIcon from "../../icons/Save.svg?react"
@@ -19,7 +19,7 @@ import {useNavigate, useNavigation} from "react-router-dom";
 import {net} from "../../api/net/net.js";
 import {useAuth} from "react-oidc-context";
 import {useReqState} from "../../api/net/netutils.js";
-import Pending from "../../Pending.jsx";
+import Pending from "../../components/Pending.jsx";
 
 /*
 * onMount

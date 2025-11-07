@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './stepPreview.module.css'
 import StepComponent from "../../panels/lesson/StepComponent.jsx";
-import Loading from "../../../../Loading.jsx";
+import Loading from "../../../../components/Loading.jsx";
 import MedTitle from "../../../../components/text/MedTitle.jsx";
 import EditableComponent from "./EditableComponent.jsx";
 

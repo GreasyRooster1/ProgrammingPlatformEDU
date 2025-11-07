@@ -1,6 +1,6 @@
 import React from 'react';
 import {useAuth} from "react-oidc-context";
-import LoadingScreen from "../LoadingScreen.jsx";
+import LoadingScreen from "./LoadingScreen.jsx";
 
 function AuthProvider(props) {
     const auth = useAuth();

@@ -1,14 +1,14 @@
 import React, {use, useEffect, useState} from 'react';
 import Project from "./Project.jsx";
 import {net} from "../../../api/net/net.js";
-import LoadingScreen from "../../../LoadingScreen.jsx";
-import Loading from "../../../Loading.jsx";
+import LoadingScreen from "../../../components/LoadingScreen.jsx";
+import Loading from "../../../components/Loading.jsx";
 import {useReqState} from "../../../api/net/netutils.js";
 import {useAuth} from "react-oidc-context";
-import Error from "../../../Error.jsx";
+import Error from "../../../components/Error.jsx";
 import SubText from "../../../components/text/SubText.jsx";
 import styles from "./projectsList.module.css";
-import Pending from "../../../Pending.jsx";
+import Pending from "../../../components/Pending.jsx";
 
 function ProjectsList(props) {
     const auth = useAuth();

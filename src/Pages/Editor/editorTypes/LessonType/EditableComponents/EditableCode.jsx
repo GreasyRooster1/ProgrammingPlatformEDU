@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import CodeInput from "../../../../../components/CodeInput.jsx";
+import CodeInput from "../../../../../components/Form/CodeInput.jsx";
 
 function EditableCode(props) {
     const [code, setCode] = useState(props.component.code??"");

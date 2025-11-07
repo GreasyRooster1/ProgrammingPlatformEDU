@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import CodeInput from "../../../../components/CodeInput.jsx";
+import CodeInput from "../../../../components/Form/CodeInput.jsx";
 import TitleDesc from "../../../../components/text/TitleDesc.jsx";
 
 import styles from "./dataPanel.module.css"

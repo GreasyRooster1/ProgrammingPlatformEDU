@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './stepsTab.module.css';
 import Step from "./Step.jsx";
 import MedTitle from "../../../../components/text/MedTitle.jsx";
-import Loading from "../../../../Loading.jsx";
+import Loading from "../../../../components/Loading.jsx";
 import PrimaryButton from "../../../../components/buttons/PrimaryButton.jsx";
 
 function StepsList(props) {

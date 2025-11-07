@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import AuthLock from "../../components/AuthLock.jsx";
 import styles from "./homePage.module.css";
-import LoadingScreen from "../../LoadingScreen.jsx";
+import LoadingScreen from "../../components/LoadingScreen.jsx";
 import HomeGrid from "./HomeGrid.jsx";
 import HomeGridItem from "./HomeGridItem.jsx";
 import ProjectsBlock from "./ProjectsBlock/ProjectsBlock.jsx";
