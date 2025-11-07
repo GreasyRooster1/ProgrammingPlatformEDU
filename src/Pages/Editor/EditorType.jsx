@@ -85,7 +85,7 @@ function EditorType(props){
                 {hasLesson &&
                     (<><Panel defaultSize={25} minSize={15} className={styles.stepsPanel}>
                             <Pending requestState={lessonDataRequestState}>
-                                <LessonPanel lessonData={lessonData} />
+                                {lessonData && <LessonPanel lessonData={lessonData} savedStep={props.projectMetadata.lesson_current_step}/>}
                             </Pending>
                         </Panel>
                         <PanelResizeHandle /></>
