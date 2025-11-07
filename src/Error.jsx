@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./request.module.css"
+import styles from "./pending.module.css"
 function Error(props) {
     return (
         <div className={styles.textContainer}>

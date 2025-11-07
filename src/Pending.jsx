@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./request.module.css"
+import styles from "./pending.module.css"
 import ScreenPage from "./components/screenPage/ScreenPage.jsx";
 import Loading from "./Loading.jsx";
 import Error from "./Error.jsx";
