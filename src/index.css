@@ -1,17 +1,12 @@
 
 :root {
-    line-height: 1.5;
-    font-weight: 400;
 
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
     --mono-font: "JetBrains Mono";
     --ui-font: "JetBrains Mono";
-    font-family: sans-serif, system-ui, monospace, Helvetica, Arial, sans-serif;
-    font-family: var(--ui-font);
+
 
     --neutral-dark:#0F0F10;
     --neutral-med:#151516;
@@ -34,11 +29,22 @@
     --default-text-color:#fff;
     --sub-text: #6d7071;
 
-    color: var(--default-text-color)
+
 }
 
 *{
     scrollbar-color: var(--neutral-light) transparent   ;
+}
+
+*{
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    font-family: sans-serif, system-ui, monospace, Helvetica, Arial, sans-serif;
+    font-family: var(--ui-font);
+    color: var(--default-text-color)
 }
 
 html{
