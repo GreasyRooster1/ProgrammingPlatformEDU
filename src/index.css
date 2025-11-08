@@ -47,7 +47,6 @@
     text-rendering: optimizeLegibility;
     font-family: sans-serif, system-ui, monospace, Helvetica, Arial, sans-serif;
     font-family: var(--ui-font);
-    color: var(--default-text-color)
 }
 
 html{
