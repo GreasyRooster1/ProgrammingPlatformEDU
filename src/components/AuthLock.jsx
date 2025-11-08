@@ -20,7 +20,7 @@ function AuthLock(props) {
     if(auth.isAuthenticated) {
         return props.children;
     }else{
-        return <Navigate to="/" replace />
+        return auth.signinRedirect();
     }
 }
 
