@@ -22,7 +22,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
       <AuthProvider {...cognitoAuthConfig}>
           <BrowserRouter>
-            <Theme radius="large" accentColor="purple" grayColor="gray" panelBackground="solid" scaling="100%" hasBackground={false}>
+            <Theme radius="large" accentColor="purple" grayColor="gray" panelBackground="solid" scaling="100%" hasBackground={false} appearance={"dark"}>
                 <App />
             </Theme>
           </BrowserRouter>

@@ -6,7 +6,7 @@
     --brand-gray-dark:#0F0F10;
 }
 
-:root {
+.radix-themes {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -14,15 +14,14 @@
     --ui-font: "JetBrains Mono";
 
 
-    --neutral-dark:#0F0F10;
-    --neutral-med:#151516;
-    --neutral-light:#46494C;
+    --neutral-dark:var(--gray-1);
+    --neutral-med:var(--gray-2);
+    --neutral-light:var(--gray-7);
 
     --neutral-icon:#7D7C7C;
 
     --transparent-primary: rgba(60, 4, 102, 0.52);
-    --primary:#8A13E5;
-    --primary-dark:#3C0466;
+    --primary:var(--purple-9);
 
     --error:#E83C19;
 
