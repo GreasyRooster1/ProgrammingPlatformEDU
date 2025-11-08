@@ -7,6 +7,7 @@ import PrimaryButton from "../../../components/buttons/PrimaryButton.jsx";
 import privateIcon from "../../../icons/PrivateVisIcon.svg"
 import {getIconForVisibility, getProjectNamedType} from "../../../api/proj.js";
 import {useNavigate} from "react-router-dom";
+import {Button} from "@radix-ui/themes";
 
 function DetailView(props) {
     const navigate = useNavigate();
@@ -19,15 +20,15 @@ function DetailView(props) {
             </div>
             <div>
                 <div className={styles.secondaryButtons}>
-                    <SecondaryButton className={styles.copyButton}>Copy</SecondaryButton>
-                    <SecondaryButton className={styles.deleteButton}>Delete</SecondaryButton>
+                    <SecondaryButton className={styles.actionButton}>Copy</SecondaryButton>
+                    <SecondaryButton className={styles.actionButton}>Delete</SecondaryButton>
                 </div>
-                <PrimaryButton className={styles.openButton} onClick={()=>{
+                <Button className={styles.openButton} size="3" onClick={()=>{
                     console.log(props.project);
                     navigate("/editor", {state: {projectMetadata: props.project}});
                 }}>
                     Open
-                </PrimaryButton>
+                </Button>
             </div>
         </>
     );

@@ -1,11 +1,16 @@
 import React from 'react';
 import styles from './secondaryButton.module.css'
+import {Button} from "@radix-ui/themes";
 
 function SecondaryButton(props) {
     return (
-        <div className={`${styles.secondaryButton} ${props.className??""}`} onClick={props.onClick}>
+        <Button
+            color="gray"
+            variant="outline"
+            {...props}
+        >
             {props.children}
-        </div>
+        </Button>
     );
 }
 

@@ -75,7 +75,7 @@ function EditorType(props){
                 <div className={styles.iconGroup}>
                     {
                         !props.noRun &&
-                        <Button onClick={runHandle} size="2" variant="soft">Run <PlayIcon width="1.1rem"/></Button>
+                        <Button onClick={runHandle} size="2" variant="solid">Run <PlayIcon width="1.1rem"/></Button>
                     }
                     <IconButton icon={(<SaveIcon />)} isHighlighted={props.saveHighlight} onClick={onSave} />
                     <IconButton icon={(<ShareIcon />)}/>
