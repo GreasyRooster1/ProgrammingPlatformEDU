@@ -9,7 +9,7 @@ import {EMPTY_FUNC, handle} from "../../api/func.js"
 import EditorPage from "./EditorPage.jsx";
 import Loading from "../../components/Loading.jsx";
 import HeaderFlex from "../../components/headerFlex/HeaderFlex.jsx";
-import play from "../../icons/Play.svg";
+import PlayIcon from "../../icons/Play.svg?react";
 import SaveIcon from "../../icons/Save.svg?react"
 import ShareIcon from "../../icons/Share.svg?react"
 import HomeIcon from "../../icons/Home.svg?react"
@@ -20,6 +20,7 @@ import {net} from "../../api/net/net.js";
 import {useAuth} from "react-oidc-context";
 import {useReqState} from "../../api/net/netutils.js";
 import Pending from "../../components/Pending.jsx";
+import {Button} from "@radix-ui/themes";
 
 /*
 * onMount
@@ -74,7 +75,7 @@ function EditorType(props){
                 <div className={styles.iconGroup}>
                     {
                         !props.noRun &&
-                        <PrimaryButton className={styles.runButton} icon={play} onClick={runHandle}>Run</PrimaryButton>
+                        <Button onClick={runHandle} size="2" variant="soft">Run <PlayIcon width="1.1rem"/></Button>
                     }
                     <IconButton icon={(<SaveIcon />)} isHighlighted={props.saveHighlight} onClick={onSave} />
                     <IconButton icon={(<ShareIcon />)}/>
