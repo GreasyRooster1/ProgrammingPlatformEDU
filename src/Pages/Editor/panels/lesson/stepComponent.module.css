@@ -1,3 +1,7 @@
+.hintCallout{
+    width:100%;
+}
+
 .hintHead{
     display: flex;
     justify-content: space-between;
