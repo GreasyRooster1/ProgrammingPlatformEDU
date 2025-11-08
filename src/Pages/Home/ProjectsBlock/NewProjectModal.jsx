@@ -9,6 +9,7 @@ import {net} from "../../../api/net/net.js";
 import {useAuth} from "react-oidc-context";
 import {useReqState} from "../../../api/net/netutils.js";
 import {projectTypes} from "../../../api/proj.js";
+import {Button} from "@radix-ui/themes";
 
 function NewProjectModal(props) {
     let auth = useAuth();
@@ -35,7 +36,7 @@ function NewProjectModal(props) {
                 <TextBox placeholder={"Enter a name..."} value={name} setValue={setName} validate={validateText}></TextBox>
             </div>
             <LanguageSelector languages={projectTypes} selectedLanguage={selectedLanguage} setSelectedLanguage={setSelectedLanguage}/>
-            <PrimaryButton className={styles.create} inactive={selectedLanguage===null||name===null} onClick={createProject}>Create</PrimaryButton>
+            <Button size="3" className={styles.create} inactive={selectedLanguage===null||name===null} onClick={createProject}>Create</Button>
         </>
     );
 }
