@@ -10,6 +10,10 @@ import EditableHint from "./EditableComponents/EditableHint.jsx";
 function StepEditor(props) {
     const [selectedComponent, setSelectedComponent] = useState(null);
 
+    useEffect(() => {
+        props.setEditorChanged(true);
+    },[props.components])
+
     const clickHandle = (index)=>{
         if(selectedComponent!==index) {
             setSelectedComponent(index);
