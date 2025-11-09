@@ -43,6 +43,7 @@ function LessonType(props){
     }
 
     const saveProject = async ()=> {
+        setEditorChanged(false);
         net.proj.saveFile(
             auth.user?.access_token,
             [props.projectMetadata.id,"main"],
