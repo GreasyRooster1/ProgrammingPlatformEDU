@@ -50,6 +50,7 @@ function EditorType(props){
     }, []);
 
     useEffect(() => {
+        if(!hasLesson) return;
         net.proj.getLesson(auth.user?.access_token,[props.projectMetadata.id],setLessonDataRequestState).then((data)=>{
             setLessonData(data);
         })

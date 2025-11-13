@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import TextBox from "../../../../../components/form/TextBox.jsx";
+import {TextArea} from "@radix-ui/themes";
 
 function EditableHint(props) {
     const [text, setText] = useState(props.component.text??"");
@@ -16,12 +17,15 @@ function EditableHint(props) {
         })
     },[title])
 
+    const handleChange = (event) => {
+        setText(event.target.value);
+    };
 
 
     return (
         <>
-            <TextBox placeholder={"type some content..."} value={title} setValue={setTitle}></TextBox>
-            <TextBox placeholder={"type some content..."} value={text} setValue={setText}></TextBox>
+            <TextArea value={title} onChange={(e)=>setTitle(e.target.value)} resize="vertical"></TextArea>
+            <TextArea value={text} onChange={(e)=>setText(e.target.value)} resize="vertical"></TextArea>
         </>
     );
 }
