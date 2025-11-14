@@ -1,8 +1,14 @@
 import React from 'react';
+import {Flex} from "@radix-ui/themes";
+import Step from "./Step.jsx";
 
 function AllSteps(props) {
     return (
-        <div></div>
+        <Flex direction="column" justify="space-around" gap="2">
+            {props.lessonData.steps.map((step, index) => (
+                <Step key={index} step={step}></Step>
+            ))}
+        </Flex>
     );
 }
 
