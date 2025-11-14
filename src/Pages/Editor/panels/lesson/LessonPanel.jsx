@@ -11,6 +11,13 @@ import {Button, Flex} from "@radix-ui/themes";
 function LessonPanel(props) {
     const [currentStep, setCurrentStep] = useState(props.savedStep);
 
+    const nextStep = () => {
+        setCurrentStep(prevState => Math.min(prevState + 1,props.lessonData.steps.length));
+    }
+    const prevStep = () => {
+        setCurrentStep(prevState => Math.max(prevState - 1,1));
+    }
+
     return (
         <div className={styles.lesson}>
             <Flex direction="column">
@@ -21,12 +28,14 @@ function LessonPanel(props) {
                 }
             </Flex>
             <Flex justify="between" className={styles.bottomBar}>
-                <Button variant="outline">
+                <Button variant="outline" onClick={prevStep}>
                     <ArrowLeftIcon />
                     Prev
                 </Button>
-
-                <Button variant="outline">
+                <Button variant="soft">
+                    {currentStep}
+                </Button>
+                <Button variant="outline" onClick={nextStep}>
                     Next
                     <ArrowRightIcon />
                 </Button>
