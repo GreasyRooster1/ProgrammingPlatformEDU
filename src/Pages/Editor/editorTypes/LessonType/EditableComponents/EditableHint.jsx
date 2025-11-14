@@ -17,10 +17,6 @@ function EditableHint(props) {
         })
     },[title])
 
-    const handleChange = (event) => {
-        setText(event.target.value);
-    };
-
 
     return (
         <>
