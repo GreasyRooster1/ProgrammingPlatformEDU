@@ -8,7 +8,6 @@ import StepComponent from "./StepComponent.jsx";
 import {ArrowLeftIcon, ArrowRightIcon} from "@radix-ui/react-icons"
 import {Blockquote, Button, Flex, Separator, TextField} from "@radix-ui/themes";
 import AllSteps from "./AllSteps.jsx";
-import StepView from "./StepView.jsx";
 
 function LessonPanel(props) {
     const [currentStep, setCurrentStep] = useState(props.savedStep);
@@ -21,9 +20,8 @@ function LessonPanel(props) {
         setCurrentStep(prevState => Math.max(prevState - 1,1));
     }
 
-    const setStep = (e) => {
-        let val = e.target.value;
-        setCurrentStep(e.target.value);
+    const setStep = () => {
+        setCurrentStep(textBoxContent);
     }
     return (
         <div className={styles.lesson}>
@@ -39,7 +37,7 @@ function LessonPanel(props) {
                     <ArrowLeftIcon />
                     Prev
                 </Button>
-                <TextField.Root variant="soft" value={currentStep} onBlur={setStep} inputMode="numeric" min={1} max={props.lessonData.steps.length}>
+                <TextField.Root variant="soft" value={textBoxContent} onChange={(e)=>setTextBoxContent(e.target.value)} onBlur={setStep} type="number" min={1} max={props.lessonData.steps.length}>
                 </TextField.Root>
                 <Button variant="outline" onClick={nextStep}>
                     Next
