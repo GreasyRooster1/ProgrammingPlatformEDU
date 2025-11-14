@@ -4,7 +4,7 @@ import Step from "./Step.jsx";
 
 function AllSteps(props) {
     return (
-        <Flex direction="column" justify="space-around" gap="2">
+        <Flex direction="column" justify="space-around">
             {props.lessonData.steps.map((step, index) => (
                 <Step key={index} step={step}></Step>
             ))}

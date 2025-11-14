@@ -1,0 +1,4 @@
+.step{
+    border:solid 1px var(--neutral-light);
+    border-radius: 10px;
+}
