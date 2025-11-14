@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import MedTitle from "../../../../components/text/MedTitle.jsx";
-import SmallTitle from "../../../../components/text/SmallTitle.jsx";
-import DropdownIcon from "../../../../icons/DropdownIcon.svg?react"
+import MedTitle from "../../../../../components/text/MedTitle.jsx";
+import SmallTitle from "../../../../../components/text/SmallTitle.jsx";
+import DropdownIcon from "../../../../../icons/DropdownIcon.svg?react"
 
-import styles from "./stepComponent.module.css";
+import styles from "../stepComponent.module.css";
 import {Blockquote, Text} from "@radix-ui/themes";
 
 function HintComponent(props) {

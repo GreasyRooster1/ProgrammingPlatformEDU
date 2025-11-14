@@ -1,6 +1,6 @@
 import React from 'react';
-import MedTitle from "../../../../components/text/MedTitle.jsx";
-import LessonMarkdown from "../../../../components/LessonMarkdown.jsx";
+import MedTitle from "../../../../../components/text/MedTitle.jsx";
+import LessonMarkdown from "../../../../../components/LessonMarkdown.jsx";
 
 function TitleComponent(props) {
     return (

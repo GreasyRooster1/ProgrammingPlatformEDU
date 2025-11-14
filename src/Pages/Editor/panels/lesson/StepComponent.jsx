@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from "./stepComponent.module.css"
-import TitleComponent from "./TitleComponent.jsx";
-import TextComponent from "./TextComponent.jsx";
-import CodeComponent from "./CodeComponent.jsx";
-import HintComponent from "./HintComponent.jsx";
+import TitleComponent from "./components/TitleComponent.jsx";
+import TextComponent from "./components/TextComponent.jsx";
+import CodeComponent from "./components/CodeComponent.jsx";
+import HintComponent from "./components/HintComponent.jsx";
 
 function StepComponent(props) {
 

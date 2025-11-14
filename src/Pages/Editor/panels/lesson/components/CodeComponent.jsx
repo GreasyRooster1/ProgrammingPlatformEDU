@@ -1,5 +1,5 @@
 import React from 'react';
-import CodeBlock from "../../../../components/CodeBlock.jsx";
+import CodeBlock from "../../../../../components/CodeBlock.jsx";
 
 function CodeComponent(props) {
     return (

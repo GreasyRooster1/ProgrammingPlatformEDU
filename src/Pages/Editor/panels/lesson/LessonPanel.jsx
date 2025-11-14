@@ -15,7 +15,7 @@ function LessonPanel(props) {
     const [isViewingAll, setIsViewingAll] = useState(false);
 
     if(isViewingAll) {
-        return (<AllSteps currentStep={currentStep} setCurrentStep={setCurrentStep}/>)
+        return (<AllSteps currentStep={currentStep} setCurrentStep={setCurrentStep} lessonData={props.lessonData}/>)
     }
     return (<StepView currentStep={currentStep} setCurrentStep={setCurrentStep} setIsViewingAll={setIsViewingAll} lessonData={props.lessonData}/>)
 }
