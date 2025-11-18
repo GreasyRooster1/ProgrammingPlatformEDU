@@ -15,3 +15,7 @@
 .textField{
     text-align: center;
 }
+
+.textField input{
+    text-indent: 0;
+}
