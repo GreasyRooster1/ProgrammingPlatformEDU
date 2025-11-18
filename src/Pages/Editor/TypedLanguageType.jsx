@@ -43,7 +43,7 @@ function TypedLanguageType(props){
     return (
         <EditorType
             codeEditor={codeEditor}
-            saveHighlight={editorChanged}
+            isChanged={editorChanged}
             {...props}
             onSave={onSaveOverride}
         />

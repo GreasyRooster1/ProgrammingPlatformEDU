@@ -21,6 +21,7 @@ import {useAuth} from "react-oidc-context";
 import {useReqState} from "../../api/net/netutils.js";
 import Pending from "../../components/Pending.jsx";
 import {Button} from "@radix-ui/themes";
+import {usePreventLeave} from "../../api/auth.js";
 
 /*
 * onMount
@@ -56,6 +57,8 @@ function EditorType(props){
         })
     }, []);
 
+    usePreventLeave(props.isChanged);
+
     const runHandle = ()=>{
         onRun();
         if(props.execRef?.current){
@@ -78,7 +81,7 @@ function EditorType(props){
                         !props.noRun &&
                         <Button onClick={runHandle} size="2" variant="solid">Run <PlayIcon width="1.1rem"/></Button>
                     }
-                    <IconButton icon={(<SaveIcon />)} isHighlighted={props.saveHighlight} onClick={onSave} />
+                    <IconButton icon={(<SaveIcon />)} isHighlighted={props.isChanged} onClick={onSave} />
                     <IconButton icon={(<ShareIcon />)}/>
                 </div>
             </>
