@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from "./lessonPanel.module.css";
 import MedTitle from "../../../../components/text/MedTitle.jsx";
 import CodePanel from "../code/CodePanel.jsx";
@@ -21,8 +21,20 @@ function LessonPanel(props) {
     }
 
     const setStep = () => {
+        if(!textBoxContent) return;
+        if(textBoxContent>props.lessonData.steps.length){
+            setTextBoxContent(props.lessonData.steps.length-1);
+            setCurrentStep(props.lessonData.steps.length-1);
+            return;
+        }
+
         setCurrentStep(textBoxContent);
     }
+
+    useEffect(()=>{
+        setTextBoxContent(currentStep);
+    },[currentStep]);
+
     return (
         <div className={styles.lesson}>
             <Flex direction="column">
