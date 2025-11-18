@@ -19,6 +19,12 @@ function LessonMarkdown(props) {
                     return (
                         <Code variant="soft" className={className}>{children}</Code>
                     )
+                },
+                p(props) {
+                    const {children, className, node, ...rest} = props
+                    return (
+                        <span className={className}>{children}</span>
+                    )
                 }
             }}
         >
