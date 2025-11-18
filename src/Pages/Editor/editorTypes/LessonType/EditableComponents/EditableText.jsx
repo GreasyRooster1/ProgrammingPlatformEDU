@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import TextBox from "../../../../../components/form/TextBox.jsx";
+import {TextArea} from "@radix-ui/themes";
 
 function EditableText(props) {
     const [text, setText] = useState(props.component.text??"");
@@ -13,7 +13,7 @@ function EditableText(props) {
 
     return (
         <>
-            <TextBox placeholder={"type some content..."} value={text} setValue={setText}></TextBox>
+            <TextArea variant="surface" size="3" placeholder={"type some content..."} value={text} setValue={setText}></TextArea>
         </>
     );
 }

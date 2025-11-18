@@ -4,15 +4,14 @@
     --brand-gray-light:#46494C;
     --brand-gray-med:#151516;
     --brand-gray-dark:#0F0F10;
+
+    --mono-font: "JetBrains Mono";
+    --ui-font: "JetBrains Mono";
 }
 
 .radix-themes {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    --mono-font: "JetBrains Mono";
-    --ui-font: "JetBrains Mono";
-
 
     --neutral-dark:var(--gray-1);
     --neutral-med:var(--gray-2);
