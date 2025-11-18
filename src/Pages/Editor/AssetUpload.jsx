@@ -5,7 +5,7 @@ function AssetUpload(props) {
     return (
         <AlertDialog.Root>
             <AlertDialog.Trigger>
-                <Button>Upload Files</Button>
+                {props.children ?? <Button>Upload Files</Button>}
             </AlertDialog.Trigger>
             <AlertDialog.Content maxWidth="450px">
                 <AlertDialog.Title>Upload file</AlertDialog.Title>
