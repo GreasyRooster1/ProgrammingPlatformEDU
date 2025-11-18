@@ -49,7 +49,7 @@ function LessonPanel(props) {
                     <ArrowLeftIcon />
                     Prev
                 </Button>
-                <TextField.Root variant="soft" value={textBoxContent} onChange={(e)=>setTextBoxContent(e.target.value)} onBlur={setStep} type="number" min={1} max={props.lessonData.steps.length}>
+                <TextField.Root className={styles.textField} variant="soft" value={textBoxContent} onChange={(e)=>setTextBoxContent(e.target.value)} onBlur={setStep} type="number" min={1} max={props.lessonData.steps.length}>
                 </TextField.Root>
                 <Button variant="outline" onClick={nextStep}>
                     Next
