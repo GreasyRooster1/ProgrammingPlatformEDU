@@ -24,3 +24,20 @@ export const useAdvAuth = ()=>{
 
     return auth;
 }
+
+export const usePreventLeave = (preventLeaveState)=>{
+    useEffect(() => {
+        const handleBeforeUnload = (event) => {
+            if (preventLeaveState) {
+                event.preventDefault();
+                event.returnValue = ''; // Required for some browsers to display the prompt
+            }
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, [preventLeaveState]);
+}

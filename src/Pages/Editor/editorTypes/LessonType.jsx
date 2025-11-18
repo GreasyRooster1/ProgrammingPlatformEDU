@@ -58,7 +58,7 @@ function LessonType(props){
             noRun
             onSave={saveProject}
             loadProject={loadProject}
-            saveHighlight={editorChanged}
+            isChanged={editorChanged}
             {...props}
         >
             <Panel defaultSize={10} minSize={10} maxSize={20} className={styles.tabsPanel}>
