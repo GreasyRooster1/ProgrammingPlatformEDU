@@ -27,6 +27,11 @@ function LessonPanel(props) {
             setCurrentStep(props.lessonData.steps.length-1);
             return;
         }
+        console.log(textBoxContent,textBoxContent.length);
+        if(textBoxContent.length<1){
+            setTextBoxContent(currentStep);
+            return;
+        }
 
         setCurrentStep(textBoxContent);
     }
