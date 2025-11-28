@@ -43,11 +43,6 @@ function LessonPanel(props) {
         setTextBoxContent(currentStep);
     },[currentStep]);
 
-    useEffect(()=>{
-        if(textBoxContent.length>0) return;
-        setTextBoxContent(" ");
-    },[textBoxContent]);
-
     return (
         <div className={styles.lesson}>
             <Flex direction="column">
