@@ -21,7 +21,9 @@ function LessonPanel(props) {
     }
 
     const setStep = () => {
-        if(!textBoxContent) return;
+        if(!textBoxContent){
+            setTextBoxContent(currentStep)
+        }
         if(textBoxContent>props.lessonData.steps.length){
             setTextBoxContent(props.lessonData.steps.length-1);
             setCurrentStep(props.lessonData.steps.length-1);
@@ -29,6 +31,7 @@ function LessonPanel(props) {
         }
         console.log(textBoxContent,textBoxContent.length);
         if(textBoxContent.length<1){
+            console.log("dsfdsf")
             setTextBoxContent(currentStep);
             return;
         }
@@ -39,6 +42,11 @@ function LessonPanel(props) {
     useEffect(()=>{
         setTextBoxContent(currentStep);
     },[currentStep]);
+
+    useEffect(()=>{
+        if(textBoxContent.length>0) return;
+        setTextBoxContent(" ");
+    },[textBoxContent]);
 
     return (
         <div className={styles.lesson}>
