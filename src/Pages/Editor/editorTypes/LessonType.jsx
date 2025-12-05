@@ -1,17 +1,12 @@
-import {useEffect, useRef, useState} from "react";
-import P5Executor from "../Executors/P5Executor.jsx";
+import {useEffect, useState} from "react";
 import EditorType from "../editorType.jsx";
 import {net} from "../../../api/net/net.js";
 import {useAuth} from "react-oidc-context";
 import {Panel, PanelResizeHandle} from "react-resizable-panels";
-import TypedLanguageType from "../typedLanguageType.jsx";
-import TabGroup from "../../../components/navigation/TabGroup.jsx";
 import StepsList from "./LessonType/StepsList.jsx";
 
 import styles from "./LessonType.module.css";
 import StepEditor from "./LessonType/StepEditor.jsx";
-import StepPreview from "./LessonType/StepPreview.jsx";
-import P5jsType from "./p5jsType.jsx";
 import DataPanel from "./LessonType/DataPanel.jsx";
 
 function LessonType(props){
