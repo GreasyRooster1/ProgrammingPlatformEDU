@@ -5,7 +5,7 @@ import {useAuth} from "react-oidc-context";
 import {Panel, PanelResizeHandle} from "react-resizable-panels";
 import StepsList from "./LessonType/StepsList.jsx";
 
-import styles from "./LessonType.module.css";
+import styles from "./lessonType.module.css";
 import StepEditor from "./LessonType/StepEditor.jsx";
 import DataPanel from "./LessonType/DataPanel.jsx";
 
