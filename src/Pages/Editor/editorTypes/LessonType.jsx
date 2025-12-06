@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import EditorType from "../editorType.jsx";
+import EditorType from "../EditorType.jsx";
 import {net} from "../../../api/net/net.js";
 import {useAuth} from "react-oidc-context";
 import {Panel, PanelResizeHandle} from "react-resizable-panels";
