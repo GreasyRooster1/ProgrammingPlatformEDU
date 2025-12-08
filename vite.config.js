@@ -8,4 +8,9 @@ export default defineConfig({
       react(),
       svgr(),
     ],
+    resolve: {
+        alias: {
+            './runtimeConfig': './runtimeConfig.browser',
+        },
+    }
 })
