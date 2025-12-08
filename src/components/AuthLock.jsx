@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import AuthProvider  from "./AuthProvider.jsx";
-import {useAuth0} from "@auth0/auth0-react";
 import LoadingScreen from "./LoadingScreen.jsx";
 import {useAuth} from "react-oidc-context";
 import {Navigate} from "react-router-dom";
