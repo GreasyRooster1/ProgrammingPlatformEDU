@@ -1,25 +1,22 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Panel, PanelGroup, PanelResizeHandle} from "react-resizable-panels";
 import styles from "./editorPage.module.css";
 import LessonPanel from "./panels/lesson/LessonPanel.jsx";
-import CodePanel from "./panels/code/CodePanel.jsx";
 import OutputPanel from "./panels/output/OutputPanel.jsx";
 import ConsolePanel from "./panels/console/ConsolePanel.jsx";
-import {EMPTY_FUNC, handle} from "../../api/func.js"
-import EditorPage from "./EditorPage.jsx";
+import {EMPTY_FUNC} from "../../api/func.js"
 import Loading from "../../components/Loading.jsx";
 import HeaderFlex from "../../components/headerFlex/HeaderFlex.jsx";
 import PlayIcon from "../../icons/Play.svg?react";
 import SaveIcon from "../../icons/Save.svg?react"
 import ShareIcon from "../../icons/Share.svg?react"
 import HomeIcon from "../../icons/Home.svg?react"
-import PrimaryButton from "../../components/buttons/PrimaryButton.jsx";
 import IconButton from "../../components/buttons/IconButton.jsx";
-import {useNavigate, useNavigation} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {net} from "../../api/net/net.js";
 import {useAuth} from "react-oidc-context";
 import {useReqState} from "../../api/net/netutils.js";
-import Pending from "../../components/Pending.jsx";
+import Pending from "~components/Pending.jsx";
 import {Button} from "@radix-ui/themes";
 import {usePreventLeave} from "../../api/auth.js";
 
