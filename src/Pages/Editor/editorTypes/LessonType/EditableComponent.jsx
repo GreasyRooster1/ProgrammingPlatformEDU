@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styles from "./editableComponent.module.css"
 import StepComponent from "../../panels/lesson/StepComponent.jsx";
 import EditableText from "./EditableComponents/EditableText.jsx";
-import Dropdown from "../../../../components/Form/Dropdown.jsx";
+import Dropdown from "../../../../components/form/Dropdown.jsx";
 import LinkButton from "../../../../components/buttons/LinkButton.jsx";
 import trashIcon from "../../../../icons/TrashIcon.svg";
 import EditableCode from "./EditableComponents/EditableCode.jsx";

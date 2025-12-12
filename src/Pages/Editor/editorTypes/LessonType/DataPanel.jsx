@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import CodeInput from "../../../../components/Form/CodeInput.jsx";
+import CodeInput from "../../../../components/form/CodeInput.jsx";
 import TitleDesc from "../../../../components/text/TitleDesc.jsx";
 
 import styles from "./dataPanel.module.css"
 import SmallTitle from "../../../../components/text/SmallTitle.jsx";
-import TextBox from "../../../../components/Form/TextBox.jsx";
+import TextBox from "../../../../components/form/TextBox.jsx";
 
 function DataPanel(props) {
     const [name,setName] = useState("");

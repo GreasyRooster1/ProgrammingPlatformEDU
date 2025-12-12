@@ -1,7 +1,7 @@
 import EditorType from "./EditorType.jsx";
 import CodePanel from "./panels/code/CodePanel.jsx";
 import {useRef, useState} from "react";
-import {EMPTY_FUNC} from "../../api/func.js";
+import {EMPTY_FUNC} from "~api/func.js";
 
 
 /*
