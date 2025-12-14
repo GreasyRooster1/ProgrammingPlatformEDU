@@ -1,8 +1,0 @@
-.icon path{
-    stroke:var(--neutral-icon);
-    transition: stroke .25s;
-}
-
-.highlight path{
-    stroke: var(--default-text-color);
-}
