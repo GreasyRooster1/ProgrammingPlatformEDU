@@ -4,7 +4,7 @@ import styles from "./nav.module.css"
 
 function Nav(props) {
     return (
-        <div className={styles.nav}>
+        <div className={styles.nav} {...props}>
 
         </div>
     );
