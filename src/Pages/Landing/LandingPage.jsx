@@ -4,6 +4,7 @@ import {useAuth} from "react-oidc-context";
 import {useNavigate} from "react-router-dom";
 import {Section} from "@radix-ui/themes";
 import Nav from "~components/Nav.jsx";
+import styles from "./landingPage.module.css";
 
 function LandingPage() {
     const auth = useAuth();
@@ -11,7 +12,7 @@ function LandingPage() {
 
     return (
         <AuthProvider>
-            <Nav>
+            <Nav className={styles.nav}>
                 landing
                 <button onClick={() => auth.signinRedirect()}>Login</button>
                 {auth.isAuthenticated &&
