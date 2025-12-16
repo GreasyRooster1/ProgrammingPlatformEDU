@@ -2,7 +2,7 @@ import React from 'react';
 import AuthProvider, {signOutRedirect} from "../../components/AuthProvider.jsx";
 import {useAuth} from "react-oidc-context";
 import {useNavigate} from "react-router-dom";
-import {Section} from "@radix-ui/themes";
+import {Button, Section} from "@radix-ui/themes";
 import Nav from "~components/Nav.jsx";
 import styles from "./landingPage.module.css";
 
@@ -14,16 +14,16 @@ function LandingPage() {
         <AuthProvider>
             <Nav className={styles.nav}>
                 landing
-                <button onClick={() => auth.signinRedirect()}>Login</button>
+                <Button onClick={() => auth.signinRedirect()}>Login</Button>
                 {auth.isAuthenticated &&
-                (<button onClick={() => auth.removeUser()}>
+                (<Button onClick={() => auth.removeUser()}>
                     Log Out
-                </button>)
+                </Button>)
                 }
                 token: {auth.user?.access_token}
-                <button onClick={() => navigate("/home")}>
+                <Button onClick={() => navigate("/home")}>
                     Home
-                </button>
+                </Button>
             </Nav>
             <Section size="2" />
         </AuthProvider>
