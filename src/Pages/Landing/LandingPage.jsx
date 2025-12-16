@@ -2,7 +2,7 @@ import React from 'react';
 import AuthProvider, {signOutRedirect} from "../../components/AuthProvider.jsx";
 import {useAuth} from "react-oidc-context";
 import {useNavigate} from "react-router-dom";
-import {Button, Section} from "@radix-ui/themes";
+import {Button, Container, Section} from "@radix-ui/themes";
 import Nav from "~components/Nav.jsx";
 import styles from "./landingPage.module.css";
 import LoginButton from "~/Pages/Landing/LoginButton.jsx";
@@ -30,7 +30,6 @@ function LandingPage() {
                     Home
                 </Button>
             </Nav>
-            <Section size="2" />
         </AuthProvider>
     )
 }

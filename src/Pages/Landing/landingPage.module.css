@@ -5,3 +5,7 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.hero{
+    background: var(--primary);
+}
