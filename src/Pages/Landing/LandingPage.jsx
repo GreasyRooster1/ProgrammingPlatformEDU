@@ -15,11 +15,17 @@ function LandingPage() {
     return (
         <AuthProvider>
             <Nav className={styles.nav}>
-                <UiSwitch value={false}>
-                    <UiSwitch.True>true</UiSwitch.True>
-                    <UiSwitch.False>false</UiSwitch.False>
+
+                <UiSwitch value={auth.isAuthenticated}>
+                    <UiSwitch.True>
+                        <Button onClick={() => auth.removeUser()}>
+                            Log Out
+                        </Button>
+                    </UiSwitch.True>
+                    <UiSwitch.False>
+                        <Button onClick={() => auth.signinRedirect()}>Sign up/Login</Button>
+                    </UiSwitch.False>
                 </UiSwitch>
-                <LoginButton auth={auth}/>
                 <Button onClick={() => navigate("/home")}>
                     Home
                 </Button>
