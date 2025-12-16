@@ -2,6 +2,7 @@ import React from 'react';
 import AuthProvider, {signOutRedirect} from "../../components/AuthProvider.jsx";
 import {useAuth} from "react-oidc-context";
 import {useNavigate} from "react-router-dom";
+import {Section} from "@radix-ui/themes";
 
 function LandingPage() {
     const auth = useAuth();
@@ -22,6 +23,7 @@ function LandingPage() {
                     Home
                 </button>
             </div>
+            <Section size="2" />
         </AuthProvider>
     )
 }
