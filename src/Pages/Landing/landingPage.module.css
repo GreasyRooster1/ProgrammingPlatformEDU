@@ -1,4 +1,7 @@
 .nav{
     background: var(--neutral-dark);
     padding: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

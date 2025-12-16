@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 import {Button, Section} from "@radix-ui/themes";
 import Nav from "~components/Nav.jsx";
 import styles from "./landingPage.module.css";
+import LoginButton from "~/Pages/Landing/LoginButton.jsx";
 
 function LandingPage() {
     const auth = useAuth();
@@ -13,14 +14,7 @@ function LandingPage() {
     return (
         <AuthProvider>
             <Nav className={styles.nav}>
-                landing
-                <Button onClick={() => auth.signinRedirect()}>Login</Button>
-                {auth.isAuthenticated &&
-                (<Button onClick={() => auth.removeUser()}>
-                    Log Out
-                </Button>)
-                }
-                token: {auth.user?.access_token}
+                <LoginButton auth={auth}/>
                 <Button onClick={() => navigate("/home")}>
                     Home
                 </Button>
