@@ -6,10 +6,10 @@ function UiSwitch(props) {
     let subComponents = subComponentList.map((key) => {
         return React.Children.map(props.children, (child) =>
             {
-                if(child.type.name === "True" && props.value){
+                if(child.type.name === key && child.type.name === "True" && props.value){
                     return child
                 }
-                if(child.type.name === "False" && !props.value){
+                if(child.type.name === key && child.type.name === "False" && !props.value){
                     return child
                 }
             }

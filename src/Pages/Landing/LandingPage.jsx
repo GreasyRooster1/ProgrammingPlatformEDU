@@ -15,7 +15,7 @@ function LandingPage() {
     return (
         <AuthProvider>
             <Nav className={styles.nav}>
-                <UiSwitch>
+                <UiSwitch value={false}>
                     <UiSwitch.True>true</UiSwitch.True>
                     <UiSwitch.False>false</UiSwitch.False>
                 </UiSwitch>
