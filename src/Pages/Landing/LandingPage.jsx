@@ -6,6 +6,7 @@ import {Button, Section} from "@radix-ui/themes";
 import Nav from "~components/Nav.jsx";
 import styles from "./landingPage.module.css";
 import LoginButton from "~/Pages/Landing/LoginButton.jsx";
+import UiSwitch from "~components/UISwitch.jsx";
 
 function LandingPage() {
     const auth = useAuth();
@@ -14,6 +15,10 @@ function LandingPage() {
     return (
         <AuthProvider>
             <Nav className={styles.nav}>
+                <UiSwitch>
+                    <UiSwitch.True>true</UiSwitch.True>
+                    <UiSwitch.False>false</UiSwitch.False>
+                </UiSwitch>
                 <LoginButton auth={auth}/>
                 <Button onClick={() => navigate("/home")}>
                     Home
