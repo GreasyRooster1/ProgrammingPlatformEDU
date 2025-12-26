@@ -1,11 +1,10 @@
 import React from 'react';
-import AuthProvider, {signOutRedirect} from "../../components/AuthProvider.jsx";
+import AuthProvider from "../../components/AuthProvider.jsx";
 import {useAuth} from "react-oidc-context";
 import {useNavigate} from "react-router-dom";
-import {Button, Container, Section} from "@radix-ui/themes";
+import {Button} from "@radix-ui/themes";
 import Nav from "~components/Nav.jsx";
 import styles from "./landingPage.module.css";
-import LoginButton from "~/Pages/Landing/LoginButton.jsx";
 import UiSwitch from "~components/UISwitch.jsx";
 
 function LandingPage() {
@@ -18,7 +17,11 @@ function LandingPage() {
 
                 <UiSwitch value={auth.isAuthenticated}>
                     <UiSwitch.True>
-                        <Button onClick={() => auth.removeUser()}>
+                        <Button onClick={() => {
+                            localStorage.clear();
+                            sessionStorage.clear();
+                            window.location.reload();
+                        }}>
                             Log Out
                         </Button>
                     </UiSwitch.True>
